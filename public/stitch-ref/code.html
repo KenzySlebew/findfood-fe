@@ -1,0 +1,606 @@
+<!DOCTYPE html><html lang="id"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_standard" name="shell-type"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"inverse-surface":"#2c3136","surface-container-high":"#e4e8ef","on-secondary-fixed":"#181c20","on-primary":"#ffffff","surface-container":"#eaeef5","on-tertiary-fixed-variant":"#881d24","on-primary-container":"#125104","primary-fixed-dim":"#94d87d","on-secondary-fixed-variant":"#43474b","on-secondary":"#ffffff","background":"#f7f9ff","surface-bright":"#f7f9ff","surface":"#f7f9ff","outline-variant":"#c1c9b9","primary-container":"#82c46c","surface-variant":"#dee3ea","on-error":"#ffffff","tertiary-fixed-dim":"#ffb3b0","on-tertiary-fixed":"#410006","on-surface-variant":"#41493c","on-background":"#171c21","primary-fixed":"#aff496","on-tertiary":"#ffffff","surface-tint":"#2e6b1f","on-primary-fixed":"#022100","primary":"#2e6b1f","error-container":"#ffdad6","error":"#ba1a1a","on-error-container":"#93000a","inverse-primary":"#94d87d","secondary-container":"#dde0e5","on-tertiary-container":"#861c23","tertiary-fixed":"#ffdad8","tertiary":"#a83639","inverse-on-surface":"#edf1f8","secondary-fixed-dim":"#c3c7cc","on-secondary-container":"#5f6367","surface-dim":"#d6dae1","surface-container-highest":"#dee3ea","secondary-fixed":"#e0e3e8","outline":"#717a6b","on-surface":"#171c21","tertiary-container":"#ff9694","secondary":"#5b5f63","surface-container-low":"#f0f4fb","on-primary-fixed-variant":"#145206","surface-container-lowest":"#ffffff"},borderRadius:{DEFAULT:"1rem",lg:"2rem",xl:"3rem",full:"9999px"},spacing:{"margin":"3rem","gutter":"1.5rem","space-xl":"2.5rem","space-xs":"0.25rem","space-sm":"0.5rem","space-lg":"1.5rem","margin-mobile":"1.25rem","gutter-mobile":"0.75rem","space-md":"1rem"},fontFamily:{"title-md":["Plus Jakarta Sans"],"label-lg":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"title-sm":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"],"title-lg":["Plus Jakarta Sans"],"headline-md-mobile":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"]},fontSize:{"title-md":["18px",{lineHeight:"26px",fontWeight:"600"}],"label-lg":["14px",{lineHeight:"20px",fontWeight:"600"}],"body-lg":["16px",{lineHeight:"26px",fontWeight:"400"}],"headline-md":["36px",{lineHeight:"44px",letterSpacing:"-0.02em",fontWeight:"700"}],"body-sm":["12px",{lineHeight:"18px",fontWeight:"400"}],"headline-sm":["24px",{lineHeight:"32px",letterSpacing:"-0.01em",fontWeight:"700"}],"title-sm":["16px",{lineHeight:"24px",fontWeight:"600"}],"headline-lg-mobile":["32px",{lineHeight:"40px",letterSpacing:"-0.015em",fontWeight:"800"}],"title-lg":["20px",{lineHeight:"28px",fontWeight:"700"}],"headline-md-mobile":["26px",{lineHeight:"34px",letterSpacing:"-0.01em",fontWeight:"700"}],"label-md":["12px",{lineHeight:"16px",fontWeight:"600"}],"body-md":["14px",{lineHeight:"22px",fontWeight:"400"}],"headline-lg":["48px",{lineHeight:"56px",letterSpacing:"-0.02em",fontWeight:"800"}],"label-sm":["10px",{lineHeight:"14px",letterSpacing:"0.04em",fontWeight:"700"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between gap-6"><div class="flex items-center gap-3 shrink-0"><div class="w-10 h-10 rounded-full bg-primary-container/20 flex items-center justify-center text-primary"><span class="material-symbols-outlined text-[24px]">skillet</span></div><span class="font-title-lg text-title-lg text-on-surface tracking-tight">Saji<span class="text-primary">.AI</span></span></div><nav class="hidden xl:flex items-center gap-1" data-active-classes="bg-primary-container text-on-primary-container font-title-sm"><a aria-current="page" class="px-3.5 py-2 rounded-full transition-colors bg-primary-container text-on-primary-container font-title-sm" data-path="beranda" href="#">Beranda</a><a class="px-3.5 py-2 rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="menu-katalog" href="#">Menu &amp; Katalog</a><a class="px-3.5 py-2 rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="cara-kerja" href="#">Cara Kerja</a><a class="px-3.5 py-2 rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="katering-acara" href="#">Katering Acara</a><a class="px-3.5 py-2 rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="harga-paket" href="#">Harga &amp; Paket</a><a class="px-3.5 py-2 rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="ai-planner" href="#">AI Planner</a></nav><div class="flex items-center gap-3 shrink-0"><button aria-label="Pencarian" class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">search</span></button><div class="relative"><button aria-label="Keranjang Belanja" class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">shopping_bag</span></button><span class="absolute -top-1 -right-1 min-w-[20px] h-5 px-1 bg-primary text-on-primary rounded-full font-label-sm text-label-sm flex items-center justify-center">3</span></div><a class="hidden sm:inline-flex px-4 py-2 font-label-lg text-label-lg text-on-surface hover:text-primary transition-colors" data-path="masuk" href="#">Masuk</a><a class="inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-primary-container text-on-primary-container font-label-lg text-label-lg shadow-sm hover:opacity-95 transition-all" data-path="pesan-sekarang" href="#">Pesan Sekarang</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-surface"><div class="flex flex-col w-full">
+<!-- 1. HERO SECTION -->
+<section class="w-full max-w-7xl mx-auto px-6 lg:px-12 pt-8 pb-16 text-center">
+<!-- Main Headline with Hand-drawn Doodle around "Fresh" -->
+<div class="max-w-4xl mx-auto flex flex-col items-center">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight mb-4">
+        Your Favorite Food<br>
+        Delivered Hot &amp; <span class="relative inline-block px-3 py-0.5">
+          Fresh
+          <!-- Organic Hand-drawn Loop SVG accent -->
+<svg class="absolute -inset-x-2 -inset-y-1.5 w-[calc(100%+16px)] h-[calc(100%+12px)] pointer-events-none text-primary-container" fill="none" viewBox="0 0 160 60" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 28C8 14 34 5 80 6C130 7 152 18 150 34C147 48 116 55 76 54C28 53 4 45 10 24C12 18 24 12 40 10" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path>
+</svg>
+</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-8">
+        Best food catering service in your town. Layanan katering korporat dan harian terbaik didukung AI Smart Planner &amp; Garansi SajiEscrow™ higienis langsung ke mejamu.
+      </p>
+<!-- Dual Call To Actions -->
+<div class="flex flex-wrap items-center justify-center gap-4 mb-14">
+<a class="px-8 py-3.5 rounded-full bg-primary-container text-on-primary-container font-title-sm text-title-sm shadow-md hover:scale-[1.02] transition-transform" href="#katalog">
+          Pesan Sekarang
+        </a>
+<a class="px-8 py-3.5 rounded-full bg-inverse-surface text-inverse-on-surface font-title-sm text-title-sm shadow-md hover:bg-on-background transition-colors" href="#menu-pilihan">
+          Lihat Menu &amp; Penawaran
+        </a>
+</div>
+</div>
+<!-- Multi-dish Floating Carousel Showcase (5 Organic Curved Cards) -->
+<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 items-center justify-center max-w-6xl mx-auto mb-8">
+<!-- Dish 1: Fresh Salad Bowl -->
+<div class="relative overflow-hidden rounded-lg bg-surface-container-lowest shadow-sm h-64 sm:h-72 transition-all duration-300 hover:-translate-y-1.5">
+<img class="w-full h-full object-cover" data-alt="Vibrant wholesome poke salad bowl with grilled salmon, edamame, purple cabbage, fresh greens, avocado slices, warm lighting, natural clean background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhA5d1Q1dyN3IwCpKpAVDN6Ae_gvrYMIWcHKKuvkpzKOy43jlzNbmIpX7-cuh9ivAEjy4EXonSoG9KZv2ESLf1178sGcR2DGx23YCOOiTlDO3VsGG_7Tr7lBlvaE0YyuYuw7L5DPpYClcQOy63RYwiGc-QZwqOS5qGWrtaQLzUKFq93Z9zvW5hwLub7SHVoDWYkA3yy23ncO6UEB-dYFq60Lbw53slLcq3t5IXl7Y0B2hZ9FlRPCKZzg">
+</div>
+<!-- Dish 2: Grilled Skewers Platter -->
+<div class="relative overflow-hidden rounded-lg bg-surface-container-lowest shadow-sm h-64 sm:h-80 transition-all duration-300 hover:-translate-y-1.5">
+<img class="w-full h-full object-cover" data-alt="Artisanal Indonesian sate and grilled meat feast arranged aesthetically on rustic slate board with peanut dips and fresh garnish, appetizing high contrast photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCc8_JI75mxX4pVlv5EgUALin2TTnGrgsnC9ikVQ4mTgxTJI7sCgFBSlca-01J6o6MrdSldRdDrusoxvHeCtby8t7z0_pEJGFKhx8J5t3UPpUk2wzT-Sxva5NzB8glN82tWoZyXaquG_2N4BDeLtp5c9d_P27yTO4zPhJyRCw75BPatuyX4slgotuArgMY7JOfMDWGQLMcAVEdYbu0ET-lLU45NDmtUBSVmnJVVv-8iPiMBgeOKofO22A">
+</div>
+<!-- Dish 3: Centerpiece Gourmet Steak & Broccolini (Hero Dish) -->
+<div class="col-span-2 sm:col-span-1 relative overflow-hidden rounded-lg bg-surface-container-lowest shadow-md h-72 sm:h-96 transition-all duration-300 hover:-translate-y-2">
+<img class="w-full h-full object-cover" data-alt="Fine dining tender tenderloin steak with charred broccolini on white ceramic square plate, drizzled with savory demi-glace jus, professional culinary photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD98j9M-ms1k1D6qW6FvSSPie4g2zLdRlacArfLNFQmHD1Yk0_RvbujZ-Kcnnmv8rJuHBWVVOOHK7vlQUPzalkX6xn-txq9ukOGQog-sUach8Ue2ILY16NSf5UfKWXHrv5AuYfrsThelKvNV9Y2I9WSpQhuoWfuJUl_ALGnRpmlfYniQlJk4ElB06QQCTrd5sDwQhEKo3qByOtNG-Us1hB0Sqkgp-DyPQ1f_QF1yuFrODIvqYhqquXizA">
+</div>
+<!-- Dish 4: Courier Hygiene Handover -->
+<div class="relative overflow-hidden rounded-lg bg-surface-container-lowest shadow-sm h-64 sm:h-80 transition-all duration-300 hover:-translate-y-1.5">
+<img class="w-full h-full object-cover" data-alt="Saji courier wearing fresh green uniform and gloves carefully delivering eco-friendly warm catering lunch packages to corporate client, bright natural lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPy_oT4KqR6qtlxiIZrRnbyxXDTWdi18cA7EFkaYbn_TGxC2P9h7Vwo0u9pq2YbwzOSH5-X5IkBaokDt6fa8ePjEOPJ8S6yCrqcBPWXY13tddz2hPAZcgbFks9urijHb2LVm7aX2Lm1PVhs5d7kxmXIV173x0A-kXYZnLfyJ_CHU6dsngP3FCW0qhyra8tugqjHRKN8-MOklt3Ht7PykrtJXzbuMKMmEvl--mb9mKlUC4RpYm2nssjCw">
+</div>
+<!-- Dish 5: Gourmet Mexican Artisan Tacos -->
+<div class="relative overflow-hidden rounded-lg bg-surface-container-lowest shadow-sm h-64 sm:h-72 transition-all duration-300 hover:-translate-y-1.5">
+<img class="w-full h-full object-cover" data-alt="Three colorful gourmet soft tacos with marinated pulled beef, guacamole, fresh cilantro, microgreens on neutral background, crisp culinary shot." src="https://lh3.googleusercontent.com/aida-public/AB6AXuArF9S4aIRXdEfuTtC7c4I0PiFPatt9MmGBL2h4s-A79CoEms7EvCnJ0xBX5dV_QC-XlQr_SnbAqsP3ger7fy4D1ggIF8YUOjhi3FQCKg-1eeMxJxRwXZOPSpWEvlB4YN8xAczb087TtAprHGDT0PgnhE01jdeLqvkIByD3WZ_tKFBugB8UixHNAdEa8FIujhjbV91pRZugCmfDAwFFZbvTvq9DcArfG8oHXjevCTysksJtR_hQ5LOl1w">
+</div>
+</div>
+<!-- Dots pagination indicator -->
+<div class="flex items-center justify-center gap-2">
+<span class="w-6 h-2 rounded-full bg-primary-container"></span>
+<span class="w-2 h-2 rounded-full bg-surface-variant"></span>
+<span class="w-2 h-2 rounded-full bg-surface-variant"></span>
+</div>
+</section>
+<!-- 2. HOW IT WORKS (Cara Kerja 4 Langkah) -->
+<section class="w-full max-w-7xl mx-auto px-6 lg:px-12 py-16">
+<div class="text-center max-w-xl mx-auto mb-12">
+<h2 class="font-headline-md text-headline-md text-on-surface tracking-tight mb-2">How it works</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Solusi pemesanan katering cerdas dengan 4 alur simpel terintegrasi AI</p>
+</div>
+<!-- 4 Step Green Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Step 01 -->
+<div class="bg-primary-container/30 hover:bg-primary-container/40 p-8 rounded-lg flex flex-col justify-between min-h-[220px] transition-all">
+<div class="w-8 h-8 rounded-full bg-inverse-surface text-inverse-on-surface font-label-md text-label-md flex items-center justify-center">
+          01.
+        </div>
+<div class="mt-8">
+<h3 class="font-title-md text-title-md text-on-surface mb-2">Fresh &amp; Nutritious</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Offers fresh foods and calculate calories, portion size akurat.</p>
+</div>
+</div>
+<!-- Step 02 -->
+<div class="bg-primary-container/30 hover:bg-primary-container/40 p-8 rounded-lg flex flex-col justify-between min-h-[220px] transition-all">
+<div class="w-8 h-8 rounded-full bg-inverse-surface text-inverse-on-surface font-label-md text-label-md flex items-center justify-center">
+          02.
+        </div>
+<div class="mt-8">
+<h3 class="font-title-md text-title-md text-on-surface mb-2">Pick Meals</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Offers fresh foods and calculate calories, porsi pakan harian.</p>
+</div>
+</div>
+<!-- Step 03 -->
+<div class="bg-primary-container/30 hover:bg-primary-container/40 p-8 rounded-lg flex flex-col justify-between min-h-[220px] transition-all">
+<div class="w-8 h-8 rounded-full bg-inverse-surface text-inverse-on-surface font-label-md text-label-md flex items-center justify-center">
+          03.
+        </div>
+<div class="mt-8">
+<h3 class="font-title-md text-title-md text-on-surface mb-2">Place A Order</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Sistem checkout instan bergaransi SajiEscrow™ aman tanpa khawatir.</p>
+</div>
+</div>
+<!-- Step 04 -->
+<div class="bg-primary-container/30 hover:bg-primary-container/40 p-8 rounded-lg flex flex-col justify-between min-h-[220px] transition-all">
+<div class="w-8 h-8 rounded-full bg-inverse-surface text-inverse-on-surface font-label-md text-label-md flex items-center justify-center">
+          04.
+        </div>
+<div class="mt-8">
+<h3 class="font-title-md text-title-md text-on-surface mb-2">Fast Delivery</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Antar tepat waktu dengan thermo-box menjaga kehangatan sajian.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. OUR SPECIAL CATERING (Menu Carousel) -->
+<section class="w-full max-w-7xl mx-auto px-6 lg:px-12 py-16" id="menu-pilihan">
+<div class="text-center max-w-xl mx-auto mb-14">
+<h2 class="font-headline-md text-headline-md text-on-surface tracking-tight mb-2">Our special Catering</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Pilihan paket bento lezat, sehat, dan diracik langsung oleh chef tersertifikasi</p>
+</div>
+<!-- 5 Circular Dish Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+<!-- Dish Card 1 -->
+<div class="bg-surface-container-lowest rounded-lg p-5 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow relative">
+<div class="w-36 h-36 mx-auto -mt-10 rounded-full overflow-hidden shadow-sm bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Top down overhead view of Indonesian authentic Bhuna Khichuri chicken rice bowl served with cucumber slices and fresh lime, appetizing culinary lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuABhXK95-0zvBLGYnrf6W3N-P97khdy0qfARnNn6xc8bvdEi2JkZiAf_kLN149sCRwdA4wuiripA9hG7fsr115mFfjrGlD-P7P2_O8W4oKkgGP6_NuzyJr4nvc5BwGvmiEZfONiWvZ7LbAxiBRF7adP0z7iyToAv0CzsoLkwx0cxHn2d-Xp0yNGVax4Qm2lQERE2l9ov49_u1nSO7gEhWYsCTtnsykDj3iqINWtVdZBWQ_lHS97mZ5y0A">
+</div>
+<div class="mt-4">
+<h4 class="font-title-sm text-title-sm text-on-surface line-clamp-2 min-h-[48px]">Bhuna Khichuri &amp; Thai Chiken</h4>
+<div class="flex items-center gap-3 my-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1 text-on-surface font-label-md"><span class="material-symbols-outlined text-[16px] text-amber-500" style="font-variation-settings: 'FILL' 1;">star</span> 4.8</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[15px] text-tertiary">local_fire_department</span> 150 Kcal</span>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="font-title-md text-title-md text-on-surface"><span class="text-secondary font-label-sm">Rp</span> 38.000</span>
+<button aria-label="Tambah hidangan" class="w-8 h-8 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center hover:opacity-90" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Dish Card 2 -->
+<div class="bg-surface-container-lowest rounded-lg p-5 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow relative">
+<div class="w-36 h-36 mx-auto -mt-10 rounded-full overflow-hidden shadow-sm bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Overhead round plate filled with Bento Rendang Padang specialty beef, steaming fragrant jasmine rice, sambal hijau, and cassava leaves, rich Indonesian flavor." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4thNqEgdhNU4gD500_UuT6fmtTHO2hSd8hnmCI2cX_uQqiSdrwn39aGypoMNboz8nVUJ1I-pXksEDtvNXeLc9fQ6Mg8JzzIXxDMiQwLSjnA4TG9Z3SLKahHMqZF_cqzA5nSUPO4GOb6fxhiJlspup-C56F6JTQrJOXNCOs7DhKi6txlLmiVou1Te6xuD_xMiOFhgQIFXFC85jRCPENPg1MobbNHG9lGxvmGETaEhB1MqXJZeme48Peg">
+</div>
+<div class="mt-4">
+<h4 class="font-title-sm text-title-sm text-on-surface line-clamp-2 min-h-[48px]">Bento Rendang Padang Spesial</h4>
+<div class="flex items-center gap-3 my-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1 text-on-surface font-label-md"><span class="material-symbols-outlined text-[16px] text-amber-500" style="font-variation-settings: 'FILL' 1;">star</span> 4.9</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[15px] text-tertiary">local_fire_department</span> 180 Kcal</span>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="font-title-md text-title-md text-on-surface"><span class="text-secondary font-label-sm">Rp</span> 45.000</span>
+<button aria-label="Tambah hidangan" class="w-8 h-8 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center hover:opacity-90" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Dish Card 3 -->
+<div class="bg-surface-container-lowest rounded-lg p-5 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow relative">
+<div class="w-36 h-36 mx-auto -mt-10 rounded-full overflow-hidden shadow-sm bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Top down view of Salmon Teriyaki Rice Bowl with sesame seeds, steamed broccoli florets and pickled ginger in a deep round bowl, warm editorial lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrxnOSBOYP6Jxw9KZHC66DzCTtdW5DrpEA9LJxymtZWOAiaOpQRjQA5Jm7blA97ejVeQoyx4PTd2yila929aWDeEiioP7IFqg_1a9jRJpwjiho9TbW_q3PPD2UsgQiCU1Rk2S2Gdi7E4WVxPNyQ83pVVjeslqTexXjsF0e1A-cocNtHLD24lINP-C56RL8lHDwf9AWL3_pe43uCwBpAMxDFvAPh31sDwOJ3bnHUo_kiWoTH_J-5zRI5g">
+</div>
+<div class="mt-4">
+<h4 class="font-title-sm text-title-sm text-on-surface line-clamp-2 min-h-[48px]">Salmon Teriyaki Rice Bowl</h4>
+<div class="flex items-center gap-3 my-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1 text-on-surface font-label-md"><span class="material-symbols-outlined text-[16px] text-amber-500" style="font-variation-settings: 'FILL' 1;">star</span> 4.9</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[15px] text-tertiary">local_fire_department</span> 160 Kcal</span>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="font-title-md text-title-md text-on-surface"><span class="text-secondary font-label-sm">Rp</span> 52.000</span>
+<button aria-label="Tambah hidangan" class="w-8 h-8 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center hover:opacity-90" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Dish Card 4 -->
+<div class="bg-surface-container-lowest rounded-lg p-5 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow relative">
+<div class="w-36 h-36 mx-auto -mt-10 rounded-full overflow-hidden shadow-sm bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Top angle culinary presentation of Nasi Liwet Solo Komplit with shredded chicken opor, sayur labu siam, boiled egg, areh coconut sauce on circular banana leaf." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJkLK_YI8GvJty_gwEPGMVb8UR7W4q8HpBvMxVHm_PSzNm7oCu0PeULP293zhghVVGHHZcHniBfVYgkkQRHBONA6-Eog_ddVM-FQU9Snl0CD4m6mM3ouvGpgyfkkihi4xVu0-ErW5-PeXy1telLRSIKOlqQTXFl-B73lir3ghJN-X6pJ8Ojsy5YJZsjZ6OEBG8SfCLH8y5Oskq4pNBI8wG7PAdkAQ9fKnyGVPd1nRMW3IEQmph6UzCZg">
+</div>
+<div class="mt-4">
+<h4 class="font-title-sm text-title-sm text-on-surface line-clamp-2 min-h-[48px]">Nasi Liwet Solo Komplit</h4>
+<div class="flex items-center gap-3 my-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1 text-on-surface font-label-md"><span class="material-symbols-outlined text-[16px] text-amber-500" style="font-variation-settings: 'FILL' 1;">star</span> 4.8</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[15px] text-tertiary">local_fire_department</span> 175 Kcal</span>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="font-title-md text-title-md text-on-surface"><span class="text-secondary font-label-sm">Rp</span> 42.000</span>
+<button aria-label="Tambah hidangan" class="w-8 h-8 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center hover:opacity-90" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Dish Card 5 -->
+<div class="bg-surface-container-lowest rounded-lg p-5 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow relative">
+<div class="w-36 h-36 mx-auto -mt-10 rounded-full overflow-hidden shadow-sm bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Overhead flat lay of Healthy Salad Grilled Chicken bowl with balsamic dressing, cherry tomatoes, crisp romaine lettuce, crunchy croutons." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJfpaPx2zaXNC3nHmEYvPXqOpCTVUgP5r3-fvRlUXR_2kaBh4VJdZ_FRWSwpSiLUJo23mRQq_fXikGgK_otpPY1w5obsFhHS4EkrNzF4-UvWhUq_vncJndbnzFTgqxsU_vXunaiQP15QMZ288HHaPOsr8_qwul4pnow-bjl8cbyDyP27yUeZNni-gAAHCJ6YJ-UzWTYT5liLwNv01ZwtyV0U7KKNT_fNO_mUQSSpFpQSuvgVpmG5pzTA">
+</div>
+<div class="mt-4">
+<h4 class="font-title-sm text-title-sm text-on-surface line-clamp-2 min-h-[48px]">Healthy Salad Grilled Chicken</h4>
+<div class="flex items-center gap-3 my-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1 text-on-surface font-label-md"><span class="material-symbols-outlined text-[16px] text-amber-500" style="font-variation-settings: 'FILL' 1;">star</span> 5.0</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[15px] text-tertiary">local_fire_department</span> 140 Kcal</span>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="font-title-md text-title-md text-on-surface"><span class="text-secondary font-label-sm">Rp</span> 39.000</span>
+<button aria-label="Tambah hidangan" class="w-8 h-8 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center hover:opacity-90" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Arrow Navigation Discs -->
+<div class="flex items-center justify-center gap-3 mt-12">
+<button aria-label="Menu sebelumnya" class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center hover:opacity-90" type="button">
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+</button>
+<button aria-label="Menu selanjutnya" class="w-10 h-10 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center hover:bg-surface-variant" type="button">
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+</section>
+<!-- 4. STATISTICS BAR -->
+<section class="w-full max-w-7xl mx-auto px-6 lg:px-12 py-10">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<!-- Stat 1 -->
+<div class="bg-primary-container/40 rounded-lg p-6 sm:p-8 text-center flex flex-col justify-center items-center">
+<span class="font-headline-lg text-headline-lg text-on-surface tracking-tight mb-1">10K+</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Total customers</span>
+</div>
+<!-- Stat 2 -->
+<div class="bg-primary-container/40 rounded-lg p-6 sm:p-8 text-center flex flex-col justify-center items-center">
+<span class="font-headline-lg text-headline-lg text-on-surface tracking-tight mb-1">09+</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Years of experience</span>
+</div>
+<!-- Stat 3 -->
+<div class="bg-primary-container/40 rounded-lg p-6 sm:p-8 text-center flex flex-col justify-center items-center">
+<span class="font-headline-lg text-headline-lg text-on-surface tracking-tight mb-1">12K</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Total destinations</span>
+</div>
+<!-- Stat 4 -->
+<div class="bg-primary-container/40 rounded-lg p-6 sm:p-8 text-center flex flex-col justify-center items-center">
+<span class="font-headline-lg text-headline-lg text-on-surface tracking-tight mb-1">4.9</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Average rating</span>
+</div>
+</div>
+</section>
+<!-- 5. PLAN EVENT WITH US (Rancang Acara Bersama Kami) -->
+<section class="w-full max-w-7xl mx-auto px-6 lg:px-12 py-16">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Left Column: Title & Booking CTA -->
+<div class="lg:col-span-4 flex flex-col justify-between h-full pr-0 lg:pr-4">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface tracking-tight mb-3">Plan Event With Us</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+            Rancang perhelatan Anda bersama tim katering kami. Mulai dari makan siang rapat direksi hingga jamuan pesta berskala ribuan porsi.
+          </p>
+<a class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-primary-container text-on-primary-container font-label-lg text-label-lg shadow-sm hover:scale-[1.02] transition-transform" href="#hubungi">
+            Book a call
+          </a>
+</div>
+</div>
+<!-- Right Column: Event Types Mosaic Collage -->
+<div class="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+<!-- Event 1: Office Event -->
+<div class="relative h-56 rounded-lg overflow-hidden group shadow-sm">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Modern bright open plan corporate office pantry with employees and team enjoying gourmet buffet catering lunch together, lively atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSRBbg7EmYd_Nf9UKkqCkzTF8Ve86O4fYbtuKGkaFHd5_5w5XOshCjTPKgTOom5nxqPcziYix7Y_yGHJI7bn6XgNtk_GjSrbdUYAJv0fWb28C6DzLvxDUuATYmlC4ENPRQMiUwNQMwVluHiyCh1RIvtkv5--FJBjma3ORwfJGsM1gsg6gFgjycbzUQrkGwv51stpbTLa9h_ey33N_fQuQwux_jHlOpVxYuyRIwnmSqvJAc712uzv0WwQ">
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-inverse-surface/20 to-transparent flex items-end p-5">
+<span class="text-on-primary font-title-sm text-title-sm">Office Event</span>
+</div>
+</div>
+<!-- Event 2: Nonprofit Event -->
+<div class="relative h-56 rounded-lg overflow-hidden group shadow-sm">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Community volunteers and organizers serving fresh healthy meals to attendees at a community center charity event, joyful humanitarian feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxABDIOaWKibppbb_WVj4yLPOklZ95AUC6-uITH792VjORJngb1Fi_8-nBRKwJ1uWzGAC5ZPS4BEDem65IzSqY-Vd12TpaVrehWoh42vqvxdtwEcr0U192KI0dhHIKEp_eyq-ej5TAZDRBstgWGpYoCB-2LRTtqeiXjDmEXsD6F3ACrp2Og3u5lIpGirrwyDj57hRP49g1TQ3jF53tNK8K_omwO3o4fvrtAJLhufVZl7u_V6-1YQjR4A">
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-inverse-surface/20 to-transparent flex items-end p-5">
+<span class="text-on-primary font-title-sm text-title-sm">Nonprofit Event</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Row: 3 More Event Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
+<!-- Event 3: Students Meal -->
+<div class="relative h-56 rounded-lg overflow-hidden group shadow-sm">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Cheerful college students eating delicious balanced bento box lunch in university courtyard, natural sunlight and vibrant energy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBMew6pwLEBnJJymMoCAlYRLZoRH_W9GeuVIIHlJYz79ahOHn0zgRdw9XaqNFUBMhJ5P6EBNf6JMsCHQDRpPhbxbu1JaltZG9HNh6hXPTKHcQciV6C-n5it2VjrQDA2q26mAM57fLINpYwsWX3QZQwkjRohgorfBgC5Lwt0MDH75rCdi4IMz03QhC0HzUntA6xrq-33PVwD_RhdfYX7SeBYgsJFMQczX3iMcbaakMEaE_FJxObRFtFgQ">
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-inverse-surface/20 to-transparent flex items-end p-5">
+<span class="text-on-primary font-title-sm text-title-sm">Students Meal</span>
+</div>
+</div>
+<!-- Event 4: Party or Festival -->
+<div class="relative h-56 rounded-lg overflow-hidden group shadow-sm">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Festive evening social party with friends clinking glasses around elegant catering spread and artisanal finger food plates, warm ambient lights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpxOsqdRkcVHFW7Ff7SLBI0yJepg3gphwEO5bEA46QYrKVgurAvINDTNzbQnp6eax7EjMtedff2OwS0ynaKDgmrVrM7hEc36wI0XJQzKJWC6_vV05qqLC-3gd5yoJA9MhD8Si-YLTZSRiSykHfMw4_I7tw_6ungmeE2w_F6m5Ezfga0YCabAQwHlZM_J1-j-mTGckCi88wn9ahkOB9haews4p7sPGe_EuypEVCvN8HpmKDccWUWEsvdw">
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-inverse-surface/20 to-transparent flex items-end p-5">
+<span class="text-on-primary font-title-sm text-title-sm">Party or Festival's</span>
+</div>
+</div>
+<!-- Event 5: Wedding Event -->
+<div class="relative h-56 rounded-lg overflow-hidden group shadow-sm">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Grand luxury wedding reception banquet table with golden cutlery, floral arrangements, fine dining catering displays, romantic lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDREszY4J-GOI6SQTLe0qXO-aSzwE9aLaLIQV3RP9tHg7PUW89hWhhCEp0L3CgvPAqyOjYDhBbfRUXj5A5Jn0_2GXxTnL2T3ZPUF8i6gXFw2owseCc5A6SvMlWjmRxjUnE63yTL3TlPpzTEn2B63gc-1iGdG6GVDUYDB-5OLHqmi6UKhKGt5MV4CAR87138oCuspbKCcriUmuQBXgSc4Srsx1imXhIHNqI2XKuPunXVCpRvvpgdfvSpLQ">
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-inverse-surface/20 to-transparent flex items-end p-5">
+<span class="text-on-primary font-title-sm text-title-sm">Wedding Event</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. PRICING & SUBSCRIPTION PACKAGES -->
+<section class="w-full max-w-7xl mx-auto px-6 lg:px-12 py-16">
+<div class="text-center max-w-xl mx-auto mb-14">
+<h2 class="font-headline-md text-headline-md text-on-surface tracking-tight mb-2">Pricing</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Choose the plan that works best for you</p>
+</div>
+<!-- Comparative Cards (Weekly vs Monthly) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+<!-- Card 1: Weekly (Green Highlighted Container) -->
+<div class="bg-primary-container/40 rounded-lg p-8 flex flex-col justify-between shadow-sm relative">
+<div>
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Weekly</h3>
+<span class="font-headline-sm text-headline-sm text-on-surface">Rp 250.000</span>
+</div>
+<!-- Feature checkmarks -->
+<ul class="space-y-3 my-6 font-body-sm text-body-sm text-on-surface">
+<li class="flex items-center gap-2.5">
+<span class="w-5 h-5 rounded-full bg-on-surface text-surface flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</span>
+<span>1 Week package catering</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="w-5 h-5 rounded-full bg-on-surface text-surface flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</span>
+<span>2 Meals per day (Lunch &amp; Dinner)</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="w-5 h-5 rounded-full bg-on-surface text-surface flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</span>
+<span>Choose preferred menus freely</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="w-5 h-5 rounded-full bg-on-surface text-surface flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</span>
+<span>Complementary infused meal drink</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="w-5 h-5 rounded-full bg-on-surface text-surface flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</span>
+<span>Rewards Points akumulatif</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="w-5 h-5 rounded-full bg-on-surface text-surface flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</span>
+<span>Lifestyle &amp; nutrition advice</span>
+</li>
+</ul>
+</div>
+<button class="w-full py-3.5 rounded-full bg-inverse-surface text-inverse-on-surface font-title-sm text-title-sm hover:bg-on-background transition-colors mt-4" type="button">
+          Get plan
+        </button>
+</div>
+<!-- Card 2: Monthly (Clean White Card) -->
+<div class="bg-surface-container-lowest rounded-lg p-8 flex flex-col justify-between shadow-sm relative">
+<div>
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Monthly</h3>
+<span class="font-headline-sm text-headline-sm text-on-surface">Rp 950.000</span>
+</div>
+<!-- Feature checkmarks -->
+<ul class="space-y-3 my-6 font-body-sm text-body-sm text-on-surface">
+<li class="flex items-center gap-2.5">
+<span class="w-5 h-5 rounded-full bg-on-surface text-surface flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</span>
+<span>1 Month full subscription</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="w-5 h-5 rounded-full bg-on-surface text-surface flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</span>
+<span>3 Meals per day (Breakfast, Lunch, Dinner)</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="w-5 h-5 rounded-full bg-on-surface text-surface flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</span>
+<span>Choose preferred menus &amp; dietary goals</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="w-5 h-5 rounded-full bg-on-surface text-surface flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</span>
+<span>Complementary snack &amp; juice box</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="w-5 h-5 rounded-full bg-on-surface text-surface flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</span>
+<span>SajiEscrow™ Corporate protection</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="w-5 h-5 rounded-full bg-on-surface text-surface flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</span>
+<span>Dedicated culinary account manager</span>
+</li>
+</ul>
+</div>
+<button class="w-full py-3.5 rounded-full bg-primary-container text-on-primary-container font-title-sm text-title-sm hover:opacity-90 transition-opacity mt-4" type="button">
+          Get plan
+        </button>
+</div>
+</div>
+</section>
+<!-- 7. CUSTOMER THOUGHTS (Testimoni PIC & Pelanggan) -->
+<section class="w-full max-w-7xl mx-auto px-6 lg:px-12 py-16">
+<div class="text-center max-w-xl mx-auto mb-14">
+<h2 class="font-headline-md text-headline-md text-on-surface tracking-tight mb-2">Customer thoughts</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Which is what our popular customers are saying</p>
+</div>
+<!-- 3 Testimonial Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+<!-- Reviewer 1 -->
+<div class="bg-surface-container-lowest rounded-lg p-6 shadow-sm flex flex-col justify-between">
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6">
+          “Sistem pemilihan menu katering Saji.AI sangat presisi. Seluruh karyawan kantor puas dengan ketepatan waktu pengantaran dan rasa masakan yang hangat konsisten.”
+        </p>
+<div class="flex items-center justify-between pt-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Portrait of smiling professional corporate employee Robert Fox wearing smart casual blazer in modern office space." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgbCnizP3kUxgstr5Aj3PH7UObdaWtM-7QTCzeYr422uJMDom0OELpugUmRtF1ubre33Xa3J8OZSrZrKaDLM4Mfk0RiYVl7Z-aQ8nkrFU57rTkGWQi1dshcz1zYdnZQrThOcbzm_I8J28z9b-TmctWYr6AkzmE7mTE0Kkx2D7_KeI6go5tDy2_VePtrOLLTDqVuR5SqlTTHDdA-BMEinAsbpsMMbXC6QndRz6tnl9jaYKYpEGhfd1hFw">
+</div>
+<div>
+<span class="font-title-sm text-title-sm text-on-surface block leading-tight">Robert Fox</span>
+<span class="font-body-sm text-body-sm text-secondary">Web Designer</span>
+</div>
+</div>
+<div class="flex text-amber-500 text-[16px]">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+</div>
+<!-- Reviewer 2 -->
+<div class="bg-surface-container-lowest rounded-lg p-6 shadow-sm flex flex-col justify-between">
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6">
+          “Garansi SajiEscrow benar-benar memberi rasa tenang untuk event tahunan kami dengan 500 porsi. Rekomendasi porsi kalkulator AI sangat hemat budget!”
+        </p>
+<div class="flex items-center justify-between pt-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Portrait of Sarah Jenkins, event manager with a warm friendly smile wearing corporate attire." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3HUSiRhvJpKqrrfaDUjKoPFfFqDjtDm2VyMtxgGhvi_a7A_59MuwfdD7V8AeAe2DpxJABn3KDWcNGjjp15C4XiZ_oveRG61tBi5vvY4ItbV1vldBMvZCfV3M3WxHGQBJZeW4pAKtqrOCnCX_AxM24khY4R5B82GItZMcWorT9maU0PGgMgZ9k0Gb02WjfiaQGK3dGU74IERhOi0yTrjOq1ACsGck1QmEOVRrJzA2-5v9yJG7tF1QtLQ">
+</div>
+<div>
+<span class="font-title-sm text-title-sm text-on-surface block leading-tight">Sarah Jenkins</span>
+<span class="font-body-sm text-body-sm text-secondary">HR &amp; Event Lead</span>
+</div>
+</div>
+<div class="flex text-amber-500 text-[16px]">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+</div>
+<!-- Reviewer 3 -->
+<div class="bg-surface-container-lowest rounded-lg p-6 shadow-sm flex flex-col justify-between">
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6">
+          “Kombinasi bento box nusantara dan salmon bowl sangat diminati tim tech kami. Ganti menu harian semudah satu sentuhan di aplikasi mobile.”
+        </p>
+<div class="flex items-center justify-between pt-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Portrait of Dimas Anggara, operations director with glasses smiling in contemporary office environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAh5MWi6WLk2OpFe_Hor1DVZYTaBXAcPfL3Y5m19u-Exq-hYQMRtqGa5nDrP0YHQX6NzJJ02ey4EvwYrNyEZRUsx-hrSfG50V9faVI5e61duLp6hx19-Yx9KAxMIIKEUdBqHJyJ9sDXye_xDXXbBmgNn4gd_pPcy4jyU3eF91qmYLRlhf6bf0Ojwrj5S_q1NqoH3CbWkxm6mh7EfFvi9w5hPMkg13-ezSicnQ7ae7eS7JL9un7PgHaKPQ">
+</div>
+<div>
+<span class="font-title-sm text-title-sm text-on-surface block leading-tight">Dimas Anggara</span>
+<span class="font-body-sm text-body-sm text-secondary">Operations Manager</span>
+</div>
+</div>
+<div class="flex text-amber-500 text-[16px]">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination dots / buttons -->
+<div class="flex items-center justify-center gap-3 mt-10">
+<button aria-label="Ulasan sebelumnya" class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center hover:opacity-90" type="button">
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+</button>
+<button aria-label="Ulasan selanjutnya" class="w-10 h-10 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center hover:bg-surface-variant" type="button">
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+</section>
+<!-- 8. DOWNLOAD MOBILE APP BANNER -->
+<section class="w-full max-w-7xl mx-auto px-6 lg:px-12 py-16">
+<div class="bg-primary-container/40 rounded-xl p-8 sm:p-12 lg:p-16 relative overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-12">
+<!-- Left Content -->
+<div class="max-w-xl z-10 text-left">
+<h2 class="font-headline-md text-headline-md text-on-surface tracking-tight mb-4">
+          Download Our Mobile<br>App to Make it Easier
+        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 max-w-md">
+          Pesan makanan katering, pantau lokasi kurir secara real-time, dan sesuaikan preferensi nutrisi tim Anda kapan saja dan di mana saja.
+        </p>
+<!-- Download Badges -->
+<div class="flex flex-wrap items-center gap-4">
+<!-- App Store Badge -->
+<a class="inline-flex items-center gap-3 bg-inverse-surface text-inverse-on-surface px-5 py-2.5 rounded-full hover:bg-on-background transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">phone_iphone</span>
+<div class="text-left">
+<span class="block font-label-sm text-label-sm leading-none opacity-80">Download on the</span>
+<span class="font-title-sm text-title-sm leading-tight font-bold">App Store</span>
+</div>
+</a>
+<!-- Google Play Badge -->
+<a class="inline-flex items-center gap-3 bg-inverse-surface text-inverse-on-surface px-5 py-2.5 rounded-full hover:bg-on-background transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">android</span>
+<div class="text-left">
+<span class="block font-label-sm text-label-sm leading-none opacity-80">GET IT ON</span>
+<span class="font-title-sm text-title-sm leading-tight font-bold">Google Play</span>
+</div>
+</a>
+</div>
+</div>
+<!-- Right Graphic / Chef & Mobile Mockup -->
+<div class="relative w-full max-w-md lg:max-w-lg flex items-center justify-center shrink-0">
+<!-- Chef Oval Shape Image -->
+<div class="w-56 h-80 sm:w-64 sm:h-96 rounded-full overflow-hidden shadow-lg bg-surface-container relative z-10">
+<img class="w-full h-full object-cover" data-alt="Young professional executive chef wearing pristine white uniform and hat with crossed arms, friendly confident expression, isolated clean studio background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaI6QlOrrWc-6Rvl7Clb6jedT5CjVgtadVFT26Kn-EnWYj02LbTTOBZNZ-TV-qdWK4ELgo5T3oDZt2ahX1SDrfs5yRW9xy9uZMh0sj7ZSHLPdh4Af5k4z9iDgUemHs28GDoTKGMTbwXhgcWqFJFKMoa4mVR76pth91enrsrh6Dq9RMe9i-y6JZoZFog8dYY5SmwcdkWwhmQHY1y8EGMR5ZClfZkVXocoVufzBqrAwTbvkC184oBT5iig">
+</div>
+<!-- Floating UI Screen Mockup -->
+<div class="absolute -right-2 sm:right-4 top-1/2 -translate-y-1/2 w-52 sm:w-60 bg-surface-container-lowest rounded-lg p-4 shadow-xl z-20 hidden sm:block">
+<div class="flex items-center justify-between mb-3 text-on-surface">
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">location_on</span>
+<span class="truncate">Dhanmondi, Jkt</span>
+</div>
+<span class="material-symbols-outlined text-[18px]">notifications</span>
+</div>
+<span class="font-title-sm text-title-sm text-on-surface block mb-1">Afternoon, Rehan!</span>
+<span class="font-body-sm text-body-sm text-secondary block mb-3">Today's curated meal</span>
+<div class="flex items-center justify-between p-2 rounded-md bg-surface-container-low mb-2">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary-container"></div>
+<span class="font-label-md text-label-md text-on-surface">Grilled Salmon</span>
+</div>
+<span class="font-label-sm text-label-sm font-bold text-primary">Hot</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 9. NEWSLETTER SUBSCRIPTION COMPACT BAR -->
+<section class="w-full max-w-7xl mx-auto px-6 lg:px-12 pb-16">
+<div class="flex flex-col md:flex-row items-center justify-between gap-6 p-8 bg-surface-container-low rounded-xl">
+<div class="text-left max-w-md">
+<h3 class="font-title-lg text-title-lg text-on-surface mb-1">Our Newsletter</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Dapatkan update menu mingguan &amp; promo spesial diskon korporat.</p>
+</div>
+<div class="w-full md:w-auto flex-1 max-w-md">
+<form class="flex items-center rounded-full bg-surface-container-lowest p-1.5 shadow-sm">
+<span class="material-symbols-outlined text-secondary ml-3 text-[20px]">mail</span>
+<input class="w-full bg-transparent px-3 py-2 font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant outline-none" placeholder="Your email address" type="email">
+<button aria-label="Langganan newsletter" class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shrink-0 hover:opacity-90 transition-opacity" type="submit">
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</form>
+</div>
+</div>
+</section>
+</div>
+<script>
+  // Simple interactive feedback for action buttons
+  document.addEventListener('DOMContentLoaded', () => {
+    const addBtns = document.querySelectorAll('button[aria-label="Tambah hidangan"]');
+    addBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const icon = btn.querySelector('.material-symbols-outlined');
+        if (icon) {
+          icon.textContent = 'done';
+          btn.classList.add('bg-primary', 'text-on-primary');
+          setTimeout(() => {
+            icon.textContent = 'add';
+            btn.classList.remove('bg-primary', 'text-on-primary');
+          }, 1500);
+        }
+      });
+    });
+  });
+</script></main><footer class="w-full bg-surface-container-lowest"><div class="max-w-7xl mx-auto px-6 lg:px-12 pt-16 pb-12"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10"><div class="lg:col-span-2 flex flex-col gap-4"><div class="flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-primary-container/20 flex items-center justify-center text-primary"><span class="material-symbols-outlined text-[24px]">skillet</span></div><span class="font-title-lg text-title-lg text-on-surface tracking-tight">Saji<span class="text-primary">.AI</span></span></div><p class="font-body-md text-body-md text-on-surface-variant max-w-sm">Saji.AI - Good food and good life for corporate &amp; events. Solusi katering cerdas berbasis teknologi untuk kebutuhan pertemuan kantor, makan siang tim, dan perhelatan istimewa Anda.</p><div class="flex items-center gap-3 pt-2"><a aria-label="Public Feed" class="w-9 h-9 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined text-[18px]">public</span></a><a aria-label="Call Support" class="w-9 h-9 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined text-[18px]">call</span></a><a aria-label="Chat Curation" class="w-9 h-9 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined text-[18px]">forum</span></a></div></div><div class="flex flex-col gap-3"><span class="font-title-sm text-title-sm text-on-surface">Layanan Kami</span><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Katering Harian Kantor</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Paket Bento &amp; Box</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Prasmanan Acara</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Coffee Break &amp; Snack</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Chef On-Demand</a></div><div class="flex flex-col gap-3"><span class="font-title-sm text-title-sm text-on-surface">Perusahaan</span><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Tentang Saji.AI</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Mitra Dapur &amp; Vendor</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Sertifikasi Halal</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Karir</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Kontak Kami</a></div><div class="flex flex-col gap-4"><span class="font-title-sm text-title-sm text-on-surface">Buletin &amp; Promo</span><p class="font-body-sm text-body-sm text-on-surface-variant">Dapatkan panduan menu mingguan dan penawaran korporat eksklusif ke surel Anda.</p><div class="flex items-center rounded-full bg-surface-container-low p-1.5 focus-within:ring-2 focus-within:ring-primary/40"><input class="w-full bg-transparent px-3 py-1 font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant outline-none" placeholder="Alamat email Anda" type="email"><button aria-label="Kirim Email" class="w-9 h-9 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shrink-0 hover:opacity-90 transition-opacity" type="button"><span class="material-symbols-outlined text-[18px]">arrow_forward</span></button></div></div></div><div class="mt-14 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4"><p class="font-body-sm text-body-sm text-on-surface-variant">© 2025 Saji.AI Platform Katering Nusantara. Hak cipta dilindungi undang-undang.</p><div class="flex items-center gap-6"><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#">Kebijakan Privasi</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#">Syarat Layanan</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#">Bantuan Korporat</a></div></div></div></footer></body></html>
