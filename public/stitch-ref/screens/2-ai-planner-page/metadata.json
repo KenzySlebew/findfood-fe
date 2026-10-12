@@ -1,0 +1,374 @@
+{
+  "screenshot": {
+    "name": "projects/16147629570532952875/screens/d928b62df7e14aa999fa45fa273c9596/fileEntries/screenshot",
+    "downloadUrl": "https://lh3.googleusercontent.com/aida/AEtjO1W8gjwL-SPFit4QUFVQek9gqsDLlV-LV3hxF6JJ_6qIk1VsMW2xZzrtEPgce4HxOX0UHZuawq53W-I-O7uWK-MWczi0zAMOvPflKAfmJAPcWyukt8JuFHUX0l2O7LqaRI3FlEnvC5jmKtllUkbpfvOlRRnW7a9XWAesPRTqnlRZglZMnO7rIO1qC50zK4ZyHfzkRmlatanYuHMmPJnQgbhDgtOzPiS4J2jLHlC2bQPYjD0-ICLl3b-j_Wsc"
+  },
+  "htmlCode": {
+    "name": "projects/16147629570532952875/files/12827514219218255317",
+    "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzAwMDY1ZDhlNGE4YzFhOTEwMDMwMjc5MWNjMWMxNDA0EgsSBxDAjuaknw4YAZIBJAoKcHJvamVjdF9pZBIWQhQxNjE0NzYyOTU3MDUzMjk1Mjg3NQ&filename=&opi=89354086",
+    "mimeType": "text/html"
+  },
+  "id": "d928b62df7e14aa999fa45fa273c9596",
+  "generatedBy": "figaro_agent",
+  "width": "2560",
+  "height": "6270",
+  "title": "AI Smart Planner & Tender RFQ - Saji.AI",
+  "prompt": "Create the \"AI Smart Planner & Bidding RFQ Tender Board\" screen for Saji.AI based on the PRD Section 3 (Fitur #2: AI Smart Planner & Tender RFQ) using the clean green aesthetic from {{DATA:IMAGE:IMAGE_2}}:\n\n1. Page Header & AI Assistant Bar:\n- Title: \"AI Smart Planner & Tender RFQ Kilat\"\n- Subtitle: \"Masukkan kebutuhan acara kantor atau hajatan Anda, AI akan merumuskan komposisi menu ideal sesuai budget dan menyiarkan tender ke vendor terverifikasi.\"\n\n2. Left Pane: AI Event Formulation Console (Interactive Input):\n- Event Type selection pills: \"Meeting Kantor / Rapat Direksi\", \"Townhall 200+ Pax\", \"Workshop & Seminar\", \"Gathering Outdoor\"\n- Jumlah Tamu / Pax input (e.g. \"150 Orang\")\n- Pagu Anggaran (Budget Target): Slider & input \"Rp 45.000 / pax\" (Total Anggaran: Rp 6.750.000)\n- Diet Restrictions checkboxes: \"Halal Mutlak\", \"No Seafood / Alergi\", \"Pilihan Vegetarian 10%\", \"Termasuk Minuman & Buah\"\n- AI Generation Button: \"ΓÜí Rancang Menu Otomatis dengan AI\" in vibrant green (#82c46c).\n\n3. Center/Right Pane: AI Recommended Menu Proposal & Broadcast RFQ:\n- AI Generated Menu Breakdown card:\n  * Nasi Aromatik Pandan Daun Jeruk (180g)\n  * Ayam Panggang Madu Ketumbar (120g)\n  * Tumis Buncis Daging Cincang (80g)\n  * Bakwan Jagung Renyah (50g)\n  * Sambal Bajak & Kerupuk Udang\n  * Buah Semangka & Melon Potong (100g)\n  * Air Mineral Cup & Teh Botol\n- Nutrition & Portion Audit score: 98/100 (AKG Kemenkes terpenuhi, 720 kcal).\n- Button \"Siarkan Tender Terbuka (Broadcast RFQ)\" with timer \"Vendor akan merespons dalam <30 menit\".\n\n4. Live Vendor Bidding Board (Tender Response):\n- 3 proposal cards from competing vendors responding to the RFQ:\n  * Kurnia Boga Mandiri: Tawaran Rp 42.000/pax (-6% di bawah pagu budget!), rating 4.9, garansi bonus pudding.\n  * Dapur Kemang Signature: Tawaran Rp 45.000/pax, kemasan biodegradable zero-plastic, rating 4.9.\n  * Larasati Royal Catering: Tawaran Rp 44.500/pax, chef sertifikasi bintang 4, rating 4.8.\n- Action buttons: \"Bandingkan Komposisi Resep\", \"Negosiasi Chat\", \"Kunci Pemenang & Bayar ke SajiEscrowΓäó\".\n- Guarantee banner: SajiEscrowΓäó Protection (Dana aman di rekening bersama hingga pesanan diverifikasi oleh PIC di lokasi).",
+  "name": "projects/16147629570532952875/screens/d928b62df7e14aa999fa45fa273c9596",
+  "theme": {
+    "colorMode": "LIGHT",
+    "font": "PLUS_JAKARTA_SANS",
+    "roundness": "ROUND_FULL",
+    "customColor": "#82c46c",
+    "headlineFont": "PLUS_JAKARTA_SANS",
+    "bodyFont": "PLUS_JAKARTA_SANS",
+    "labelFont": "PLUS_JAKARTA_SANS",
+    "namedColors": {
+      "tertiary_fixed": "#ffdad8",
+      "surface_container_highest": "#dee3ea",
+      "primary_container": "#82c46c",
+      "surface_bright": "#f7f9ff",
+      "on_background": "#171c21",
+      "background": "#f7f9ff",
+      "inverse_on_surface": "#edf1f8",
+      "tertiary_fixed_dim": "#ffb3b0",
+      "surface_variant": "#dee3ea",
+      "on_surface": "#171c21",
+      "outline": "#717a6b",
+      "tertiary_container": "#ff9694",
+      "on_secondary_fixed_variant": "#43474b",
+      "error_container": "#ffdad6",
+      "on_primary": "#ffffff",
+      "on_error": "#ffffff",
+      "on_tertiary": "#ffffff",
+      "surface_tint": "#2e6b1f",
+      "on_secondary_fixed": "#181c20",
+      "secondary_fixed": "#e0e3e8",
+      "outline_variant": "#c1c9b9",
+      "on_secondary_container": "#5f6367",
+      "surface": "#f7f9ff",
+      "surface_container": "#eaeef5",
+      "on_tertiary_fixed": "#410006",
+      "on_primary_container": "#125104",
+      "tertiary": "#a83639",
+      "on_primary_fixed": "#022100",
+      "primary_fixed": "#aff496",
+      "secondary_container": "#dde0e5",
+      "primary": "#2e6b1f",
+      "on_surface_variant": "#41493c",
+      "on_tertiary_fixed_variant": "#881d24",
+      "inverse_primary": "#94d87d",
+      "error": "#ba1a1a",
+      "inverse_surface": "#2c3136",
+      "secondary": "#5b5f63",
+      "surface_container_high": "#e4e8ef",
+      "surface_dim": "#d6dae1",
+      "on_primary_fixed_variant": "#145206",
+      "secondary_fixed_dim": "#c3c7cc",
+      "primary_fixed_dim": "#94d87d",
+      "surface_container_lowest": "#ffffff",
+      "surface_container_low": "#f0f4fb",
+      "on_error_container": "#93000a",
+      "on_secondary": "#ffffff",
+      "on_tertiary_container": "#861c23"
+    },
+    "colorVariant": "FIDELITY",
+    "overridePrimaryColor": "#82c46c",
+    "overrideSecondaryColor": "#2b2f33",
+    "overrideTertiaryColor": "#f87171",
+    "overrideNeutralColor": "#6d7278",
+    "spacingScale": 2,
+    "typography": {
+      "headline-md-mobile": {
+        "fontFamily": "Plus Jakarta Sans",
+        "fontSize": "26px",
+        "fontWeight": "700",
+        "lineHeight": "34px",
+        "letterSpacing": "-0.01em"
+      },
+      "title-md": {
+        "fontFamily": "Plus Jakarta Sans",
+        "fontSize": "18px",
+        "fontWeight": "600",
+        "lineHeight": "26px"
+      },
+      "body-lg": {
+        "fontFamily": "Plus Jakarta Sans",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "26px"
+      },
+      "label-sm": {
+        "fontFamily": "Plus Jakarta Sans",
+        "fontSize": "10px",
+        "fontWeight": "700",
+        "lineHeight": "14px",
+        "letterSpacing": "0.04em"
+      },
+      "headline-md": {
+        "fontFamily": "Plus Jakarta Sans",
+        "fontSize": "36px",
+        "fontWeight": "700",
+        "lineHeight": "44px",
+        "letterSpacing": "-0.02em"
+      },
+      "body-sm": {
+        "fontFamily": "Plus Jakarta Sans",
+        "fontSize": "12px",
+        "fontWeight": "400",
+        "lineHeight": "18px"
+      },
+      "headline-sm": {
+        "fontFamily": "Plus Jakarta Sans",
+        "fontSize": "24px",
+        "fontWeight": "700",
+        "lineHeight": "32px",
+        "letterSpacing": "-0.01em"
+      },
+      "title-sm": {
+        "fontFamily": "Plus Jakarta Sans",
+        "fontSize": "16px",
+        "fontWeight": "600",
+        "lineHeight": "24px"
+      },
+      "headline-lg": {
+        "fontFamily": "Plus Jakarta Sans",
+        "fontSize": "48px",
+        "fontWeight": "800",
+        "lineHeight": "56px",
+        "letterSpacing": "-0.02em"
+      },
+      "label-md": {
+        "fontFamily": "Plus Jakarta Sans",
+        "fontSize": "12px",
+        "fontWeight": "600",
+        "lineHeight": "16px"
+      },
+      "label-lg": {
+        "fontFamily": "Plus Jakarta Sans",
+        "fontSize": "14px",
+        "fontWeight": "600",
+        "lineHeight": "20px"
+      },
+      "body-md": {
+        "fontFamily": "Plus Jakarta Sans",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "22px"
+      },
+      "headline-lg-mobile": {
+        "fontFamily": "Plus Jakarta Sans",
+        "fontSize": "32px",
+        "fontWeight": "800",
+        "lineHeight": "40px",
+        "letterSpacing": "-0.015em"
+      },
+      "title-lg": {
+        "fontFamily": "Plus Jakarta Sans",
+        "fontSize": "20px",
+        "fontWeight": "700",
+        "lineHeight": "28px"
+      }
+    },
+    "spacing": {
+      "margin": "3rem",
+      "space-xs": "0.25rem",
+      "gutter-mobile": "0.75rem",
+      "space-lg": "1.5rem",
+      "gutter": "1.5rem",
+      "margin-mobile": "1.25rem",
+      "space-sm": "0.5rem",
+      "space-md": "1rem",
+      "space-xl": "2.5rem"
+    },
+    "headlineFontFamily": "Plus Jakarta Sans",
+    "bodyFontFamily": "Plus Jakarta Sans",
+    "labelFontFamily": "Plus Jakarta Sans"
+  },
+  "deviceType": "DESKTOP",
+  "screenType": "DESIGN",
+  "screenMetadata": {
+    "agentType": "PRO_AGENT",
+    "status": "COMPLETE",
+    "displayMode": "HTML"
+  },
+  "designSystem": {
+    "name": "assets/551073e87cfd4c4694786add44586fa7",
+    "designSystem": {
+      "displayName": "Saji Fresh Culinary System",
+      "styleGuidelines": "## Brand & Style\n\nThe design system embodies a fresh, appetizing, and technologically streamlined food curation experience. Tailored for corporate planners, event hosts, and discerning culinary enthusiasts, it bridges modern algorithmic intelligence with farm-to-table vitality. \n\nThe aesthetic style merges **Warm Organic Minimalism** with crisp **Modern Utility**:\n- **Clarity over Clutter**: Generous breathing room, light mint-tinted surfaces, and stark charcoal typography.\n- **Vibrant Hospitality**: Inviting, rounded silhouettes and organic soft-lime accents convey health, sustainability, and prompt service.\n- **Smart Precision**: Compact stat badges, neatly structured nutritional breakdowns, and linear iconography provide reliable analytical rigor without sacrificing culinary delight.\n\n## Layout & Spacing\n\nThe layout follows a fluid 12-column grid structure constrained to a maximum content container of `1280px`. \n\n- **Desktop (>= 1024px)**: 12 columns with `1.5rem` (24px) gutters and `3rem` (48px) page margins. Catering menus and feature blocks expand naturally into 4 or 3-column rows.\n- **Tablet (768px - 1023px)**: 8 columns with `1rem` (16px) gutters and `2rem` (32px) margins. Grids collapse into 2-column card structures.\n- **Mobile (< 768px)**: 4 columns with `0.75rem` (12px) gutters and `1.25rem` (20px) margins. Cards collapse into horizontal carousels or single-column stacks with edge-to-edge imagery.\n- **Vertical Rhythm**: Inter-section gaps systematically utilize `5rem` to `7rem` on desktop and `3rem` on mobile, maintaining an airy, uncluttered presentation.\n\n## Elevation & Depth\n\nVisual hierarchy relies on clean surface layering, crisp white cards, and ultra-diffuse ambient shadows rather than sharp border drops:\n\n- **Canvas Base**: Soft ambient ground (`#F8FAF8`).\n- **Elevated Food & Review Cards**: Pure white (`#FFFFFF`) surfaces layered above canvas using a soft ambient shadow: `box-shadow: 0 10px 30px -10px rgba(43, 47, 51, 0.05)`.\n- **Soft Highlight Containers**: Filled flat tiles (`#EEF7EA` or `#82C46C` at 15% opacity) with no shadows, serving as background trays for metrics, stats, and workflow steps.\n- **Interactive Modals & Overlays**: Floating menus and dropdowns leverage `box-shadow: 0 20px 40px -12px rgba(43, 47, 51, 0.10)`.\n- **Borders**: Avoid harsh divider strokes; utilize delicate tints (`rgba(109, 114, 120, 0.12)`) only when necessary to define input forms or search wrappers.\n\n## Components\n\n### Buttons\n- **Primary Action**: Full-pill background of `#82C46C` with white text (`#FFFFFF`) or `#2B2F33` bold label, slight scale animation on hover (`transform: translateY(-1px)`).\n- **Secondary / Contrast Action**: Deep charcoal (`#2B2F33`) pill with white text, providing visual anchor next to primary buttons.\n- **Icon / Pagination Buttons**: Circular discs (`40px x 40px`) in filled mint (`#EEF7EA`) or dark charcoal (`#2B2F33`) containing minimalist linear arrows.\n- **Counter / Add Button**: Circular primary green badge (`#82C46C`) centered with a white `+` icon positioned alongside dish pricing.\n\n### Chips & Badges\n- **Nutritional / Meta Badges**: Soft gray or mint micro-pills containing metadata such as calorie count (`≡ƒöÑ 150 Kcal`) or customer ratings (`Γ¡É 4.8`).\n- **Step Indicators**: Small circular badges (`24px x 24px`) in dark charcoal (`#2B2F33`) with white numeric values denoting flow step numbers (`01`, `02`, `03`).\n\n### Cards & Packaging Blocks\n- **Dish Menu Card**: Clean white vertical card with high-resolution circular dish image overlapping the header, title in charcoal, ratings row, price in bold, and a green plus-action button pinned to the lower right.\n- **Workflow & Stat Card**: Uniform colored panels in soft mint (`#82C46C` tint) with oversized bold metric typography (`10K+`, `09+`), accompanied by a centered descriptive label.\n- **Pricing Packages**: Dual comparison cards; standard package in white, recommended package highlighted in filled light mint (`#EEF7EA`) with full-width primary CTA pill.\n\n### Form Inputs & Search Fields\n- **Search Bar**: Full pill container with light tinted border (`#E5E7EB`), interior search icon, subtle placeholder text, and an embedded right-aligned green submit pill button.\n- **Newsletter Box**: Muted background pill (`#F3F4F6`) with embedded icon, clean text field, and adjacent green action pill.",
+      "theme": {
+        "colorMode": "LIGHT",
+        "font": "PLUS_JAKARTA_SANS",
+        "roundness": "ROUND_FULL",
+        "customColor": "#82c46c",
+        "headlineFont": "PLUS_JAKARTA_SANS",
+        "bodyFont": "PLUS_JAKARTA_SANS",
+        "labelFont": "PLUS_JAKARTA_SANS",
+        "namedColors": {
+          "surface_container_highest": "#dee3ea",
+          "inverse_primary": "#94d87d",
+          "surface": "#f7f9ff",
+          "on_error": "#ffffff",
+          "on_tertiary_fixed": "#410006",
+          "on_surface_variant": "#41493c",
+          "on_tertiary_container": "#861c23",
+          "surface_container_low": "#f0f4fb",
+          "on_primary_container": "#125104",
+          "on_secondary_container": "#5f6367",
+          "surface_tint": "#2e6b1f",
+          "outline": "#717a6b",
+          "error": "#ba1a1a",
+          "on_error_container": "#93000a",
+          "inverse_surface": "#2c3136",
+          "primary_fixed": "#aff496",
+          "on_tertiary": "#ffffff",
+          "primary_fixed_dim": "#94d87d",
+          "on_secondary_fixed_variant": "#43474b",
+          "surface_variant": "#dee3ea",
+          "secondary": "#5b5f63",
+          "secondary_fixed_dim": "#c3c7cc",
+          "tertiary_fixed_dim": "#ffb3b0",
+          "on_tertiary_fixed_variant": "#881d24",
+          "on_primary_fixed_variant": "#145206",
+          "inverse_on_surface": "#edf1f8",
+          "on_primary": "#ffffff",
+          "on_primary_fixed": "#022100",
+          "surface_container_lowest": "#ffffff",
+          "primary_container": "#82c46c",
+          "on_surface": "#171c21",
+          "tertiary_container": "#ff9694",
+          "surface_bright": "#f7f9ff",
+          "secondary_fixed": "#e0e3e8",
+          "outline_variant": "#c1c9b9",
+          "background": "#f7f9ff",
+          "surface_container": "#eaeef5",
+          "surface_dim": "#d6dae1",
+          "tertiary": "#a83639",
+          "error_container": "#ffdad6",
+          "on_secondary_fixed": "#181c20",
+          "secondary_container": "#dde0e5",
+          "tertiary_fixed": "#ffdad8",
+          "on_background": "#171c21",
+          "on_secondary": "#ffffff",
+          "primary": "#2e6b1f",
+          "surface_container_high": "#e4e8ef"
+        },
+        "designMd": "---\nname: Saji Fresh Culinary System\ncolors:\n  surface: '#f7f9ff'\n  surface-dim: '#d6dae1'\n  surface-bright: '#f7f9ff'\n  surface-container-lowest: '#ffffff'\n  surface-container-low: '#f0f4fb'\n  surface-container: '#eaeef5'\n  surface-container-high: '#e4e8ef'\n  surface-container-highest: '#dee3ea'\n  on-surface: '#171c21'\n  on-surface-variant: '#41493c'\n  inverse-surface: '#2c3136'\n  inverse-on-surface: '#edf1f8'\n  outline: '#717a6b'\n  outline-variant: '#c1c9b9'\n  surface-tint: '#2e6b1f'\n  primary: '#2e6b1f'\n  on-primary: '#ffffff'\n  primary-container: '#82c46c'\n  on-primary-container: '#125104'\n  inverse-primary: '#94d87d'\n  secondary: '#5b5f63'\n  on-secondary: '#ffffff'\n  secondary-container: '#dde0e5'\n  on-secondary-container: '#5f6367'\n  tertiary: '#a83639'\n  on-tertiary: '#ffffff'\n  tertiary-container: '#ff9694'\n  on-tertiary-container: '#861c23'\n  error: '#ba1a1a'\n  on-error: '#ffffff'\n  error-container: '#ffdad6'\n  on-error-container: '#93000a'\n  primary-fixed: '#aff496'\n  primary-fixed-dim: '#94d87d'\n  on-primary-fixed: '#022100'\n  on-primary-fixed-variant: '#145206'\n  secondary-fixed: '#e0e3e8'\n  secondary-fixed-dim: '#c3c7cc'\n  on-secondary-fixed: '#181c20'\n  on-secondary-fixed-variant: '#43474b'\n  tertiary-fixed: '#ffdad8'\n  tertiary-fixed-dim: '#ffb3b0'\n  on-tertiary-fixed: '#410006'\n  on-tertiary-fixed-variant: '#881d24'\n  background: '#f7f9ff'\n  on-background: '#171c21'\n  surface-variant: '#dee3ea'\ntypography:\n  headline-lg:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 48px\n    fontWeight: '800'\n    lineHeight: 56px\n    letterSpacing: -0.02em\n  headline-lg-mobile:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 32px\n    fontWeight: '800'\n    lineHeight: 40px\n    letterSpacing: -0.015em\n  headline-md:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 36px\n    fontWeight: '700'\n    lineHeight: 44px\n    letterSpacing: -0.02em\n  headline-md-mobile:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 26px\n    fontWeight: '700'\n    lineHeight: 34px\n    letterSpacing: -0.01em\n  headline-sm:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 24px\n    fontWeight: '700'\n    lineHeight: 32px\n    letterSpacing: -0.01em\n  title-lg:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 20px\n    fontWeight: '700'\n    lineHeight: 28px\n  title-md:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 18px\n    fontWeight: '600'\n    lineHeight: 26px\n  title-sm:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 16px\n    fontWeight: '600'\n    lineHeight: 24px\n  body-lg:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 16px\n    fontWeight: '400'\n    lineHeight: 26px\n  body-md:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 14px\n    fontWeight: '400'\n    lineHeight: 22px\n  body-sm:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 12px\n    fontWeight: '400'\n    lineHeight: 18px\n  label-lg:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 14px\n    fontWeight: '600'\n    lineHeight: 20px\n  label-md:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 12px\n    fontWeight: '600'\n    lineHeight: 16px\n  label-sm:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 10px\n    fontWeight: '700'\n    lineHeight: 14px\n    letterSpacing: 0.04em\nrounded:\n  sm: 0.5rem\n  DEFAULT: 1rem\n  md: 1.5rem\n  lg: 2rem\n  xl: 3rem\n  full: 9999px\nspacing:\n  gutter: 1.5rem\n  gutter-mobile: 0.75rem\n  margin: 3rem\n  margin-mobile: 1.25rem\n  space-xs: 0.25rem\n  space-sm: 0.5rem\n  space-md: 1rem\n  space-lg: 1.5rem\n  space-xl: 2.5rem\n---\n\n## Brand & Style\n\nThe design system embodies a fresh, appetizing, and technologically streamlined food curation experience. Tailored for corporate planners, event hosts, and discerning culinary enthusiasts, it bridges modern algorithmic intelligence with farm-to-table vitality. \n\nThe aesthetic style merges **Warm Organic Minimalism** with crisp **Modern Utility**:\n- **Clarity over Clutter**: Generous breathing room, light mint-tinted surfaces, and stark charcoal typography.\n- **Vibrant Hospitality**: Inviting, rounded silhouettes and organic soft-lime accents convey health, sustainability, and prompt service.\n- **Smart Precision**: Compact stat badges, neatly structured nutritional breakdowns, and linear iconography provide reliable analytical rigor without sacrificing culinary delight.\n\n## Colors\n\nThe color palette centers on lush, natural greens complemented by anchored dark slate neutrals and delicate culinary tints.\n\n- **Primary (`#82C46C`)**: The core brand accent denoting freshness, botanical vitality, active confirmations, key conversion buttons, and prominent highlight blocks.\n- **Secondary (`#2B2F33`)**: Deep charcoal used for primary headings, high-contrast action buttons, and active status tags.\n- **Tertiary (`#F87171`)**: Coral salmon applied for critical calorie counts, dietary warnings, urgent actions, and favorites.\n- **Accent Warmth (`#F59E0B`)**: Amber yellow used exclusively for review stars and chef awards.\n- **Tonal Mint Backgrounds (`#EEF7EA`, `#F4FAF0`)**: Subtle green tinted containers reserved for card highlights, counter tiles, and feature panels.\n- **Neutral Scales**: `#6D7278` handles secondary text and metadata; `#F8FAF8` delivers an airy, tinted canvas foundation paired with pure `#FFFFFF` cards.\n\n## Typography\n\nThe typography leverages **Plus Jakarta Sans** uniformly across headlines, body copy, and UI controls to preserve geometric purity and a friendly, accessible cadence.\n\n- **Headlines**: Rendered in heavy weights (700 to 800) with slight negative tracking to achieve compact, punchy editorial titles. Hand-drawn highlight loops or primary color accents can be paired with key keywords.\n- **Subheadings & Section Intros**: Styled with muted tones (`#6D7278`) and steady line heights to maintain effortless scannability before dense culinary menus.\n- **Nutritional Labels & Pricing**: Set with precise, medium-to-bold metrics for rapid cognitive intake during order planning.\n\n## Layout & Spacing\n\nThe layout follows a fluid 12-column grid structure constrained to a maximum content container of `1280px`. \n\n- **Desktop (>= 1024px)**: 12 columns with `1.5rem` (24px) gutters and `3rem` (48px) page margins. Catering menus and feature blocks expand naturally into 4 or 3-column rows.\n- **Tablet (768px - 1023px)**: 8 columns with `1rem` (16px) gutters and `2rem` (32px) margins. Grids collapse into 2-column card structures.\n- **Mobile (< 768px)**: 4 columns with `0.75rem` (12px) gutters and `1.25rem` (20px) margins. Cards collapse into horizontal carousels or single-column stacks with edge-to-edge imagery.\n- **Vertical Rhythm**: Inter-section gaps systematically utilize `5rem` to `7rem` on desktop and `3rem` on mobile, maintaining an airy, uncluttered presentation.\n\n## Elevation & Depth\n\nVisual hierarchy relies on clean surface layering, crisp white cards, and ultra-diffuse ambient shadows rather than sharp border drops:\n\n- **Canvas Base**: Soft ambient ground (`#F8FAF8`).\n- **Elevated Food & Review Cards**: Pure white (`#FFFFFF`) surfaces layered above canvas using a soft ambient shadow: `box-shadow: 0 10px 30px -10px rgba(43, 47, 51, 0.05)`.\n- **Soft Highlight Containers**: Filled flat tiles (`#EEF7EA` or `#82C46C` at 15% opacity) with no shadows, serving as background trays for metrics, stats, and workflow steps.\n- **Interactive Modals & Overlays**: Floating menus and dropdowns leverage `box-shadow: 0 20px 40px -12px rgba(43, 47, 51, 0.10)`.\n- **Borders**: Avoid harsh divider strokes; utilize delicate tints (`rgba(109, 114, 120, 0.12)`) only when necessary to define input forms or search wrappers.\n\n## Shapes\n\nThe interface embraces organic, playful, and ultra-friendly geometries:\n\n- **Corner Radii**: Cards, feature boxes, and pricing sheets employ generous curvatures ranging from `1.5rem` (24px) to `2rem` (32px).\n- **Controls & Chips**: Buttons, search bars, pagination controls, and micro-badges are strictly full pills (`rounded-full` / `9999px`).\n- **Media Containers**: Food photography utilizes perfect circles (`rounded-full`) or smooth rounded rectangles (`rounded-3xl`), mimicking plates, platters, and organic serving surfaces.\n\n## Components\n\n### Buttons\n- **Primary Action**: Full-pill background of `#82C46C` with white text (`#FFFFFF`) or `#2B2F33` bold label, slight scale animation on hover (`transform: translateY(-1px)`).\n- **Secondary / Contrast Action**: Deep charcoal (`#2B2F33`) pill with white text, providing visual anchor next to primary buttons.\n- **Icon / Pagination Buttons**: Circular discs (`40px x 40px`) in filled mint (`#EEF7EA`) or dark charcoal (`#2B2F33`) containing minimalist linear arrows.\n- **Counter / Add Button**: Circular primary green badge (`#82C46C`) centered with a white `+` icon positioned alongside dish pricing.\n\n### Chips & Badges\n- **Nutritional / Meta Badges**: Soft gray or mint micro-pills containing metadata such as calorie count (`≡ƒöÑ 150 Kcal`) or customer ratings (`Γ¡É 4.8`).\n- **Step Indicators**: Small circular badges (`24px x 24px`) in dark charcoal (`#2B2F33`) with white numeric values denoting flow step numbers (`01`, `02`, `03`).\n\n### Cards & Packaging Blocks\n- **Dish Menu Card**: Clean white vertical card with high-resolution circular dish image overlapping the header, title in charcoal, ratings row, price in bold, and a green plus-action button pinned to the lower right.\n- **Workflow & Stat Card**: Uniform colored panels in soft mint (`#82C46C` tint) with oversized bold metric typography (`10K+`, `09+`), accompanied by a centered descriptive label.\n- **Pricing Packages**: Dual comparison cards; standard package in white, recommended package highlighted in filled light mint (`#EEF7EA`) with full-width primary CTA pill.\n\n### Form Inputs & Search Fields\n- **Search Bar**: Full pill container with light tinted border (`#E5E7EB`), interior search icon, subtle placeholder text, and an embedded right-aligned green submit pill button.\n- **Newsletter Box**: Muted background pill (`#F3F4F6`) with embedded icon, clean text field, and adjacent green action pill.",
+        "colorVariant": "FIDELITY",
+        "overridePrimaryColor": "#82c46c",
+        "overrideSecondaryColor": "#2b2f33",
+        "overrideTertiaryColor": "#f87171",
+        "overrideNeutralColor": "#6d7278",
+        "spacingScale": 2,
+        "typography": {
+          "title-sm": {
+            "fontFamily": "Plus Jakarta Sans",
+            "fontSize": "16px",
+            "fontWeight": "600",
+            "lineHeight": "24px"
+          },
+          "body-md": {
+            "fontFamily": "Plus Jakarta Sans",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "lineHeight": "22px"
+          },
+          "headline-md-mobile": {
+            "fontFamily": "Plus Jakarta Sans",
+            "fontSize": "26px",
+            "fontWeight": "700",
+            "lineHeight": "34px",
+            "letterSpacing": "-0.01em"
+          },
+          "label-sm": {
+            "fontFamily": "Plus Jakarta Sans",
+            "fontSize": "10px",
+            "fontWeight": "700",
+            "lineHeight": "14px",
+            "letterSpacing": "0.04em"
+          },
+          "headline-sm": {
+            "fontFamily": "Plus Jakarta Sans",
+            "fontSize": "24px",
+            "fontWeight": "700",
+            "lineHeight": "32px",
+            "letterSpacing": "-0.01em"
+          },
+          "headline-md": {
+            "fontFamily": "Plus Jakarta Sans",
+            "fontSize": "36px",
+            "fontWeight": "700",
+            "lineHeight": "44px",
+            "letterSpacing": "-0.02em"
+          },
+          "title-md": {
+            "fontFamily": "Plus Jakarta Sans",
+            "fontSize": "18px",
+            "fontWeight": "600",
+            "lineHeight": "26px"
+          },
+          "title-lg": {
+            "fontFamily": "Plus Jakarta Sans",
+            "fontSize": "20px",
+            "fontWeight": "700",
+            "lineHeight": "28px"
+          },
+          "headline-lg-mobile": {
+            "fontFamily": "Plus Jakarta Sans",
+            "fontSize": "32px",
+            "fontWeight": "800",
+            "lineHeight": "40px",
+            "letterSpacing": "-0.015em"
+          },
+          "body-lg": {
+            "fontFamily": "Plus Jakarta Sans",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "26px"
+          },
+          "headline-lg": {
+            "fontFamily": "Plus Jakarta Sans",
+            "fontSize": "48px",
+            "fontWeight": "800",
+            "lineHeight": "56px",
+            "letterSpacing": "-0.02em"
+          },
+          "label-lg": {
+            "fontFamily": "Plus Jakarta Sans",
+            "fontSize": "14px",
+            "fontWeight": "600",
+            "lineHeight": "20px"
+          },
+          "label-md": {
+            "fontFamily": "Plus Jakarta Sans",
+            "fontSize": "12px",
+            "fontWeight": "600",
+            "lineHeight": "16px"
+          },
+          "body-sm": {
+            "fontFamily": "Plus Jakarta Sans",
+            "fontSize": "12px",
+            "fontWeight": "400",
+            "lineHeight": "18px"
+          }
+        },
+        "spacing": {
+          "space-xs": "0.25rem",
+          "gutter-mobile": "0.75rem",
+          "margin": "3rem",
+          "space-lg": "1.5rem",
+          "space-sm": "0.5rem",
+          "space-md": "1rem",
+          "space-xl": "2.5rem",
+          "gutter": "1.5rem",
+          "margin-mobile": "1.25rem"
+        },
+        "headlineFontFamily": "Plus Jakarta Sans",
+        "bodyFontFamily": "Plus Jakarta Sans",
+        "labelFontFamily": "Plus Jakarta Sans"
+      }
+    },
+    "version": "1"
+  }
+}

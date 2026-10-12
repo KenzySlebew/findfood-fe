@@ -1,0 +1,556 @@
+<!DOCTYPE html><html lang="id"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_standard" name="shell-type"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"inverse-surface":"#2c3136","surface-container-high":"#e4e8ef","on-secondary-fixed":"#181c20","on-primary":"#ffffff","surface-container":"#eaeef5","on-tertiary-fixed-variant":"#881d24","on-primary-container":"#125104","primary-fixed-dim":"#94d87d","on-secondary-fixed-variant":"#43474b","on-secondary":"#ffffff","background":"#f7f9ff","surface-bright":"#f7f9ff","surface":"#f7f9ff","outline-variant":"#c1c9b9","primary-container":"#82c46c","surface-variant":"#dee3ea","on-error":"#ffffff","tertiary-fixed-dim":"#ffb3b0","on-tertiary-fixed":"#410006","on-surface-variant":"#41493c","on-background":"#171c21","primary-fixed":"#aff496","on-tertiary":"#ffffff","surface-tint":"#2e6b1f","on-primary-fixed":"#022100","primary":"#2e6b1f","error-container":"#ffdad6","error":"#ba1a1a","on-error-container":"#93000a","inverse-primary":"#94d87d","secondary-container":"#dde0e5","on-tertiary-container":"#861c23","tertiary-fixed":"#ffdad8","tertiary":"#a83639","inverse-on-surface":"#edf1f8","secondary-fixed-dim":"#c3c7cc","on-secondary-container":"#5f6367","surface-dim":"#d6dae1","surface-container-highest":"#dee3ea","secondary-fixed":"#e0e3e8","outline":"#717a6b","on-surface":"#171c21","tertiary-container":"#ff9694","secondary":"#5b5f63","surface-container-low":"#f0f4fb","on-primary-fixed-variant":"#145206","surface-container-lowest":"#ffffff"},borderRadius:{DEFAULT:"1rem",lg:"2rem",xl:"3rem",full:"9999px"},spacing:{"margin":"3rem","gutter":"1.5rem","space-xl":"2.5rem","space-xs":"0.25rem","space-sm":"0.5rem","space-lg":"1.5rem","margin-mobile":"1.25rem","gutter-mobile":"0.75rem","space-md":"1rem"},fontFamily:{"title-md":["Plus Jakarta Sans"],"label-lg":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"title-sm":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"],"title-lg":["Plus Jakarta Sans"],"headline-md-mobile":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"]},fontSize:{"title-md":["18px",{lineHeight:"26px",fontWeight:"600"}],"label-lg":["14px",{lineHeight:"20px",fontWeight:"600"}],"body-lg":["16px",{lineHeight:"26px",fontWeight:"400"}],"headline-md":["36px",{lineHeight:"44px",letterSpacing:"-0.02em",fontWeight:"700"}],"body-sm":["12px",{lineHeight:"18px",fontWeight:"400"}],"headline-sm":["24px",{lineHeight:"32px",letterSpacing:"-0.01em",fontWeight:"700"}],"title-sm":["16px",{lineHeight:"24px",fontWeight:"600"}],"headline-lg-mobile":["32px",{lineHeight:"40px",letterSpacing:"-0.015em",fontWeight:"800"}],"title-lg":["20px",{lineHeight:"28px",fontWeight:"700"}],"headline-md-mobile":["26px",{lineHeight:"34px",letterSpacing:"-0.01em",fontWeight:"700"}],"label-md":["12px",{lineHeight:"16px",fontWeight:"600"}],"body-md":["14px",{lineHeight:"22px",fontWeight:"400"}],"headline-lg":["48px",{lineHeight:"56px",letterSpacing:"-0.02em",fontWeight:"800"}],"label-sm":["10px",{lineHeight:"14px",letterSpacing:"0.04em",fontWeight:"700"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between gap-6"><div class="flex items-center gap-3 shrink-0"><div class="w-10 h-10 rounded-full bg-primary-container/20 flex items-center justify-center text-primary"><span class="material-symbols-outlined text-[24px]">skillet</span></div><span class="font-title-lg text-title-lg text-on-surface tracking-tight">Saji<span class="text-primary">.AI</span></span></div><nav class="hidden xl:flex items-center gap-1" data-active-classes="bg-primary-container text-on-primary-container font-title-sm"><a class="px-3.5 py-2 rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="beranda" href="#">Beranda</a><a class="px-3.5 py-2 rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="menu-katalog" href="#">Menu &amp; Katalog</a><a class="px-3.5 py-2 rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="cara-kerja" href="#">Cara Kerja</a><a class="px-3.5 py-2 rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="katering-acara" href="#">Katering Acara</a><a class="px-3.5 py-2 rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="harga-paket" href="#">Harga &amp; Paket</a><a class="px-3.5 py-2 rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="ai-planner" href="#">AI Planner</a></nav><div class="flex items-center gap-3 shrink-0"><button aria-label="Pencarian" class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">search</span></button><div class="relative"><button aria-label="Keranjang Belanja" class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">shopping_bag</span></button><span class="absolute -top-1 -right-1 min-w-[20px] h-5 px-1 bg-primary text-on-primary rounded-full font-label-sm text-label-sm flex items-center justify-center">3</span></div><a class="hidden sm:inline-flex px-4 py-2 font-label-lg text-label-lg text-on-surface hover:text-primary transition-colors" data-path="masuk" href="#">Masuk</a><a class="inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-primary-container text-on-primary-container font-label-lg text-label-lg shadow-sm hover:opacity-95 transition-all" data-path="pesan-sekarang" href="#">Pesan Sekarang</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-surface"><div class="flex flex-col w-full">
+<!-- Top Visual Accent / Breadcrumb Header -->
+<section class="max-w-7xl mx-auto px-6 lg:px-12 w-full pt-8 pb-4">
+<div class="flex flex-wrap items-center justify-between gap-4">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-container/20 text-on-primary-container font-label-md text-label-md">
+<span class="w-1.5 h-1.5 rounded-full bg-primary mr-2 animate-pulse"></span>
+          Perlindungan Transaksi Terpadu
+        </span>
+<span class="text-on-surface-variant font-label-md text-label-md">/ Pembayaran Terenkripsi 256-bit</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm bg-surface-container-low px-3 py-1.5 rounded-full">
+<span class="material-symbols-outlined text-[16px] text-primary">verified_user</span>
+<span>Escrow Berlisensi Bank Indonesia &amp; Asosiasi Katering</span>
+</div>
+</div>
+</section>
+<!-- Page Hero Title Section -->
+<section class="max-w-7xl mx-auto px-6 lg:px-12 w-full pt-6 pb-12 text-center flex flex-col items-center">
+<div class="inline-block relative">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight max-w-4xl">
+        Paket Berlangganan &amp; Checkout <span class="relative inline-block text-on-surface">Transaksi Aman<svg class="absolute -bottom-2.5 left-0 w-full overflow-visible pointer-events-none" fill="none" height="14" viewBox="0 0 240 18"><path class="text-primary-container" d="M4 14C60 4 180 3 236 12C190 7 70 8 10 15" stroke="currentColor" stroke-linecap="round" stroke-width="3"></path></svg></span>
+</h1>
+</div>
+<p class="mt-5 font-body-lg text-body-lg text-on-surface-variant max-w-2xl text-center">
+      Pilih paket katering rutin kantor atau selesaikan pesanan acara Anda dengan perlindungan SajiEscrow™ tanpa risiko keterlambatan atau ketidaksesuaian hidangan.
+    </p>
+<!-- Cycle Filter Pills -->
+<div class="mt-8 inline-flex items-center p-1.5 rounded-full bg-surface-container-low shadow-sm">
+<button class="px-6 py-2 rounded-full bg-primary-container text-on-primary-container font-label-lg text-label-lg shadow-sm transition-all" type="button">
+        Langganan Rutin
+      </button>
+<button class="px-6 py-2 rounded-full text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-colors" type="button">
+        Acara Korporat &amp; RFQ
+      </button>
+<button class="px-6 py-2 rounded-full text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-colors" type="button">
+        Single Order Checkout
+      </button>
+</div>
+</section>
+<!-- Section 1: Comparative Subscription Plans (Style & Tone from reference) -->
+<section class="max-w-7xl mx-auto px-6 lg:px-12 w-full pb-20">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+<!-- Card 1: Mingguan -->
+<div class="bg-surface-container-lowest rounded-lg p-8 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between relative overflow-hidden">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="inline-block px-3 py-1 rounded-full bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm">
+              Uji Coba Tim Kecil
+            </span>
+<span class="material-symbols-outlined text-secondary text-[24px]">calendar_view_week</span>
+</div>
+<h2 class="font-title-lg text-title-lg text-on-surface">Paket Mingguan (Weekly)</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Solusi praktis untuk kebutuhan makan siang 5 hari kerja.</p>
+<div class="my-6">
+<div class="flex items-baseline gap-1">
+<span class="font-headline-md text-headline-md text-on-surface">Rp 250.000</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">/ pax / minggu</span>
+</div>
+<span class="inline-block mt-1 font-label-sm text-label-sm text-primary">Hemat 12% dibanding pesan harian</span>
+</div>
+<div class="space-y-3.5 pt-4">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Durasi paket 1 minggu (Senin - Jumat)</span>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">2 Sesi santapan / hari (Siang &amp; Snack)</span>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Menu berganti setiap hari (Nusantara &amp; Asian)</span>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Bebas ongkos kirim radius 10 km</span>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Poin reward Saji 150 pts</span>
+</div>
+</div>
+</div>
+<div class="mt-8 pt-6">
+<button class="w-full py-3.5 px-6 rounded-full bg-inverse-surface text-on-primary font-label-lg text-label-lg hover:opacity-90 transition-all flex items-center justify-center gap-2" type="button">
+            Pilih Paket Mingguan
+            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Card 2: Bulanan Korporat (Signature Highlight Card) -->
+<div class="bg-primary-container/20 rounded-lg p-8 shadow-md relative overflow-hidden flex flex-col justify-between">
+<div class="absolute -top-3 right-6 bg-primary text-on-primary px-4 py-1.5 rounded-full font-label-sm text-label-sm shadow-sm flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">stars</span>
+          Paling Direkomendasikan
+        </div>
+<div>
+<div class="flex items-center justify-between mb-4 pt-1">
+<span class="inline-block px-3 py-1 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm">
+              Prioritas Kantor &amp; Startup
+            </span>
+<div class="w-9 h-9 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined text-[20px]">corporate_fare</span>
+</div>
+</div>
+<h2 class="font-title-lg text-title-lg text-on-surface">Paket Bulanan Korporat</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Otomasi nutrisi tim dengan laporan terpusat dan SLA ketepatan waktu.</p>
+<div class="my-6">
+<div class="flex items-baseline gap-1">
+<span class="font-headline-md text-headline-md text-on-surface">Rp 950.000</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">/ pax / bulan</span>
+</div>
+<span class="inline-block mt-1 font-label-sm text-label-sm text-on-primary-container bg-primary-container/40 px-2 py-0.5 rounded">
+              Termasuk Asuransi Mutu Rasa SajiEscrow™
+            </span>
+</div>
+<div class="space-y-3.5 pt-4">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">verified</span>
+<span class="font-body-md text-body-md text-on-surface font-semibold">1 Bulan penuh (22 hari kerja bergaransi)</span>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">verified</span>
+<span class="font-body-md text-body-md text-on-surface">3 Sesi Santapan (Sarapan, Siang, &amp; Healthy Snack)</span>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">verified</span>
+<span class="font-body-md text-body-md text-on-surface">Bebas kustomisasi menu diet &amp; preferensi alergi tim</span>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">verified</span>
+<span class="font-body-md text-body-md text-on-surface">Dedicated Account Manager &amp; PIC Hotline 24/7</span>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">verified</span>
+<span class="font-body-md text-body-md text-on-surface">Faktur Pajak resmi (PPN/PPH) &amp; Rekap konsumsi bulanan</span>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">verified</span>
+<span class="font-body-md text-body-md text-on-surface">Audit kalori &amp; gizi mingguan oleh Ahli Nutrisi Saji</span>
+</div>
+</div>
+</div>
+<div class="mt-8 pt-6">
+<button class="w-full py-4 px-6 rounded-full bg-primary-container text-on-primary-container font-label-lg text-label-lg hover:opacity-95 shadow transition-all flex items-center justify-center gap-2" type="button">
+            Aktifkan Langganan Bulanan
+            <span class="material-symbols-outlined text-[20px]">bolt</span>
+</button>
+</div>
+</div>
+<!-- Card 3: Enterprise / Event Akbar RFQ -->
+<div class="bg-surface-container-lowest rounded-lg p-8 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between relative overflow-hidden">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="inline-block px-3 py-1 rounded-full bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm">
+              Skala Besar &amp; Konferensi
+            </span>
+<span class="material-symbols-outlined text-secondary text-[24px]">celebration</span>
+</div>
+<h2 class="font-title-lg text-title-lg text-on-surface">Paket Event Akbar (Enterprise / RFQ)</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Layanan perjamuan menyeluruh untuk gathering, townhall, &amp; pameran.</p>
+<div class="my-6">
+<div class="flex items-baseline gap-1">
+<span class="font-headline-md text-headline-md text-on-surface">Custom RFQ</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">/ proposal</span>
+</div>
+<span class="inline-block mt-1 font-label-sm text-label-sm text-secondary">Mulai kapasitas 500+ pax hingga 5.000 pax</span>
+</div>
+<div class="space-y-3.5 pt-4">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Live buffet banquet setup &amp; booth stall tematik</span>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Pramusaji berseragam, chef on-site, &amp; utensil lengkap</span>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Food tasting session gratis di kantor Anda</span>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Fasilitas Term of Payment korporat (TOP 30 Hari)</span>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Manajer operasional lapangan (Field Marshall)</span>
+</div>
+</div>
+</div>
+<div class="mt-8 pt-6">
+<button class="w-full py-3.5 px-6 rounded-full bg-surface-container-low text-on-surface font-label-lg text-label-lg hover:bg-surface-container transition-all flex items-center justify-center gap-2" type="button">
+            Ajukan Penawaran Khusus
+            <span class="material-symbols-outlined text-[18px]">receipt_long</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Metric Quick Ribbon (Inspired by reference metric pills) -->
+<section class="max-w-7xl mx-auto px-6 lg:px-12 w-full pb-16">
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="bg-primary-container/20 rounded-lg p-6 text-center">
+<span class="block font-headline-md text-headline-md text-on-surface tracking-tight">100%</span>
+<span class="block font-body-sm text-body-sm text-on-surface-variant mt-1">Escrow Terlindungi</span>
+</div>
+<div class="bg-primary-container/20 rounded-lg p-6 text-center">
+<span class="block font-headline-md text-headline-md text-on-surface tracking-tight">15 Menit</span>
+<span class="block font-body-sm text-body-sm text-on-surface-variant mt-1">Toleransi Tiba Tepat Waktu</span>
+</div>
+<div class="bg-primary-container/20 rounded-lg p-6 text-center">
+<span class="block font-headline-md text-headline-md text-on-surface tracking-tight">320+</span>
+<span class="block font-body-sm text-body-sm text-on-surface-variant mt-1">Dapur Vendor Terakreditasi Halal</span>
+</div>
+<div class="bg-primary-container/20 rounded-lg p-6 text-center">
+<span class="block font-headline-md text-headline-md text-on-surface tracking-tight">4.9 / 5.0</span>
+<span class="block font-body-sm text-body-sm text-on-surface-variant mt-1">Kepuasan Pengadaan Korporat</span>
+</div>
+</div>
+</section>
+<!-- Section 2: Checkout & SajiEscrow™ Payment Tracker Panel -->
+<section class="w-full bg-surface-container-low py-16">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<!-- Section Title inside Checkout Area -->
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+<div>
+<span class="font-label-md text-label-md text-primary font-semibold tracking-wide uppercase">SajiEscrow™ Smart Protection Engine</span>
+<h2 class="font-headline-md text-headline-md text-on-surface mt-1">Selesaikan Pesanan &amp; Verifikasi Rekening Bersama</h2>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-lowest px-4 py-2 rounded-full shadow-sm text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-primary text-[18px]">lock</span>
+          ID Transaksi: <span class="font-semibold text-on-surface">#SJ-2026-0928-89B</span>
+</div>
+</div>
+<!-- Split Layout: Left Checkout Order Summary, Right Escrow Tracker & Security -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Left: Order Details & Price Composition (7 Columns) -->
+<div class="lg:col-span-7 flex flex-col gap-6">
+<!-- Order Item Briefing Card -->
+<div class="bg-surface-container-lowest rounded-lg p-8 shadow-sm">
+<div class="flex items-center justify-between pb-6">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-full bg-primary-container/30 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[26px]">bento</span>
+</div>
+<div>
+<h3 class="font-title-lg text-title-lg text-on-surface">150 Box Bento Nusantara VIP</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Menu: Nasi Liwet Wangi, Ayam Bakar Taliwang, Sambal Goreng Ati, Telur Pindang, Urap Segar</p>
+</div>
+</div>
+<span class="px-3 py-1 rounded-full bg-primary-container/20 text-on-primary-container font-label-sm text-label-sm shrink-0">
+                Tier VIP
+              </span>
+</div>
+<!-- Bento Image & Vendor info mosaic -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 pb-6">
+<div class="sm:col-span-1 rounded overflow-hidden h-28 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Exquisite corporate wooden bento box filled with Indonesian nasi liwet aromatic rice, grilled ayam bakar taliwang chicken, colorful fresh herbs and sambal, photographed in natural studio lighting with soft green napkins in background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaldDvvW0jAZ-55pcNSGZtUlUkZfJJAGjr5RL_3L1g0odVO_4QF6Zyj2VAHwkjzYXt_nJgmrNpQd99IffiqT8oJgdSHXS69uTQStGHSHexkQ0BGFj3anZsD_JkEbA1RvwEw9qD5gdEW7M0T02W4dmKv2o0MNvDN-eIDVLaeUQhnesW9uT58wbpeBJutOKkkT5IMc_DaE4Ak6hrIa03rwR76PZvVQQoDYVEIXrkVYlM6j2s-x73_-iLyw">
+</div>
+<div class="sm:col-span-2 flex flex-col justify-between py-1">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Vendor Mitra Terpilih:</span>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-title-sm text-title-sm text-on-surface">Kurnia Boga Mandiri</span>
+<span class="inline-flex items-center text-primary text-[14px] bg-primary-container/20 px-2 py-0.5 rounded-full font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px] mr-1">verified</span> Halal A
+                    </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Dapur Sentral: Kebayoran Baru, Jakarta Selatan (Rating Dapur 4.95/5.0)</p>
+</div>
+<div class="flex items-center gap-4 text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px] text-primary">kitchen</span> Higienitas Grade A</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px] text-primary">timer</span> Masak H-4 Jam</span>
+</div>
+</div>
+</div>
+<!-- Event Logistics Context Info -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4 rounded bg-surface-container-low">
+<div class="flex items-start gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[18px]">event</span>
+</div>
+<div>
+<span class="block font-label-sm text-label-sm text-on-surface-variant">Waktu Pengantaran Target</span>
+<span class="font-title-sm text-title-sm text-on-surface">28 September 2026, 11:30 WIB</span>
+<span class="block font-body-sm text-body-sm text-primary">Toleransi kedatangan: 11:00 - 11:20 WIB</span>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+</div>
+<div>
+<span class="block font-label-sm text-label-sm text-on-surface-variant">Lokasi Acara Kantor</span>
+<span class="font-title-sm text-title-sm text-on-surface">Menara Sahid Sudirman Lt. 24</span>
+<span class="block font-body-sm text-body-sm text-on-surface-variant">Jl. Jend. Sudirman Kav 86, Jakarta Pusat</span>
+</div>
+</div>
+</div>
+<!-- Live Route Miniature Map Container -->
+<div class="mt-4 rounded overflow-hidden">
+<div class="w-full h-32 bg-cover bg-center rounded relative flex items-end p-3" data-location="Menara Sahid Sudirman, Jakarta, Indonesia" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBoIEes2PFceumtH0cirW85BKvCVTtE6IR3ZL4qeKvFXmxHjH2RKW56QwKcsdyXLfn0JuvUm8y5O8cO-G5XGnEfRe6iT_8eGfjDPZbtgTzSwc8sTprf468M00MjOCj7t4E8JPPt8QixbOvD-gjfuU-4t6LlLYQ5aUe5W4uviebDH7RJf7yOuILqyShhojvm6kzb4sIRkz4eChH0jXJHQ_iZVMEfFen2SGGT2vdUgBBqHeU73TQuHkoNOw')">
+<div class="bg-surface-container-lowest/95 backdrop-blur px-3 py-1.5 rounded-full flex items-center gap-2 text-on-surface shadow-sm">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+<span class="font-label-sm text-label-sm">Rute Terverifikasi Dapur ke Menara Sahid (18 menit tempuh)</span>
+</div>
+</div>
+</div>
+<!-- Breakdown Table -->
+<div class="mt-6 pt-6 space-y-3 font-body-md text-body-md">
+<div class="flex justify-between items-center text-on-surface-variant">
+<span>Subtotal (150 Pax @ Rp 45.000)</span>
+<span class="font-title-sm text-title-sm text-on-surface">Rp 6.750.000</span>
+</div>
+<div class="flex justify-between items-center text-on-surface-variant">
+<span class="flex items-center gap-1">
+                  Biaya Pengantaran Khusus Kurir Berpendingin
+                  <span class="material-symbols-outlined text-[16px] text-secondary" title="Menjaga suhu makanan tetap higienis selama perjalanan">info</span>
+</span>
+<span class="font-title-sm text-title-sm text-on-surface">Rp 150.000</span>
+</div>
+<div class="flex justify-between items-center text-on-surface-variant">
+<span>PPN 11% (Faktur Pajak Korporat)</span>
+<span class="font-title-sm text-title-sm text-on-surface">Rp 759.000</span>
+</div>
+<div class="flex justify-between items-center text-primary font-label-sm text-label-sm">
+<span>Biaya Perlindungan Escrow Penjamin Mutu</span>
+<span class="font-bold">GRATIS (Sponsor Saji)</span>
+</div>
+<div class="pt-4 mt-2 flex justify-between items-baseline">
+<div>
+<span class="block font-title-lg text-title-lg text-on-surface">Total Nilai Escrow Terproteksi</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Dana dikunci sementara di rekening penampung resmi Saji</span>
+</div>
+<div class="text-right">
+<span class="font-headline-md text-headline-md text-primary">Rp 7.659.000</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Payment Method Selection Box -->
+<div class="bg-surface-container-lowest rounded-lg p-8 shadow-sm">
+<h3 class="font-title-md text-title-md text-on-surface mb-2">Metode Pembayaran SajiEscrow™</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6">Pilih saluran pembayaran resmi. Dana Anda hanya dilepaskan jika makanan telah diterima sesuai standar.</p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<!-- Method 1 -->
+<label class="flex items-center gap-3.5 p-4 rounded bg-surface-container-low cursor-pointer hover:bg-surface-container transition-colors">
+<input checked="" class="w-4 h-4 text-primary focus:ring-primary accent-primary" name="payment_method" type="radio">
+<div class="flex-1">
+<span class="block font-title-sm text-title-sm text-on-surface">BCA Virtual Account</span>
+<span class="block font-body-sm text-body-sm text-on-surface-variant">Verifikasi otomatis &lt; 30 detik</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-primary-container/30 text-on-primary-container">Instan</span>
+</label>
+<!-- Method 2 -->
+<label class="flex items-center gap-3.5 p-4 rounded bg-surface-container-low cursor-pointer hover:bg-surface-container transition-colors">
+<input class="w-4 h-4 text-primary focus:ring-primary accent-primary" name="payment_method" type="radio">
+<div class="flex-1">
+<span class="block font-title-sm text-title-sm text-on-surface">Mandiri VA / Bill</span>
+<span class="block font-body-sm text-body-sm text-on-surface-variant">Verifikasi real-time 24 jam</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-primary-container/30 text-on-primary-container">Instan</span>
+</label>
+<!-- Method 3 -->
+<label class="flex items-center gap-3.5 p-4 rounded bg-surface-container-low cursor-pointer hover:bg-surface-container transition-colors">
+<input class="w-4 h-4 text-primary focus:ring-primary accent-primary" name="payment_method" type="radio">
+<div class="flex-1">
+<span class="block font-title-sm text-title-sm text-on-surface">QRIS Dinamis</span>
+<span class="block font-body-sm text-body-sm text-on-surface-variant">Scan via Gopay, OVO, Livin, BCA</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant">QR Pay</span>
+</label>
+<!-- Method 4 -->
+<label class="flex items-center gap-3.5 p-4 rounded bg-surface-container-low cursor-pointer hover:bg-surface-container transition-colors">
+<input class="w-4 h-4 text-primary focus:ring-primary accent-primary" name="payment_method" type="radio">
+<div class="flex-1">
+<span class="block font-title-sm text-title-sm text-on-surface">Corporate Invoice (TOP 14/30)</span>
+<span class="block font-body-sm text-body-sm text-on-surface-variant">Khusus akun korporat teregistrasi</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-variant text-on-surface-variant">B2B TOP</span>
+</label>
+</div>
+<div class="mt-8 flex flex-col sm:flex-row items-center gap-4">
+<button class="w-full sm:flex-1 py-4 px-8 rounded-full bg-primary-container text-on-primary-container font-label-lg text-label-lg shadow hover:opacity-95 transition-all flex items-center justify-center gap-2" type="button">
+<span class="material-symbols-outlined text-[20px]">shield_lock</span>
+                Bayar &amp; Amankan Pesanan via SajiEscrow™
+              </button>
+<button class="w-full sm:w-auto py-4 px-6 rounded-full bg-surface-container-low text-on-surface font-label-lg text-label-lg hover:bg-surface-container transition-colors flex items-center justify-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[18px]">draft</span>
+                Unduh Proforma
+              </button>
+</div>
+</div>
+</div>
+<!-- Right: SajiEscrow™ Lifecycle Stepper & Guarantees (5 Columns) -->
+<div class="lg:col-span-5 flex flex-col gap-6">
+<!-- Escrow Lifecycle Tracker Timeline -->
+<div class="bg-surface-container-lowest rounded-lg p-8 shadow-sm">
+<div class="flex items-center justify-between pb-6">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-bold">
+<span class="material-symbols-outlined text-[18px]">timeline</span>
+</div>
+<h3 class="font-title-lg text-title-lg text-on-surface">Siklus Perlindungan Dana</h3>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-primary-container/20 text-on-primary-container font-label-sm text-label-sm">
+                5 Tahap Keamanan
+              </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6">
+              Uang Anda tidak langsung diberikan ke vendor. Dana disimpan di rekening penampungan bergaransi sampai pesanan tiba dengan sempurna.
+            </p>
+<!-- Stepper Items -->
+<div class="relative space-y-6 pl-2">
+<!-- Step 1 (Current Active) -->
+<div class="flex items-start gap-4 relative">
+<div class="w-8 h-8 rounded-full bg-inverse-surface text-on-primary flex items-center justify-center font-label-sm text-label-sm shrink-0 z-10 shadow">
+                  01
+                </div>
+<div class="flex-1 bg-surface-container-low p-4 rounded">
+<div class="flex items-center justify-between">
+<span class="font-title-sm text-title-sm text-on-surface">Pembayaran Masuk Escrow</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Langkah Saat Ini</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                    Dana senilai Rp 7.659.000 disimpan aman di rekening penampung berlisensi Saji.AI. Vendor menerima jaminan konfirmasi pesanan resmi.
+                  </p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="flex items-start gap-4 relative">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center font-label-sm text-label-sm shrink-0 z-10">
+                  02
+                </div>
+<div class="flex-1 p-2">
+<span class="font-title-sm text-title-sm text-on-surface">Vendor Mulai Masak (H-4 Jam)</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                    Live Kitchen Tracking aktif. Tim Kurnia Boga Mandiri mengunggah log sertifikasi kesegaran bahan baku dan checklist higienis.
+                  </p>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="flex items-start gap-4 relative">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center font-label-sm text-label-sm shrink-0 z-10">
+                  03
+                </div>
+<div class="flex-1 p-2">
+<span class="font-title-sm text-title-sm text-on-surface">Kurir Menuju Lokasi Acara</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                    GPS Tracking realtime dengan armada khusus berpendingin. Update estimasi waktu tiba (ETA) otomatis terkirim via WhatsApp PIC.
+                  </p>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="flex items-start gap-4 relative">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center font-label-sm text-label-sm shrink-0 z-10">
+                  04
+                </div>
+<div class="flex-1 p-2">
+<span class="font-title-sm text-title-sm text-on-surface">PIC Verifikasi Kondisi &amp; Porsi</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                    PIC kantor memeriksa checklist: kelengkapan 150 bento box, kehangatan hidangan, dan kesegaran rasa melalui kode OTP verifikasi.
+                  </p>
+</div>
+</div>
+<!-- Step 5 -->
+<div class="flex items-start gap-4 relative">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center font-label-sm text-label-sm shrink-0 z-10">
+                  05
+                </div>
+<div class="flex-1 p-2">
+<span class="font-title-sm text-title-sm text-on-surface">Dana Diteruskan ke Vendor</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                    Setelah OTP validasi ditekan oleh PIC, dana escrow langsung dicairkan ke rekening vendor tanpa potongan keterlambatan.
+                  </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Security Badges & Guarantees Panel -->
+<div class="bg-primary-container/20 rounded-lg p-8">
+<h4 class="font-title-md text-title-md text-on-surface mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[24px]">verified_user</span>
+              Jaminan &amp; Standar Perlindungan Saji
+            </h4>
+<div class="space-y-4">
+<div class="flex items-start gap-3 bg-surface-container-lowest/80 p-3.5 rounded">
+<span class="material-symbols-outlined text-tertiary text-[22px] shrink-0">published_with_changes</span>
+<div>
+<span class="font-title-sm text-title-sm text-on-surface block">100% Garansi Uang Kembali</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Jika hidangan terlambat &gt; 30 menit atau rasa tidak memenuhi standar mutu, dana dikembalikan penuh tanpa kompromi.</span>
+</div>
+</div>
+<div class="flex items-start gap-3 bg-surface-container-lowest/80 p-3.5 rounded">
+<span class="material-symbols-outlined text-primary text-[22px] shrink-0">account_balance</span>
+<div>
+<span class="font-title-sm text-title-sm text-on-surface block">Regulasi Bank Indonesia Terdaftar</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Didukung gateway berlisensi kategori PJP 1 dengan enkripsi data transaksi bersertifikat PCI-DSS.</span>
+</div>
+</div>
+<div class="flex items-start gap-3 bg-surface-container-lowest/80 p-3.5 rounded">
+<span class="material-symbols-outlined text-primary text-[22px] shrink-0">health_and_safety</span>
+<div>
+<span class="font-title-sm text-title-sm text-on-surface block">Sertifikat Halal &amp; Uji Higienis</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Vendor telah melewati uji swab laboratorium berkala untuk bakteri E.Coli dan Salmonella.</span>
+</div>
+</div>
+</div>
+<div class="mt-6 pt-4 flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<span>Butuh bantuan seputar escrow?</span>
+<a class="font-label-md text-label-md text-primary hover:underline flex items-center gap-1" href="#">
+                Chat Tim Finance
+                <span class="material-symbols-outlined text-[16px]">support_agent</span>
+</a>
+</div>
+</div>
+<!-- Customer Service Contact Card -->
+<div class="bg-surface-container-lowest rounded-lg p-6 shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">headset_mic</span>
+</div>
+<div>
+<span class="block font-title-sm text-title-sm text-on-surface">Executive Event Concierge</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">WhatsApp Priority: +62 811-9288-7254</span>
+</div>
+</div>
+<span class="w-3 h-3 rounded-full bg-primary animate-ping" title="Online Sekarang"></span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Client-side Script for Option Feedback -->
+<script>
+    (function() {
+      // Toggle highlight on plan selection buttons if clicked
+      const buttons = document.querySelectorAll('button');
+      buttons.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+          if (this.innerText.includes('Pilih') || this.innerText.includes('Aktifkan')) {
+            const originalText = this.innerHTML;
+            this.innerHTML = '<span class="material-symbols-outlined text-[18px] animate-spin">refresh</span> Memproses Pilihan...';
+            setTimeout(() => {
+              this.innerHTML = '<span class="material-symbols-outlined text-[18px]">check</span> Paket Dipilih';
+              setTimeout(() => { this.innerHTML = originalText; }, 1800);
+            }, 500);
+          }
+        });
+      });
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-lowest"><div class="max-w-7xl mx-auto px-6 lg:px-12 pt-16 pb-12"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10"><div class="lg:col-span-2 flex flex-col gap-4"><div class="flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-primary-container/20 flex items-center justify-center text-primary"><span class="material-symbols-outlined text-[24px]">skillet</span></div><span class="font-title-lg text-title-lg text-on-surface tracking-tight">Saji<span class="text-primary">.AI</span></span></div><p class="font-body-md text-body-md text-on-surface-variant max-w-sm">Saji.AI - Good food and good life for corporate &amp; events. Solusi katering cerdas berbasis teknologi untuk kebutuhan pertemuan kantor, makan siang tim, dan perhelatan istimewa Anda.</p><div class="flex items-center gap-3 pt-2"><a aria-label="Public Feed" class="w-9 h-9 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined text-[18px]">public</span></a><a aria-label="Call Support" class="w-9 h-9 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined text-[18px]">call</span></a><a aria-label="Chat Curation" class="w-9 h-9 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined text-[18px]">forum</span></a></div></div><div class="flex flex-col gap-3"><span class="font-title-sm text-title-sm text-on-surface">Layanan Kami</span><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Katering Harian Kantor</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Paket Bento &amp; Box</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Prasmanan Acara</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Coffee Break &amp; Snack</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Chef On-Demand</a></div><div class="flex flex-col gap-3"><span class="font-title-sm text-title-sm text-on-surface">Perusahaan</span><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Tentang Saji.AI</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Mitra Dapur &amp; Vendor</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Sertifikasi Halal</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Karir</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Kontak Kami</a></div><div class="flex flex-col gap-4"><span class="font-title-sm text-title-sm text-on-surface">Buletin &amp; Promo</span><p class="font-body-sm text-body-sm text-on-surface-variant">Dapatkan panduan menu mingguan dan penawaran korporat eksklusif ke surel Anda.</p><div class="flex items-center rounded-full bg-surface-container-low p-1.5 focus-within:ring-2 focus-within:ring-primary/40"><input class="w-full bg-transparent px-3 py-1 font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant outline-none" placeholder="Alamat email Anda" type="email"><button aria-label="Kirim Email" class="w-9 h-9 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shrink-0 hover:opacity-90 transition-opacity" type="button"><span class="material-symbols-outlined text-[18px]">arrow_forward</span></button></div></div></div><div class="mt-14 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4"><p class="font-body-sm text-body-sm text-on-surface-variant">© 2025 Saji.AI Platform Katering Nusantara. Hak cipta dilindungi undang-undang.</p><div class="flex items-center gap-6"><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#">Kebijakan Privasi</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#">Syarat Layanan</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#">Bantuan Korporat</a></div></div></div></footer></body></html>
