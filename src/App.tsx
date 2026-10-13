@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { BrowserRouter, Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
 import { HowItWorks } from './components/HowItWorks';
@@ -13,8 +14,65 @@ import { Newsletter } from './components/Newsletter';
 import { Footer } from './components/Footer';
 import { AuthModal } from './components/AuthModal';
 import { CartDrawer } from './components/CartDrawer';
+import { KatalogPage } from './pages/KatalogPage';
+import { PricingPage } from './pages/PricingPage';
 import { api, clearStoredAuth, getStoredUser } from './services/api';
 import type { CartItem, MenuItem, User } from './types';
+
+/* ───────── Scroll-to-top on route change ───────── */
+const ScrollToTop: React.FC = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }, [pathname]);
+  return null;
+};
+
+/* ───────── Landing Page (Home) ───────── */
+interface HomeProps {
+  onAddToCart: (dish: MenuItem) => void;
+  onSelectPlan: (plan: string, price: number) => void;
+}
+
+const HomePage: React.FC<HomeProps> = ({ onAddToCart, onSelectPlan }) => {
+  const navigate = useNavigate();
+  return (
+    <>
+      {/* 1. Hero Section with Hand-drawn Doodle and Floating Curved Cards */}
+      <HeroSection
+        onOpenOrder={() => navigate('/katalog')}
+        onExploreMenu={() => navigate('/katalog')}
+      />
+
+    {/* 2. How It Works (4 Step Green Cards) */}
+    <HowItWorks />
+
+    {/* 3. Our Special Catering (Circular Dish Cards & Filter) */}
+    <SpecialCatering onAddToCart={onAddToCart} />
+
+    {/* 4. AI Smart Planner Core Feature (PRD V3 Integration) */}
+    <AIPlannerSection />
+
+    {/* 5. Statistics Bar (10K+ Total customers, etc.) */}
+    <StatsBar />
+
+    {/* 6. Plan Event With Us (Mosaic Collage & Book a call) */}
+    <PlanEvent />
+
+    {/* 7. Pricing & Subscription (Weekly vs Monthly) */}
+    <PricingSection onSelectPlan={onSelectPlan} />
+
+    {/* 8. Customer Thoughts (Testimonials & Star Ratings) */}
+    <Testimonials />
+
+    {/* 9. Download Mobile App Banner (Chef Oval Graphic & Live Status Mockup) */}
+    <AppDownload />
+
+    {/* 10. Newsletter Subscription Bar */}
+    <Newsletter />
+  </>
+  );
+};
 
 export const App: React.FC = () => {
   const [user, setUser] = useState<User | null>(null);
@@ -110,96 +168,93 @@ export const App: React.FC = () => {
   };
 
   const totalCartCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
+  const cartSubtotal = cartItems.reduce((acc, item) => acc + item.dish.price * item.quantity, 0);
 
   return (
-    <div className="min-h-screen bg-[#f7f9ff] text-[#171c21] flex flex-col font-sans selection:bg-[#82c46c]/40 selection:text-[#125104]">
-      
-      {/* Toast Alert */}
-      {toastMessage && (
-        <div className="fixed bottom-6 right-6 z-50 bg-[#171c21] text-white px-5 py-3 rounded-2xl shadow-2xl text-xs sm:text-sm font-semibold flex items-center gap-2.5 animate-in slide-in-from-bottom duration-200 border border-white/10">
-          <span className="material-symbols-outlined text-[18px] text-[#82c46c]">
-            check_circle
-          </span>
-          <span>{toastMessage}</span>
-        </div>
-      )}
-
-      {/* Navigation Bar */}
-      <Navbar
-        user={user}
-        onOpenAuth={handleOpenAuth}
-        onLogout={handleLogout}
-        onOpenCart={() => setIsCartOpen(true)}
-        cartCount={totalCartCount}
-        backendOnline={backendOnline}
-      />
-
-      {/* Main Content Sections */}
-      <main className="w-full pt-20 flex-1">
+    <BrowserRouter>
+      <ScrollToTop />
+      <div className="min-h-screen bg-[#f7f9ff] text-[#171c21] flex flex-col font-sans selection:bg-[#82c46c]/40 selection:text-[#125104]">
         
-        {/* 1. Hero Section with Hand-drawn Doodle and Floating Curved Cards */}
-        <HeroSection
-          onOpenOrder={() => {
-            const elem = document.getElementById('menu-pilihan');
-            elem?.scrollIntoView({ behavior: 'smooth' });
-          }}
-          onExploreMenu={() => {
-            const elem = document.getElementById('menu-pilihan');
-            elem?.scrollIntoView({ behavior: 'smooth' });
-          }}
+        {/* Toast Alert */}
+        {toastMessage && (
+          <div className="fixed bottom-6 right-6 z-50 bg-[#171c21] text-white px-5 py-3 rounded-2xl shadow-2xl text-xs sm:text-sm font-semibold flex items-center gap-2.5 animate-in slide-in-from-bottom duration-200 border border-white/10">
+            <span className="material-symbols-outlined text-[18px] text-[#82c46c]">
+              check_circle
+            </span>
+            <span>{toastMessage}</span>
+          </div>
+        )}
+
+        {/* Navigation Bar */}
+        <Navbar
+          user={user}
+          onOpenAuth={handleOpenAuth}
+          onLogout={handleLogout}
+          onOpenCart={() => setIsCartOpen(true)}
+          cartCount={totalCartCount}
+          backendOnline={backendOnline}
         />
 
-        {/* 2. How It Works (4 Step Green Cards) */}
-        <HowItWorks />
+        {/* Main Content Sections */}
+        <main className="w-full pt-20 flex-1">
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <HomePage
+                  onAddToCart={handleAddToCart}
+                  onSelectPlan={handleSelectPlan}
+                />
+              }
+            />
+            <Route
+              path="/katalog"
+              element={
+                <KatalogPage
+                  onAddToCart={handleAddToCart}
+                  cartItemCount={totalCartCount}
+                  cartSubtotal={cartSubtotal}
+                  onOpenCart={() => setIsCartOpen(true)}
+                />
+              }
+            />
+            <Route
+              path="/pricing"
+              element={
+                <PricingPage
+                  onSelectPlan={handleSelectPlan}
+                  cartSubtotal={cartSubtotal}
+                  cartItemCount={totalCartCount}
+                  cartItems={cartItems}
+                />
+              }
+            />
+          </Routes>
+        </main>
 
-        {/* 3. Our Special Catering (Circular Dish Cards & Filter) */}
-        <SpecialCatering onAddToCart={handleAddToCart} />
+        {/* Footer */}
+        <Footer />
 
-        {/* 4. AI Smart Planner Core Feature (PRD V3 Integration) */}
-        <AIPlannerSection />
+        {/* Slide-over Cart Drawer */}
+        <CartDrawer
+          isOpen={isCartOpen}
+          onClose={() => setIsCartOpen(false)}
+          items={cartItems}
+          onUpdateQty={handleUpdateQty}
+          onRemoveItem={handleRemoveItem}
+          onClearCart={() => setCartItems([])}
+        />
 
-        {/* 5. Statistics Bar (10K+ Total customers, etc.) */}
-        <StatsBar />
+        {/* Auth Modal (Login / Register Multi-role) */}
+        <AuthModal
+          isOpen={isAuthOpen}
+          initialTab={authInitialTab}
+          onClose={() => setIsAuthOpen(false)}
+          onSuccess={handleAuthSuccess}
+        />
 
-        {/* 6. Plan Event With Us (Mosaic Collage & Book a call) */}
-        <PlanEvent />
-
-        {/* 7. Pricing & Subscription (Weekly vs Monthly) */}
-        <PricingSection onSelectPlan={handleSelectPlan} />
-
-        {/* 8. Customer Thoughts (Testimonials & Star Ratings) */}
-        <Testimonials />
-
-        {/* 9. Download Mobile App Banner (Chef Oval Graphic & Live Status Mockup) */}
-        <AppDownload />
-
-        {/* 10. Newsletter Subscription Bar */}
-        <Newsletter />
-
-      </main>
-
-      {/* Footer */}
-      <Footer />
-
-      {/* Slide-over Cart Drawer */}
-      <CartDrawer
-        isOpen={isCartOpen}
-        onClose={() => setIsCartOpen(false)}
-        items={cartItems}
-        onUpdateQty={handleUpdateQty}
-        onRemoveItem={handleRemoveItem}
-        onClearCart={() => setCartItems([])}
-      />
-
-      {/* Auth Modal (Login / Register Multi-role) */}
-      <AuthModal
-        isOpen={isAuthOpen}
-        initialTab={authInitialTab}
-        onClose={() => setIsAuthOpen(false)}
-        onSuccess={handleAuthSuccess}
-      />
-
-    </div>
+      </div>
+    </BrowserRouter>
   );
 };
 

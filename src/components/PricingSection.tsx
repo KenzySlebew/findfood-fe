@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 interface PricingSectionProps {
   onSelectPlan: (plan: string, price: number) => void;
@@ -125,6 +126,19 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectPlan }) 
           </button>
         </div>
 
+      </div>
+
+      {/* Explore Full Pricing & Escrow Simulator */}
+      <div className="flex justify-center mt-12">
+        <Link
+          to="/pricing"
+          className="px-8 py-3.5 rounded-full bg-[#f0f4fb] hover:bg-[#eaeef5] text-[#171c21] text-xs sm:text-sm font-bold border border-[#dee3ea] transition-all flex items-center gap-2 group"
+        >
+          <span>Lihat Rincian SajiEscrow™ &amp; Kalkulator Tender RFQ</span>
+          <span className="material-symbols-outlined text-[18px] text-[#2e6b1f] group-hover:translate-x-1 transition-transform">
+            arrow_forward
+          </span>
+        </Link>
       </div>
     </section>
   );

@@ -35,7 +35,7 @@ export interface ApiResponse<T = unknown> {
 export interface MenuItem {
   id: string;
   name: string;
-  category: 'bento' | 'healthy' | 'nusantara' | 'western';
+  category: 'bento' | 'healthy' | 'nusantara' | 'western' | 'snack' | 'live';
   description: string;
   price: number;
   rating: number;

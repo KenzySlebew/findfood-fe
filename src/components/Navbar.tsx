@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import type { User } from '../types';
 
 interface NavbarProps {
@@ -21,13 +22,15 @@ export const Navbar: React.FC<NavbarProps> = ({
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const currentPath = location.pathname;
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-[#ffffff]/90 backdrop-blur-xl border-b border-[#eaeef5]/80 shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
       <div className="h-20 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between gap-6">
         
         {/* Brand Logo */}
-        <a href="#" className="flex items-center gap-3 shrink-0 group">
+        <Link to="/" className="flex items-center gap-3 shrink-0 group">
           <div className="w-10 h-10 rounded-full bg-[#82c46c]/20 flex items-center justify-center text-[#2e6b1f] group-hover:scale-105 transition-transform">
             <span className="material-symbols-outlined text-[24px]">skillet</span>
           </div>
@@ -39,42 +42,48 @@ export const Navbar: React.FC<NavbarProps> = ({
               SMART CATERING
             </span>
           </div>
-        </a>
+        </Link>
 
         {/* Desktop Navigation Links */}
         <nav className="hidden xl:flex items-center gap-1">
-          <a
-            href="#"
-            className="px-4 py-2 rounded-full text-sm font-semibold transition-all bg-[#82c46c] text-[#125104] shadow-sm"
+          <Link
+            to="/"
+            className={`px-4 py-2 rounded-full text-sm font-semibold transition-all ${
+              currentPath === '/' ? 'bg-[#82c46c] text-[#125104] shadow-sm' : 'text-[#41493c] hover:text-[#171c21] hover:bg-[#f0f4fb]'
+            }`}
           >
             Beranda
-          </a>
-          <a
-            href="#menu-pilihan"
-            className="px-4 py-2 rounded-full text-sm font-medium text-[#41493c] hover:text-[#171c21] hover:bg-[#f0f4fb] transition-all"
+          </Link>
+          <Link
+            to="/katalog"
+            className={`px-4 py-2 rounded-full text-sm font-semibold transition-all ${
+              currentPath === '/katalog' ? 'bg-[#82c46c] text-[#125104] shadow-sm' : 'text-[#41493c] hover:text-[#171c21] hover:bg-[#f0f4fb]'
+            }`}
           >
             Menu &amp; Katalog
-          </a>
+          </Link>
           <a
-            href="#cara-kerja"
+            href={currentPath === '/' ? '#cara-kerja' : '/#cara-kerja'}
             className="px-4 py-2 rounded-full text-sm font-medium text-[#41493c] hover:text-[#171c21] hover:bg-[#f0f4fb] transition-all"
           >
             Cara Kerja
           </a>
           <a
-            href="#katering-acara"
+            href={currentPath === '/' ? '#katering-acara' : '/#katering-acara'}
             className="px-4 py-2 rounded-full text-sm font-medium text-[#41493c] hover:text-[#171c21] hover:bg-[#f0f4fb] transition-all"
           >
             Katering Acara
           </a>
-          <a
-            href="#harga-paket"
-            className="px-4 py-2 rounded-full text-sm font-medium text-[#41493c] hover:text-[#171c21] hover:bg-[#f0f4fb] transition-all"
+          <Link
+            to="/pricing"
+            className={`px-4 py-2 rounded-full text-sm font-semibold transition-all ${
+              currentPath === '/pricing' ? 'bg-[#82c46c] text-[#125104] shadow-sm' : 'text-[#41493c] hover:text-[#171c21] hover:bg-[#f0f4fb]'
+            }`}
           >
             Harga &amp; Paket
-          </a>
+          </Link>
           <a
-            href="#ai-planner"
+            href={currentPath === '/' ? '#ai-planner' : '/#ai-planner'}
             className="px-4 py-2 rounded-full text-sm font-semibold text-[#2e6b1f] bg-[#aff496]/40 hover:bg-[#aff496]/60 transition-all flex items-center gap-1.5"
           >
             <span className="material-symbols-outlined text-[16px]">auto_awesome</span>
@@ -207,43 +216,49 @@ export const Navbar: React.FC<NavbarProps> = ({
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
         <div className="xl:hidden bg-white border-t border-[#eaeef5] px-6 py-4 flex flex-col gap-2">
-          <a
-            href="#"
+          <Link
+            to="/"
             onClick={() => setMobileMenuOpen(false)}
-            className="px-4 py-2.5 rounded-xl font-semibold bg-[#82c46c]/20 text-[#2e6b1f]"
+            className={`px-4 py-2.5 rounded-xl font-semibold ${
+              currentPath === '/' ? 'bg-[#82c46c]/20 text-[#2e6b1f]' : 'text-[#41493c] hover:bg-[#f0f4fb]'
+            }`}
           >
             Beranda
-          </a>
-          <a
-            href="#menu-pilihan"
+          </Link>
+          <Link
+            to="/katalog"
             onClick={() => setMobileMenuOpen(false)}
-            className="px-4 py-2.5 rounded-xl text-sm font-medium text-[#41493c] hover:bg-[#f0f4fb]"
+            className={`px-4 py-2.5 rounded-xl font-semibold ${
+              currentPath === '/katalog' ? 'bg-[#82c46c]/20 text-[#2e6b1f]' : 'text-[#41493c] hover:bg-[#f0f4fb]'
+            }`}
           >
             Menu &amp; Katalog
-          </a>
+          </Link>
           <a
-            href="#cara-kerja"
+            href={currentPath === '/' ? '#cara-kerja' : '/#cara-kerja'}
             onClick={() => setMobileMenuOpen(false)}
             className="px-4 py-2.5 rounded-xl text-sm font-medium text-[#41493c] hover:bg-[#f0f4fb]"
           >
             Cara Kerja
           </a>
           <a
-            href="#katering-acara"
+            href={currentPath === '/' ? '#katering-acara' : '/#katering-acara'}
             onClick={() => setMobileMenuOpen(false)}
             className="px-4 py-2.5 rounded-xl text-sm font-medium text-[#41493c] hover:bg-[#f0f4fb]"
           >
             Katering Acara
           </a>
-          <a
-            href="#harga-paket"
+          <Link
+            to="/pricing"
             onClick={() => setMobileMenuOpen(false)}
-            className="px-4 py-2.5 rounded-xl text-sm font-medium text-[#41493c] hover:bg-[#f0f4fb]"
+            className={`px-4 py-2.5 rounded-xl font-semibold ${
+              currentPath === '/pricing' ? 'bg-[#82c46c]/20 text-[#2e6b1f]' : 'text-[#41493c] hover:bg-[#f0f4fb]'
+            }`}
           >
             Harga &amp; Paket
-          </a>
+          </Link>
           <a
-            href="#ai-planner"
+            href={currentPath === '/' ? '#ai-planner' : '/#ai-planner'}
             onClick={() => setMobileMenuOpen(false)}
             className="px-4 py-2.5 rounded-xl text-sm font-bold text-[#2e6b1f] bg-[#aff496]/40 flex items-center gap-2"
           >

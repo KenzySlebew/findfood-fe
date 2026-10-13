@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import type { MenuItem } from '../types';
 
 interface SpecialCateringProps {
@@ -204,22 +205,17 @@ export const SpecialCatering: React.FC<SpecialCateringProps> = ({ onAddToCart })
         })}
       </div>
 
-      {/* Navigation Discs */}
-      <div className="flex items-center justify-center gap-3 mt-12">
-        <button
-          type="button"
-          aria-label="Menu sebelumnya"
-          className="w-10 h-10 rounded-full bg-[#82c46c] text-[#125104] flex items-center justify-center hover:opacity-90 shadow-sm"
+      {/* Explore Full Catalog Action */}
+      <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-12">
+        <Link
+          to="/katalog"
+          className="px-8 py-3.5 rounded-full bg-[#2c3136] text-white text-sm font-semibold hover:bg-black transition-all shadow-md flex items-center gap-2 group"
         >
-          <span className="material-symbols-outlined text-[20px]">arrow_back</span>
-        </button>
-        <button
-          type="button"
-          aria-label="Menu selanjutnya"
-          className="w-10 h-10 rounded-full bg-white text-[#171c21] flex items-center justify-center hover:bg-[#dee3ea] shadow-sm border border-[#dee3ea]"
-        >
-          <span className="material-symbols-outlined text-[20px]">arrow_forward</span>
-        </button>
+          <span>Eksplorasi Seluruh Katalog (250+ Pilihan)</span>
+          <span className="material-symbols-outlined text-[18px] text-[#82c46c] group-hover:translate-x-1 transition-transform">
+            arrow_forward
+          </span>
+        </Link>
       </div>
     </section>
   );
