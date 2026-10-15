@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export const AIPlannerSection: React.FC = () => {
   const [portionCount, setPortionCount] = useState<number>(50);
@@ -245,6 +246,23 @@ export const AIPlannerSection: React.FC = () => {
             </div>
           </div>
         )}
+
+        {/* Link to Full Studio AI Planner & Live Bidding Room */}
+        <div className="mt-8 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-2 text-xs text-[#dee3ea]">
+            <span className="material-symbols-outlined text-[18px] text-[#82c46c]">verified_user</span>
+            <span>Butuh lelang terbuka dengan perbandingan penawaran vendor multi-katering?</span>
+          </div>
+          <Link
+            to="/ai-planner"
+            className="px-6 py-2.5 rounded-full bg-[#82c46c] text-[#125104] text-xs font-bold hover:bg-[#94d87d] transition-all flex items-center gap-1.5 shadow-sm group"
+          >
+            <span>Buka Studio AI Planner &amp; Bidding Board Penuh</span>
+            <span className="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">
+              arrow_forward
+            </span>
+          </Link>
+        </div>
 
       </div>
     </section>

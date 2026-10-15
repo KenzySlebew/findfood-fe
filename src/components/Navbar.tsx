@@ -82,13 +82,17 @@ export const Navbar: React.FC<NavbarProps> = ({
           >
             Harga &amp; Paket
           </Link>
-          <a
-            href={currentPath === '/' ? '#ai-planner' : '/#ai-planner'}
-            className="px-4 py-2 rounded-full text-sm font-semibold text-[#2e6b1f] bg-[#aff496]/40 hover:bg-[#aff496]/60 transition-all flex items-center gap-1.5"
+          <Link
+            to="/ai-planner"
+            className={`px-4 py-2 rounded-full text-sm font-semibold transition-all flex items-center gap-1.5 ${
+              currentPath === '/ai-planner'
+                ? 'bg-[#82c46c] text-[#125104] shadow-sm'
+                : 'text-[#2e6b1f] bg-[#aff496]/40 hover:bg-[#aff496]/60'
+            }`}
           >
             <span className="material-symbols-outlined text-[16px]">auto_awesome</span>
             AI Planner
-          </a>
+          </Link>
         </nav>
 
         {/* Right Action Icons & Controls */}
@@ -257,14 +261,18 @@ export const Navbar: React.FC<NavbarProps> = ({
           >
             Harga &amp; Paket
           </Link>
-          <a
-            href={currentPath === '/' ? '#ai-planner' : '/#ai-planner'}
+          <Link
+            to="/ai-planner"
             onClick={() => setMobileMenuOpen(false)}
-            className="px-4 py-2.5 rounded-xl text-sm font-bold text-[#2e6b1f] bg-[#aff496]/40 flex items-center gap-2"
+            className={`px-4 py-2.5 rounded-xl text-sm font-bold flex items-center gap-2 ${
+              currentPath === '/ai-planner'
+                ? 'bg-[#82c46c] text-[#125104]'
+                : 'text-[#2e6b1f] bg-[#aff496]/40 hover:bg-[#aff496]/60'
+            }`}
           >
             <span className="material-symbols-outlined text-[18px]">auto_awesome</span>
             AI Planner
-          </a>
+          </Link>
         </div>
       )}
     </header>

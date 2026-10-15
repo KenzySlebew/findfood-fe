@@ -16,6 +16,7 @@ import { AuthModal } from './components/AuthModal';
 import { CartDrawer } from './components/CartDrawer';
 import { KatalogPage } from './pages/KatalogPage';
 import { PricingPage } from './pages/PricingPage';
+import { AIPlannerPage } from './pages/AIPlannerPage';
 import { api, clearStoredAuth, getStoredUser } from './services/api';
 import type { CartItem, MenuItem, User } from './types';
 
@@ -226,6 +227,14 @@ export const App: React.FC = () => {
                   cartSubtotal={cartSubtotal}
                   cartItemCount={totalCartCount}
                   cartItems={cartItems}
+                />
+              }
+            />
+            <Route
+              path="/ai-planner"
+              element={
+                <AIPlannerPage
+                  onSelectPlan={handleSelectPlan}
                 />
               }
             />
