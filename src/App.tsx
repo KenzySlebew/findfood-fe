@@ -17,6 +17,8 @@ import { CartDrawer } from './components/CartDrawer';
 import { KatalogPage } from './pages/KatalogPage';
 import { PricingPage } from './pages/PricingPage';
 import { AIPlannerPage } from './pages/AIPlannerPage';
+import { DashboardPage } from './pages/DashboardPage';
+import { OrderTrackingPage } from './pages/OrderTrackingPage';
 import { api, clearStoredAuth, getStoredUser } from './services/api';
 import type { CartItem, MenuItem, User } from './types';
 
@@ -237,6 +239,19 @@ export const App: React.FC = () => {
                   onSelectPlan={handleSelectPlan}
                 />
               }
+            />
+            <Route
+              path="/dashboard"
+              element={
+                <DashboardPage
+                  user={user}
+                  onOpenAuth={handleOpenAuth}
+                />
+              }
+            />
+            <Route
+              path="/tracking"
+              element={<OrderTrackingPage />}
             />
           </Routes>
         </main>

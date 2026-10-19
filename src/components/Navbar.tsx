@@ -76,7 +76,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           </a>
           <Link
             to="/pricing"
-            className={`px-4 py-2 rounded-full text-sm font-semibold transition-all ${
+            className={`px-3.5 py-2 rounded-full text-sm font-semibold transition-all ${
               currentPath === '/pricing' ? 'bg-[#82c46c] text-[#125104] shadow-sm' : 'text-[#41493c] hover:text-[#171c21] hover:bg-[#f0f4fb]'
             }`}
           >
@@ -84,7 +84,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           </Link>
           <Link
             to="/ai-planner"
-            className={`px-4 py-2 rounded-full text-sm font-semibold transition-all flex items-center gap-1.5 ${
+            className={`px-3.5 py-2 rounded-full text-sm font-semibold transition-all flex items-center gap-1.5 ${
               currentPath === '/ai-planner'
                 ? 'bg-[#82c46c] text-[#125104] shadow-sm'
                 : 'text-[#2e6b1f] bg-[#aff496]/40 hover:bg-[#aff496]/60'
@@ -92,6 +92,24 @@ export const Navbar: React.FC<NavbarProps> = ({
           >
             <span className="material-symbols-outlined text-[16px]">auto_awesome</span>
             AI Planner
+          </Link>
+          <Link
+            to="/tracking"
+            className={`px-3.5 py-2 rounded-full text-sm font-semibold transition-all flex items-center gap-1 ${
+              currentPath === '/tracking' ? 'bg-[#82c46c] text-[#125104] shadow-sm' : 'text-[#41493c] hover:text-[#171c21] hover:bg-[#f0f4fb]'
+            }`}
+          >
+            <span className="material-symbols-outlined text-[16px]">share_location</span>
+            Lacak
+          </Link>
+          <Link
+            to="/dashboard"
+            className={`px-3.5 py-2 rounded-full text-sm font-semibold transition-all flex items-center gap-1 ${
+              currentPath === '/dashboard' ? 'bg-[#82c46c] text-[#125104] shadow-sm' : 'text-[#41493c] hover:text-[#171c21] hover:bg-[#f0f4fb]'
+            }`}
+          >
+            <span className="material-symbols-outlined text-[16px]">dashboard</span>
+            Portal
           </Link>
         </nav>
 
@@ -168,14 +186,18 @@ export const Navbar: React.FC<NavbarProps> = ({
           {/* User Auth Buttons / Dropdown */}
           {user ? (
             <div className="flex items-center gap-2 pl-1">
-              <div className="hidden md:flex flex-col text-right">
+              <Link
+                to="/dashboard"
+                className="hidden md:flex flex-col text-right hover:opacity-80 transition-opacity"
+                title="Buka Portal Dashboard"
+              >
                 <span className="text-xs font-bold text-[#171c21] truncate max-w-[120px]">
                   {user.name}
                 </span>
                 <span className="text-[10px] text-[#2e6b1f] font-semibold">
                   {user.role === 'VENDOR' ? 'Mitra Toko' : 'Client PIC'}
                 </span>
-              </div>
+              </Link>
               <button
                 type="button"
                 onClick={onLogout}
@@ -273,6 +295,50 @@ export const Navbar: React.FC<NavbarProps> = ({
             <span className="material-symbols-outlined text-[18px]">auto_awesome</span>
             AI Planner
           </Link>
+          <Link
+            to="/tracking"
+            onClick={() => setMobileMenuOpen(false)}
+            className={`px-4 py-2.5 rounded-xl text-sm font-semibold flex items-center gap-2 ${
+              currentPath === '/tracking' ? 'bg-[#82c46c]/20 text-[#2e6b1f]' : 'text-[#41493c] hover:bg-[#f0f4fb]'
+            }`}
+          >
+            <span className="material-symbols-outlined text-[18px]">share_location</span>
+            Lacak Pesanan (GPS)
+          </Link>
+          <Link
+            to="/dashboard"
+            onClick={() => setMobileMenuOpen(false)}
+            className={`px-4 py-2.5 rounded-xl text-sm font-semibold flex items-center gap-2 ${
+              currentPath === '/dashboard' ? 'bg-[#82c46c]/20 text-[#2e6b1f]' : 'text-[#41493c] hover:bg-[#f0f4fb]'
+            }`}
+          >
+            <span className="material-symbols-outlined text-[18px]">dashboard</span>
+            Portal Dashboard
+          </Link>
+          {!user && (
+            <div className="pt-2 border-t border-[#eaeef5] flex gap-2">
+              <button
+                type="button"
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  onOpenAuth('login');
+                }}
+                className="flex-1 py-2 rounded-xl bg-[#f0f4fb] text-xs font-bold text-[#171c21]"
+              >
+                Masuk
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  onOpenAuth('register');
+                }}
+                className="flex-1 py-2 rounded-xl bg-[#82c46c] text-xs font-bold text-[#125104]"
+              >
+                Daftar Akun
+              </button>
+            </div>
+          )}
         </div>
       )}
     </header>

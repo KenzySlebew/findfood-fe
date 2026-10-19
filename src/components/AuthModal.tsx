@@ -273,6 +273,61 @@ export const AuthModal: React.FC<AuthModalProps> = ({
           </span>
         </div>
 
+        {/* Quick Demo Login Option */}
+        <div className="mt-5 pt-4 border-t border-[#eaeef5]">
+          <span className="text-[10px] font-bold text-[#5b5f63] uppercase tracking-wider block text-center mb-2">
+            Akses Demo Cepat (1-Klik Masuk):
+          </span>
+          <div className="grid grid-cols-2 gap-2">
+            <button
+              type="button"
+              onClick={() => {
+                const demoClient: User = {
+                  id: 'demo-client-1',
+                  name: 'Sarah Wijaya (PIC Kantor)',
+                  email: 'sarah.pic@megacapital.co.id',
+                  role: 'CLIENT',
+                };
+                setStoredToken('mock-jwt-token-client');
+                setStoredUser(demoClient);
+                onSuccess(demoClient);
+                onClose();
+              }}
+              className="py-2 px-3 rounded-xl bg-[#f0f4fb] hover:bg-[#eaeef5] text-xs font-bold text-[#171c21] flex items-center justify-center gap-1.5 border border-[#dee3ea]"
+            >
+              <span className="material-symbols-outlined text-[16px] text-[#2e6b1f]">business</span>
+              <span>Demo Client</span>
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                const demoVendor: User = {
+                  id: 'demo-vendor-1',
+                  name: 'Kurnia Boga Mandiri',
+                  email: 'halo@kurniaboga.com',
+                  role: 'VENDOR',
+                  vendor: {
+                    id: 'v-1',
+                    userId: 'demo-vendor-1',
+                    namaToko: 'Kurnia Boga Mandiri',
+                    alamat: 'Kebayoran Baru, Jakarta Selatan',
+                    statusVerifikasi: 'APPROVED',
+                    ratingRataRata: 4.95,
+                  },
+                };
+                setStoredToken('mock-jwt-token-vendor');
+                setStoredUser(demoVendor);
+                onSuccess(demoVendor);
+                onClose();
+              }}
+              className="py-2 px-3 rounded-xl bg-[#f0f4fb] hover:bg-[#eaeef5] text-xs font-bold text-[#171c21] flex items-center justify-center gap-1.5 border border-[#dee3ea]"
+            >
+              <span className="material-symbols-outlined text-[16px] text-[#2e6b1f]">storefront</span>
+              <span>Demo Vendor</span>
+            </button>
+          </div>
+        </div>
+
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export const Footer: React.FC = () => {
   return (
@@ -8,86 +9,96 @@ export const Footer: React.FC = () => {
           
           {/* Column 1 & 2: Brand Information */}
           <div className="lg:col-span-2 flex flex-col gap-4">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-[#82c46c]/20 flex items-center justify-center text-[#2e6b1f]">
+            <Link to="/" className="flex items-center gap-3 w-fit group">
+              <div className="w-10 h-10 rounded-full bg-[#82c46c]/20 flex items-center justify-center text-[#2e6b1f] group-hover:scale-105 transition-transform">
                 <span className="material-symbols-outlined text-[24px]">skillet</span>
               </div>
               <span className="font-bold text-xl text-[#171c21] tracking-tight">
                 Saji<span className="text-[#2e6b1f]">.AI</span>
               </span>
-            </div>
+            </Link>
             
             <p className="text-xs sm:text-sm text-[#41493c] max-w-sm leading-relaxed">
-              Saji.AI &mdash; Good food and good life for corporate &amp; events. Solusi katering cerdas berbasis teknologi untuk kebutuhan pertemuan kantor, makan siang tim, dan perhelatan istimewa Anda.
+              Saji.AI &mdash; Good food and good life for corporate &amp; events. Solusi katering cerdas berbasis AI untuk kebutuhan pertemuan kantor, makan siang tim, dan perhelatan istimewa dengan proteksi transaksi SajiEscrow™.
             </p>
 
-            <div className="flex items-center gap-2 pt-1 text-[11px] font-semibold text-[#2e6b1f] bg-[#82c46c]/15 px-3 py-1.5 rounded-full w-fit">
+            <div className="flex items-center gap-2 pt-1 text-[11px] font-semibold text-[#2e6b1f] bg-[#82c46c]/15 px-3 py-1.5 rounded-full w-fit border border-[#82c46c]/30">
               <span className="material-symbols-outlined text-[16px]">verified</span>
-              100% Bersertifikasi Halal &amp; Higienis BPOM
+              100% Bersertifikasi Halal MUI &amp; Higienis BPOM
             </div>
 
             <div className="flex items-center gap-3 pt-2">
               <a
-                href="#"
+                href="https://saji.ai"
+                target="_blank"
+                rel="noreferrer"
                 aria-label="Public Feed"
                 className="w-9 h-9 rounded-full bg-[#f0f4fb] flex items-center justify-center text-[#41493c] hover:text-[#2e6b1f] hover:bg-[#82c46c]/20 transition-all"
               >
                 <span className="material-symbols-outlined text-[18px]">public</span>
               </a>
               <a
-                href="#"
+                href="https://wa.me/6281192887254"
+                target="_blank"
+                rel="noreferrer"
                 aria-label="Call Support"
                 className="w-9 h-9 rounded-full bg-[#f0f4fb] flex items-center justify-center text-[#41493c] hover:text-[#2e6b1f] hover:bg-[#82c46c]/20 transition-all"
               >
                 <span className="material-symbols-outlined text-[18px]">call</span>
               </a>
-              <a
-                href="#"
-                aria-label="Chat Curation"
+              <Link
+                to="/ai-planner"
+                aria-label="AI Planner"
                 className="w-9 h-9 rounded-full bg-[#f0f4fb] flex items-center justify-center text-[#41493c] hover:text-[#2e6b1f] hover:bg-[#82c46c]/20 transition-all"
               >
-                <span className="material-symbols-outlined text-[18px]">forum</span>
-              </a>
+                <span className="material-symbols-outlined text-[18px]">auto_awesome</span>
+              </Link>
             </div>
           </div>
 
           {/* Column 3: Layanan Kami */}
           <div className="flex flex-col gap-3">
-            <span className="font-bold text-sm text-[#171c21]">Layanan Kami</span>
-            <a href="#" className="text-xs sm:text-sm text-[#41493c] hover:text-[#171c21] transition-colors">
-              Katering Harian Kantor
-            </a>
-            <a href="#" className="text-xs sm:text-sm text-[#41493c] hover:text-[#171c21] transition-colors">
-              Paket Bento &amp; Box
-            </a>
-            <a href="#" className="text-xs sm:text-sm text-[#41493c] hover:text-[#171c21] transition-colors">
-              Prasmanan Acara
-            </a>
-            <a href="#" className="text-xs sm:text-sm text-[#41493c] hover:text-[#171c21] transition-colors">
-              Coffee Break &amp; Snack
-            </a>
-            <a href="#" className="text-xs sm:text-sm text-[#41493c] hover:text-[#171c21] transition-colors">
-              Chef On-Demand
-            </a>
+            <span className="font-bold text-sm text-[#171c21]">Layanan &amp; Fitur</span>
+            <Link to="/katalog" className="text-xs sm:text-sm text-[#41493c] hover:text-[#2e6b1f] transition-colors">
+              Katalog Bento &amp; Prasmanan
+            </Link>
+            <Link to="/ai-planner" className="text-xs sm:text-sm text-[#41493c] hover:text-[#2e6b1f] transition-colors flex items-center gap-1">
+              <span>AI Smart Planner &amp; RFQ</span>
+              <span className="px-1.5 py-0.2 rounded bg-[#82c46c]/20 text-[#125104] text-[9px] font-bold">Baru</span>
+            </Link>
+            <Link to="/pricing" className="text-xs sm:text-sm text-[#41493c] hover:text-[#2e6b1f] transition-colors">
+              Paket Langganan Kantor
+            </Link>
+            <Link to="/pricing" className="text-xs sm:text-sm text-[#41493c] hover:text-[#2e6b1f] transition-colors">
+              Garansi SajiEscrow™
+            </Link>
+            <Link to="/tracking" className="text-xs sm:text-sm text-[#41493c] hover:text-[#2e6b1f] transition-colors">
+              Pelacakan Kurir Real-Time
+            </Link>
+            <Link to="/dashboard" className="text-xs sm:text-sm text-[#41493c] hover:text-[#2e6b1f] transition-colors">
+              Portal Client &amp; Vendor
+            </Link>
           </div>
 
           {/* Column 4: Perusahaan */}
           <div className="flex flex-col gap-3">
-            <span className="font-bold text-sm text-[#171c21]">Perusahaan</span>
-            <a href="#" className="text-xs sm:text-sm text-[#41493c] hover:text-[#171c21] transition-colors">
+            <span className="font-bold text-sm text-[#171c21]">Perusahaan &amp; Regulasi</span>
+            <Link to="/" className="text-xs sm:text-sm text-[#41493c] hover:text-[#2e6b1f] transition-colors">
               Tentang Saji.AI
-            </a>
-            <a href="#" className="text-xs sm:text-sm text-[#41493c] hover:text-[#171c21] transition-colors">
+            </Link>
+            <Link to="/dashboard" className="text-xs sm:text-sm text-[#41493c] hover:text-[#2e6b1f] transition-colors">
               Mitra Dapur &amp; Vendor
-            </a>
-            <a href="#" className="text-xs sm:text-sm text-[#41493c] hover:text-[#171c21] transition-colors">
-              Sertifikasi Halal
-            </a>
-            <a href="#" className="text-xs sm:text-sm text-[#41493c] hover:text-[#171c21] transition-colors">
-              Karir
-            </a>
-            <a href="#" className="text-xs sm:text-sm text-[#41493c] hover:text-[#171c21] transition-colors">
-              Kontak Kami
+            </Link>
+            <Link to="/pricing" className="text-xs sm:text-sm text-[#41493c] hover:text-[#2e6b1f] transition-colors">
+              Standar Higiene &amp; Halal
+            </Link>
+            <a
+              href="https://wa.me/6281192887254"
+              target="_blank"
+              rel="noreferrer"
+              className="text-xs sm:text-sm text-[#41493c] hover:text-[#2e6b1f] transition-colors"
+            >
+              Kontak Tim Finance &amp; GA
             </a>
           </div>
 
@@ -105,6 +116,7 @@ export const Footer: React.FC = () => {
               />
               <button
                 type="button"
+                onClick={() => alert('Terima kasih! Anda telah terdaftar untuk menerima info promo.')}
                 aria-label="Kirim Email"
                 className="w-8 h-8 rounded-full bg-[#82c46c] text-[#125104] flex items-center justify-center shrink-0 hover:opacity-90 transition-opacity"
               >
@@ -121,14 +133,19 @@ export const Footer: React.FC = () => {
             &copy; 2026 Saji.AI Platform Katering Nusantara. Hak cipta dilindungi undang-undang.
           </p>
           <div className="flex items-center gap-6">
-            <a href="#" className="text-xs text-[#5b5f63] hover:text-[#171c21] transition-colors">
-              Kebijakan Privasi
-            </a>
-            <a href="#" className="text-xs text-[#5b5f63] hover:text-[#171c21] transition-colors">
+            <Link to="/pricing" className="text-xs text-[#5b5f63] hover:text-[#171c21] transition-colors">
+              Kebijakan Escrow
+            </Link>
+            <Link to="/pricing" className="text-xs text-[#5b5f63] hover:text-[#171c21] transition-colors">
               Syarat Layanan
-            </a>
-            <a href="#" className="text-xs text-[#5b5f63] hover:text-[#171c21] transition-colors">
-              Bantuan Korporat
+            </Link>
+            <a
+              href="https://wa.me/6281192887254"
+              target="_blank"
+              rel="noreferrer"
+              className="text-xs text-[#5b5f63] hover:text-[#171c21] transition-colors"
+            >
+              Bantuan Hotline 24/7
             </a>
           </div>
         </div>
@@ -136,3 +153,5 @@ export const Footer: React.FC = () => {
     </footer>
   );
 };
+
+export default Footer;
