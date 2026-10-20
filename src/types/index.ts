@@ -5,6 +5,8 @@ export interface User {
   email: string;
   name: string;
   role: Role;
+  namaToko?: string;
+  alamatToko?: string;
   vendor?: VendorProfile | null;
   createdAt?: string;
   updatedAt?: string;

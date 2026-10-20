@@ -624,7 +624,8 @@ export const PricingPage: React.FC<PricingPageProps> = ({
       {/* ───────────────────────────────────────────────────────────
        *  5. TAB CONTENT: Single Order & SajiEscrow™ Simulator
        * ─────────────────────────────────────────────────────────── */}
-      <section className="w-full bg-[#f0f4fb] py-16 border-t border-[#eaeef5]">
+      {activeTab === 'single' && (
+        <section className="w-full bg-[#f0f4fb] py-16 border-t border-[#eaeef5] animate-in fade-in duration-300">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           
           {/* Section Header */}
@@ -1066,6 +1067,7 @@ export const PricingPage: React.FC<PricingPageProps> = ({
           </div>
         </div>
       </section>
+    )}
 
       {/* ───────────────────────────────────────────────────────────
        *  6. Proforma Invoice Modal

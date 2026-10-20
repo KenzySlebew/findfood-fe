@@ -6,6 +6,30 @@ export const OrderTrackingPage: React.FC = () => {
   const [otpCode] = useState('8921');
   const [isOtpVerified, setIsOtpVerified] = useState(false);
 
+  // Client Destination Address State
+  const [destinationAddress, setDestinationAddress] = useState('Menara Sahid Sudirman Lt. 24, Jl. Jend. Sudirman No. 86, Jakarta Pusat');
+  const [dropoffPoint, setDropoffPoint] = useState('Lobi Utama Resepsionis VIP (Drop Kurir Khusus)');
+  const [recipientPhone] = useState('+62 811-9288-7254 (PIC Sarah)');
+  const [isEditingAddress, setIsEditingAddress] = useState(false);
+  const [tempAddress, setTempAddress] = useState(destinationAddress);
+  const [tempDropoff, setTempDropoff] = useState(dropoffPoint);
+  const [addressSavedNotification, setAddressSavedNotification] = useState(false);
+
+  const presetAddresses = [
+    { label: 'Menara Sahid Sudirman Lt. 24 (Kantor Pusat)', value: 'Menara Sahid Sudirman Lt. 24, Jl. Jend. Sudirman No. 86, Jakarta Pusat', drop: 'Lobi Utama Resepsionis VIP' },
+    { label: 'Cyber 2 Tower Lt. 12, HR Rasuna Said (Kantor Cabang)', value: 'Cyber 2 Tower Lt. 12, Jl. H. R. Rasuna Said Blok X-5 No. 13, Kuningan, Jakarta Selatan', drop: 'Loading Dock Barat / Lift Servis B2' },
+    { label: 'Pacific Century Place SCBD Lt. 35', value: 'Pacific Century Place SCBD Lt. 35, Jl. Jend. Sudirman Kav 52-53, Senayan, Jakarta Selatan', drop: 'Lobby Concierge SCBD Tower' },
+  ];
+
+  const handleSaveAddress = (e: React.FormEvent) => {
+    e.preventDefault();
+    setDestinationAddress(tempAddress);
+    setDropoffPoint(tempDropoff);
+    setIsEditingAddress(false);
+    setAddressSavedNotification(true);
+    setTimeout(() => setAddressSavedNotification(false), 3000);
+  };
+
   return (
     <div className="flex flex-col w-full bg-[#f7f9ff] text-[#171c21] min-h-screen pb-20">
       
@@ -75,9 +99,9 @@ export const OrderTrackingPage: React.FC = () => {
                 </div>
 
                 {/* Destination Badge */}
-                <div className="self-end bg-[#171c21]/90 backdrop-blur-md text-white p-3 rounded-2xl text-xs flex items-center gap-2 shadow-md">
+                <div className="self-end bg-[#171c21]/90 backdrop-blur-md text-white p-3 rounded-2xl text-xs flex items-center gap-2 shadow-md max-w-sm">
                   <span className="material-symbols-outlined text-[#82c46c] text-[18px]">location_on</span>
-                  <span>Tujuan: Menara Sahid Sudirman Lt. 24, Jakarta</span>
+                  <span className="truncate">Tujuan: {destinationAddress}</span>
                 </div>
               </div>
 
@@ -106,6 +130,137 @@ export const OrderTrackingPage: React.FC = () => {
                 </div>
               </div>
 
+            </div>
+
+            {/* Alamat Tujuan Pengiriman (Sisi Client PIC) */}
+            <div className="bg-white rounded-3xl p-6 shadow-sm border border-[#dee3ea]">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-[#eaeef5]">
+                <div className="flex items-center gap-2.5">
+                  <div className="w-10 h-10 rounded-full bg-[#82c46c]/20 text-[#2e6b1f] flex items-center justify-center font-bold">
+                    <span className="material-symbols-outlined text-[22px]">location_on</span>
+                  </div>
+                  <div>
+                    <h3 className="text-base font-bold text-[#171c21]">Alamat Tujuan Pengiriman Acara</h3>
+                    <p className="text-xs text-[#5b5f63]">Dikonfigurasi oleh Client PIC untuk navigasi kurir dan serah terima</p>
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setTempAddress(destinationAddress);
+                    setTempDropoff(dropoffPoint);
+                    setIsEditingAddress(!isEditingAddress);
+                  }}
+                  className="px-4 py-2 rounded-full bg-[#f0f4fb] hover:bg-[#eaeef5] text-xs font-bold text-[#171c21] transition-colors flex items-center gap-1.5 w-fit"
+                >
+                  <span className="material-symbols-outlined text-[16px] text-[#2e6b1f]">edit_location_alt</span>
+                  <span>{isEditingAddress ? 'Batal Edit' : 'Ubah / Pilih Alamat'}</span>
+                </button>
+              </div>
+
+              {addressSavedNotification && (
+                <div className="mt-3 p-3 bg-[#aff496]/40 text-[#125104] text-xs font-bold rounded-2xl flex items-center gap-2">
+                  <span className="material-symbols-outlined text-[18px]">check_circle</span>
+                  <span>Alamat tujuan dan titik drop-off berhasil diperbarui ke armada kurir!</span>
+                </div>
+              )}
+
+              {/* View Mode */}
+              {!isEditingAddress ? (
+                <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+                  <div className="md:col-span-2 bg-[#f0f4fb] p-4 rounded-2xl border border-[#dee3ea]/70">
+                    <span className="text-[10px] font-bold text-[#5b5f63] uppercase tracking-wider block mb-1">
+                      Alamat Gedung &amp; Lokasi
+                    </span>
+                    <p className="font-semibold text-sm text-[#171c21] leading-relaxed">
+                      {destinationAddress}
+                    </p>
+                    <div className="mt-2.5 flex items-center gap-2 text-[#2e6b1f] font-semibold">
+                      <span className="material-symbols-outlined text-[16px]">meeting_room</span>
+                      <span>Titik Drop: {dropoffPoint}</span>
+                    </div>
+                  </div>
+
+                  <div className="bg-[#f0f4fb] p-4 rounded-2xl border border-[#dee3ea]/70 flex flex-col justify-between">
+                    <div>
+                      <span className="text-[10px] font-bold text-[#5b5f63] uppercase tracking-wider block mb-1">
+                        Kontak PIC Lapangan
+                      </span>
+                      <p className="font-bold text-xs text-[#171c21]">{recipientPhone}</p>
+                    </div>
+                    <div className="mt-3 pt-2 border-t border-[#dee3ea] flex items-center gap-1 text-[11px] text-[#5b5f63]">
+                      <span className="material-symbols-outlined text-[14px] text-[#2e6b1f]">shield</span>
+                      <span>Verifikasi OTP Wajib di Lokasi</span>
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                /* Edit & Selection Mode */
+                <form onSubmit={handleSaveAddress} className="mt-4 p-5 rounded-2xl bg-[#f0f4fb] border border-[#82c46c]/40 space-y-4">
+                  <div>
+                    <label className="text-xs font-bold text-[#171c21] block mb-1.5">
+                      Pilih dari Daftar Alamat Kantor Tersimpan:
+                    </label>
+                    <select
+                      onChange={(e) => {
+                        const selected = presetAddresses.find((p) => p.value === e.target.value);
+                        if (selected) {
+                          setTempAddress(selected.value);
+                          setTempDropoff(selected.drop);
+                        }
+                      }}
+                      className="w-full bg-white p-3 rounded-xl text-xs font-semibold text-[#171c21] border border-[#dee3ea] outline-none"
+                    >
+                      {presetAddresses.map((p) => (
+                        <option key={p.value} value={p.value}>{p.label}</option>
+                      ))}
+                    </select>
+                  </div>
+
+                  <div>
+                    <label className="text-xs font-bold text-[#171c21] block mb-1.5">
+                      Atau Isi Alamat Lengkap / Gedung Acara:
+                    </label>
+                    <textarea
+                      value={tempAddress}
+                      onChange={(e) => setTempAddress(e.target.value)}
+                      rows={2}
+                      className="w-full bg-white p-3 rounded-xl text-xs text-[#171c21] border border-[#dee3ea] outline-none"
+                      placeholder="Nama gedung, lantai, jalan, patokan..."
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <label className="text-xs font-bold text-[#171c21] block mb-1.5">
+                      Titik Drop-off / Instruksi Khusus Kurir:
+                    </label>
+                    <input
+                      type="text"
+                      value={tempDropoff}
+                      onChange={(e) => setTempDropoff(e.target.value)}
+                      className="w-full bg-white p-2.5 rounded-xl text-xs text-[#171c21] border border-[#dee3ea] outline-none"
+                      placeholder="Contoh: Lobi Timur, Lantai 24 Ruang Training B..."
+                    />
+                  </div>
+
+                  <div className="flex items-center gap-2 pt-2">
+                    <button
+                      type="submit"
+                      className="px-5 py-2.5 rounded-full bg-[#2e6b1f] text-white text-xs font-bold hover:bg-black transition-all shadow-sm"
+                    >
+                      Simpan &amp; Perbarui Alamat
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setIsEditingAddress(false)}
+                      className="px-4 py-2.5 rounded-full bg-white text-xs font-bold text-[#5b5f63] border border-[#dee3ea]"
+                    >
+                      Batal
+                    </button>
+                  </div>
+                </form>
+              )}
             </div>
 
             {/* Hygiene Checklist & Real-time Log */}

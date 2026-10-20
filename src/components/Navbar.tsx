@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import type { User } from '../types';
 
 interface NavbarProps {
@@ -17,13 +17,27 @@ export const Navbar: React.FC<NavbarProps> = ({
   onLogout,
   onOpenCart,
   cartCount,
-  backendOnline,
 }) => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
   const currentPath = location.pathname;
+
+  const handleSearchSubmit = (e?: React.FormEvent) => {
+    if (e) e.preventDefault();
+    if (searchQuery.trim()) {
+      navigate(`/katalog?search=${encodeURIComponent(searchQuery.trim())}`);
+      setIsSearchOpen(false);
+    }
+  };
+
+  const handleQuickKeyword = (kw: string) => {
+    setSearchQuery(kw);
+    navigate(`/katalog?search=${encodeURIComponent(kw)}`);
+    setIsSearchOpen(false);
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-[#ffffff]/90 backdrop-blur-xl border-b border-[#eaeef5]/80 shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
@@ -45,7 +59,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         </Link>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden xl:flex items-center gap-1">
+        <nav className="hidden xl:flex items-center gap-1.5">
           <Link
             to="/"
             className={`px-4 py-2 rounded-full text-sm font-semibold transition-all ${
@@ -60,27 +74,15 @@ export const Navbar: React.FC<NavbarProps> = ({
               currentPath === '/katalog' ? 'bg-[#82c46c] text-[#125104] shadow-sm' : 'text-[#41493c] hover:text-[#171c21] hover:bg-[#f0f4fb]'
             }`}
           >
-            Menu &amp; Katalog
+            Menu
           </Link>
-          <a
-            href={currentPath === '/' ? '#cara-kerja' : '/#cara-kerja'}
-            className="px-4 py-2 rounded-full text-sm font-medium text-[#41493c] hover:text-[#171c21] hover:bg-[#f0f4fb] transition-all"
-          >
-            Cara Kerja
-          </a>
-          <a
-            href={currentPath === '/' ? '#katering-acara' : '/#katering-acara'}
-            className="px-4 py-2 rounded-full text-sm font-medium text-[#41493c] hover:text-[#171c21] hover:bg-[#f0f4fb] transition-all"
-          >
-            Katering Acara
-          </a>
           <Link
             to="/pricing"
-            className={`px-3.5 py-2 rounded-full text-sm font-semibold transition-all ${
+            className={`px-4 py-2 rounded-full text-sm font-semibold transition-all ${
               currentPath === '/pricing' ? 'bg-[#82c46c] text-[#125104] shadow-sm' : 'text-[#41493c] hover:text-[#171c21] hover:bg-[#f0f4fb]'
             }`}
           >
-            Harga &amp; Paket
+            Harga
           </Link>
           <Link
             to="/ai-planner"
@@ -115,19 +117,6 @@ export const Navbar: React.FC<NavbarProps> = ({
 
         {/* Right Action Icons & Controls */}
         <div className="flex items-center gap-3 shrink-0">
-          
-          {/* Backend Health Badge */}
-          <div
-            title={backendOnline ? 'Backend Express Terhubung (Port 5000)' : 'Menghubungkan ke Backend...'}
-            className={`hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold ${
-              backendOnline
-                ? 'bg-emerald-50 text-emerald-700 border border-emerald-200'
-                : 'bg-amber-50 text-amber-700 border border-amber-200 animate-pulse'
-            }`}
-          >
-            <span className={`w-2 h-2 rounded-full ${backendOnline ? 'bg-emerald-500' : 'bg-amber-500'}`} />
-            <span className="hidden md:inline">{backendOnline ? 'API Aktif' : 'Cek API...'}</span>
-          </div>
 
           {/* Search Button & Popover */}
           <div className="relative">
@@ -141,14 +130,14 @@ export const Navbar: React.FC<NavbarProps> = ({
             </button>
 
             {isSearchOpen && (
-              <div className="absolute right-0 mt-2 w-72 bg-white rounded-2xl shadow-xl p-3 border border-[#dee3ea] z-50">
-                <div className="flex items-center gap-2 bg-[#f0f4fb] px-3 py-2 rounded-full">
+              <div className="absolute right-0 mt-2 w-80 bg-white rounded-2xl shadow-xl p-4 border border-[#dee3ea] z-50 animate-in fade-in zoom-in-95 duration-150">
+                <form onSubmit={handleSearchSubmit} className="flex items-center gap-2 bg-[#f0f4fb] px-3.5 py-2.5 rounded-full border border-[#dee3ea]">
                   <span className="material-symbols-outlined text-[18px] text-[#5b5f63]">search</span>
                   <input
                     type="text"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    placeholder="Cari bento, liwet, porsi..."
+                    placeholder="Cari bento, liwet, lauk, rendang..."
                     className="w-full bg-transparent text-xs text-[#171c21] outline-none"
                     autoFocus
                   />
@@ -156,11 +145,36 @@ export const Navbar: React.FC<NavbarProps> = ({
                     <button
                       type="button"
                       onClick={() => setSearchQuery('')}
-                      className="text-xs text-[#5b5f63] hover:text-black"
+                      className="text-xs text-[#5b5f63] hover:text-black font-bold"
                     >
                       ✕
                     </button>
                   )}
+                  <button
+                    type="submit"
+                    className="px-2.5 py-1 bg-[#2e6b1f] text-white rounded-full text-[11px] font-bold hover:bg-black transition-colors"
+                  >
+                    Cari
+                  </button>
+                </form>
+
+                {/* Popular Keywords Quick Access */}
+                <div className="mt-3 pt-2.5 border-t border-[#eaeef5]">
+                  <span className="text-[10px] font-bold text-[#5b5f63] uppercase tracking-wider block mb-2">
+                    Pencarian Populer:
+                  </span>
+                  <div className="flex flex-wrap gap-1.5">
+                    {['Bento', 'Nasi Kotak', 'Liwet', 'Salad Diet', 'Rendang', 'Snack Box'].map((kw) => (
+                      <button
+                        key={kw}
+                        type="button"
+                        onClick={() => handleQuickKeyword(kw)}
+                        className="px-2.5 py-1 rounded-full bg-[#f0f4fb] text-[11px] font-medium text-[#41493c] hover:bg-[#82c46c]/20 hover:text-[#125104] transition-colors"
+                      >
+                        {kw}
+                      </button>
+                    ))}
+                  </div>
                 </div>
               </div>
             )}
@@ -258,22 +272,8 @@ export const Navbar: React.FC<NavbarProps> = ({
               currentPath === '/katalog' ? 'bg-[#82c46c]/20 text-[#2e6b1f]' : 'text-[#41493c] hover:bg-[#f0f4fb]'
             }`}
           >
-            Menu &amp; Katalog
+            Menu
           </Link>
-          <a
-            href={currentPath === '/' ? '#cara-kerja' : '/#cara-kerja'}
-            onClick={() => setMobileMenuOpen(false)}
-            className="px-4 py-2.5 rounded-xl text-sm font-medium text-[#41493c] hover:bg-[#f0f4fb]"
-          >
-            Cara Kerja
-          </a>
-          <a
-            href={currentPath === '/' ? '#katering-acara' : '/#katering-acara'}
-            onClick={() => setMobileMenuOpen(false)}
-            className="px-4 py-2.5 rounded-xl text-sm font-medium text-[#41493c] hover:bg-[#f0f4fb]"
-          >
-            Katering Acara
-          </a>
           <Link
             to="/pricing"
             onClick={() => setMobileMenuOpen(false)}
@@ -281,7 +281,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               currentPath === '/pricing' ? 'bg-[#82c46c]/20 text-[#2e6b1f]' : 'text-[#41493c] hover:bg-[#f0f4fb]'
             }`}
           >
-            Harga &amp; Paket
+            Harga
           </Link>
           <Link
             to="/ai-planner"

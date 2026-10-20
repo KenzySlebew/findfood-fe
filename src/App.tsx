@@ -44,7 +44,6 @@ const HomePage: React.FC<HomeProps> = ({ onAddToCart, onSelectPlan }) => {
       {/* 1. Hero Section with Hand-drawn Doodle and Floating Curved Cards */}
       <HeroSection
         onOpenOrder={() => navigate('/katalog')}
-        onExploreMenu={() => navigate('/katalog')}
       />
 
     {/* 2. How It Works (4 Step Green Cards) */}
@@ -124,6 +123,19 @@ export const App: React.FC = () => {
   const handleAuthSuccess = (loggedUser: User) => {
     setUser(loggedUser);
     showToast(`Selamat datang, ${loggedUser.name}! (${loggedUser.role})`);
+  };
+
+  const handleLoginDemo = (role: 'CLIENT' | 'VENDOR') => {
+    const demoUser: User = {
+      id: role === 'VENDOR' ? 'usr_demo_vendor' : 'usr_demo_client',
+      email: role === 'VENDOR' ? 'chef.haryo@kurniaboga.com' : 'sarah.wijaya@telkom.co.id',
+      name: role === 'VENDOR' ? 'Chef Haryo (Kurnia Boga)' : 'Sarah Wijaya (PT Telkom Indonesia)',
+      role,
+      namaToko: role === 'VENDOR' ? 'Kurnia Boga Mandiri' : undefined,
+      alamatToko: role === 'VENDOR' ? 'Jl. Kemang Raya No. 42, Jakarta Selatan' : undefined,
+      createdAt: new Date().toISOString(),
+    };
+    handleAuthSuccess(demoUser);
   };
 
   const handleLogout = () => {
@@ -246,6 +258,7 @@ export const App: React.FC = () => {
                 <DashboardPage
                   user={user}
                   onOpenAuth={handleOpenAuth}
+                  onLoginDemo={handleLoginDemo}
                 />
               }
             />

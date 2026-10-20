@@ -2,12 +2,11 @@ import React from 'react';
 
 interface HeroSectionProps {
   onOpenOrder: () => void;
-  onExploreMenu: () => void;
+  onExploreMenu?: () => void;
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({
   onOpenOrder,
-  onExploreMenu,
 }) => {
   return (
     <section className="w-full max-w-7xl mx-auto px-6 lg:px-12 pt-8 pb-16 text-center">
@@ -50,21 +49,15 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           <span className="text-[#2e6b1f] font-semibold">SajiEscrow™</span> higienis langsung ke mejamu.
         </p>
 
-        {/* Dual Call To Actions */}
-        <div className="flex flex-wrap items-center justify-center gap-4 mb-14">
+        {/* Call To Action */}
+        <div className="flex items-center justify-center mb-14">
           <button
             type="button"
             onClick={onOpenOrder}
-            className="px-8 py-3.5 rounded-full bg-[#82c46c] text-[#125104] font-bold text-sm shadow-md hover:scale-[1.02] hover:shadow-lg transition-all"
+            className="px-9 py-4 rounded-full bg-[#82c46c] text-[#125104] font-extrabold text-base shadow-md hover:scale-[1.03] hover:shadow-xl transition-all flex items-center gap-2"
           >
-            Pesan Sekarang
-          </button>
-          <button
-            type="button"
-            onClick={onExploreMenu}
-            className="px-8 py-3.5 rounded-full bg-[#2c3136] text-[#edf1f8] font-semibold text-sm shadow-md hover:bg-[#171c21] transition-colors"
-          >
-            Lihat Menu &amp; Penawaran
+            <span className="material-symbols-outlined text-[20px]">restaurant_menu</span>
+            <span>Pesan Sekarang</span>
           </button>
         </div>
       </div>

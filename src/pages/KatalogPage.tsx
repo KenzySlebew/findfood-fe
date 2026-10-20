@@ -1,5 +1,5 @@
-import React, { useState, useMemo } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useMemo, useEffect } from 'react';
+import { Link, useSearchParams } from 'react-router-dom';
 import type { MenuItem } from '../types';
 
 /* ────────────────────────────────────────────
@@ -342,13 +342,25 @@ export const KatalogPage: React.FC<KatalogPageProps> = ({
   cartSubtotal,
   onOpenCart,
 }) => {
+  const [searchParams] = useSearchParams();
+  const urlSearch = searchParams.get('search') || '';
+
   // Filter States
   const [activeFilter, setActiveFilter] = useState('all');
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState(urlSearch);
   const [selectedArea, setSelectedArea] = useState('jaksel');
   const [budgetRange, setBudgetRange] = useState(85000);
   const [selectedPaxRange, setSelectedPaxRange] = useState<'all' | '10-25' | '25-100' | '100+'>('all');
   const [sortBy, setSortBy] = useState<'relevance' | 'price-asc' | 'price-desc' | 'rating' | 'calories'>('relevance');
+
+  // Sync with URL query changes (e.g. from Navbar search)
+  useEffect(() => {
+    const q = searchParams.get('search');
+    if (q !== null) {
+      setSearchQuery(q);
+      setCurrentPage(1);
+    }
+  }, [searchParams]);
 
   // Diet checkboxes
   const [filterHalal, setFilterHalal] = useState(true);
