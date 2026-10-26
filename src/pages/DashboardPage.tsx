@@ -11,10 +11,9 @@ interface DashboardPageProps {
 export const DashboardPage: React.FC<DashboardPageProps> = ({ user, onOpenAuth, onLoginDemo }) => {
   const navigate = useNavigate();
 
-  // Role toggle for demo: Can view as CLIENT or as VENDOR
-  const [activeRoleView, setActiveRoleView] = useState<'CLIENT' | 'VENDOR'>(
-    user?.role === 'VENDOR' ? 'VENDOR' : 'CLIENT'
-  );
+  // Strict Role Separation: View is strictly governed by user.role
+  const isVendor = user?.role === 'VENDOR';
+  const activeRoleView: 'CLIENT' | 'VENDOR' = isVendor ? 'VENDOR' : 'CLIENT';
 
   // Client Tab States
   const [clientTab, setClientTab] = useState<'orders' | 'tenders' | 'invoices'>('orders');
@@ -323,35 +322,19 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({ user, onOpenAuth, 
               </button>
             )}
 
-            {/* Role Switcher Pill */}
-            <div className="flex items-center gap-2 bg-[#f0f4fb] p-1.5 rounded-2xl border border-[#dee3ea]">
-              <span className="text-[10px] font-bold text-[#5b5f63] px-2 uppercase tracking-wider">
-                Peran:
+            {/* Role Badge (Strict Role Separation: No Cross Viewing) */}
+            <div className="flex items-center gap-2 bg-[#f0f4fb] px-4 py-2.5 rounded-2xl border border-[#dee3ea]">
+              <span className="material-symbols-outlined text-[18px] text-[#2e6b1f]">
+                {isVendor ? 'storefront' : 'business'}
               </span>
-              <button
-                type="button"
-                onClick={() => setActiveRoleView('CLIENT')}
-                className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${
-                  activeRoleView === 'CLIENT'
-                    ? 'bg-[#82c46c] text-[#125104] shadow-xs'
-                    : 'text-[#41493c] hover:text-[#171c21]'
-                }`}
-              >
-                <span className="material-symbols-outlined text-[16px]">business</span>
-                <span>Client PIC</span>
-              </button>
-              <button
-                type="button"
-                onClick={() => setActiveRoleView('VENDOR')}
-                className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${
-                  activeRoleView === 'VENDOR'
-                    ? 'bg-[#2c3136] text-white shadow-xs'
-                    : 'text-[#41493c] hover:text-[#171c21]'
-                }`}
-              >
-                <span className="material-symbols-outlined text-[16px]">storefront</span>
-                <span>Mitra Vendor</span>
-              </button>
+              <div className="flex flex-col">
+                <span className="text-[10px] font-bold text-[#5b5f63] uppercase tracking-wider">
+                  Hak Akses Terverifikasi:
+                </span>
+                <span className="text-xs font-extrabold text-[#171c21]">
+                  {isVendor ? 'Mitra Toko Dapur (Vendor)' : 'Corporate Client PIC'}
+                </span>
+              </div>
             </div>
           </div>
 

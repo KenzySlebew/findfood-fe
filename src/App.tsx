@@ -19,7 +19,7 @@ import { PricingPage } from './pages/PricingPage';
 import { AIPlannerPage } from './pages/AIPlannerPage';
 import { DashboardPage } from './pages/DashboardPage';
 import { OrderTrackingPage } from './pages/OrderTrackingPage';
-import { api, clearStoredAuth, getStoredUser } from './services/api';
+import { api, clearStoredAuth, getStoredUser, setStoredToken, setStoredUser, saveRegisteredAccount } from './services/api';
 import type { CartItem, MenuItem, User } from './types';
 
 /* ───────── Scroll-to-top on route change ───────── */
@@ -122,7 +122,9 @@ export const App: React.FC = () => {
 
   const handleAuthSuccess = (loggedUser: User) => {
     setUser(loggedUser);
-    showToast(`Selamat datang, ${loggedUser.name}! (${loggedUser.role})`);
+    setStoredUser(loggedUser);
+    saveRegisteredAccount(loggedUser);
+    showToast(`Selamat datang, ${loggedUser.name}! (${loggedUser.role === 'VENDOR' ? 'Mitra Toko' : 'Client PIC'})`);
   };
 
   const handleLoginDemo = (role: 'CLIENT' | 'VENDOR') => {
@@ -135,6 +137,9 @@ export const App: React.FC = () => {
       alamatToko: role === 'VENDOR' ? 'Jl. Kemang Raya No. 42, Jakarta Selatan' : undefined,
       createdAt: new Date().toISOString(),
     };
+    setStoredToken(`saji_token_demo_${role.toLowerCase()}`);
+    setStoredUser(demoUser);
+    saveRegisteredAccount(demoUser);
     handleAuthSuccess(demoUser);
   };
 
@@ -248,6 +253,7 @@ export const App: React.FC = () => {
               path="/ai-planner"
               element={
                 <AIPlannerPage
+                  user={user}
                   onSelectPlan={handleSelectPlan}
                 />
               }

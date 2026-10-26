@@ -6,14 +6,38 @@ export const OrderTrackingPage: React.FC = () => {
   const [otpCode] = useState('8921');
   const [isOtpVerified, setIsOtpVerified] = useState(false);
 
-  // Client Destination Address State
+  // Client Destination Address & Recipient WhatsApp State
   const [destinationAddress, setDestinationAddress] = useState('Menara Sahid Sudirman Lt. 24, Jl. Jend. Sudirman No. 86, Jakarta Pusat');
   const [dropoffPoint, setDropoffPoint] = useState('Lobi Utama Resepsionis VIP (Drop Kurir Khusus)');
-  const [recipientPhone] = useState('+62 811-9288-7254 (PIC Sarah)');
+  const [recipientName, setRecipientName] = useState('Sarah Wijaya (PIC Acara)');
+  const [recipientWa, setRecipientWa] = useState('081192887254');
   const [isEditingAddress, setIsEditingAddress] = useState(false);
   const [tempAddress, setTempAddress] = useState(destinationAddress);
   const [tempDropoff, setTempDropoff] = useState(dropoffPoint);
+  const [tempRecipientName, setTempRecipientName] = useState(recipientName);
+  const [tempRecipientWa, setTempRecipientWa] = useState(recipientWa);
   const [addressSavedNotification, setAddressSavedNotification] = useState(false);
+
+  const cleanWaNumber = (num: string) => {
+    let cleaned = num.replace(/\D/g, '');
+    if (cleaned.startsWith('0')) {
+      cleaned = '62' + cleaned.substring(1);
+    }
+    return cleaned;
+  };
+
+  const formattedWaDisplay = (num: string) => {
+    const raw = num.replace(/\D/g, '');
+    if (raw.length >= 10) {
+      if (raw.startsWith('62')) {
+        return `+62 ${raw.slice(2, 5)}-${raw.slice(5, 9)}-${raw.slice(9)}`;
+      }
+      if (raw.startsWith('0')) {
+        return `${raw.slice(0, 4)}-${raw.slice(4, 8)}-${raw.slice(8)}`;
+      }
+    }
+    return num;
+  };
 
   const presetAddresses = [
     { label: 'Menara Sahid Sudirman Lt. 24 (Kantor Pusat)', value: 'Menara Sahid Sudirman Lt. 24, Jl. Jend. Sudirman No. 86, Jakarta Pusat', drop: 'Lobi Utama Resepsionis VIP' },
@@ -25,6 +49,8 @@ export const OrderTrackingPage: React.FC = () => {
     e.preventDefault();
     setDestinationAddress(tempAddress);
     setDropoffPoint(tempDropoff);
+    setRecipientName(tempRecipientName);
+    setRecipientWa(tempRecipientWa);
     setIsEditingAddress(false);
     setAddressSavedNotification(true);
     setTimeout(() => setAddressSavedNotification(false), 3000);
@@ -149,19 +175,21 @@ export const OrderTrackingPage: React.FC = () => {
                   onClick={() => {
                     setTempAddress(destinationAddress);
                     setTempDropoff(dropoffPoint);
+                    setTempRecipientName(recipientName);
+                    setTempRecipientWa(recipientWa);
                     setIsEditingAddress(!isEditingAddress);
                   }}
                   className="px-4 py-2 rounded-full bg-[#f0f4fb] hover:bg-[#eaeef5] text-xs font-bold text-[#171c21] transition-colors flex items-center gap-1.5 w-fit"
                 >
                   <span className="material-symbols-outlined text-[16px] text-[#2e6b1f]">edit_location_alt</span>
-                  <span>{isEditingAddress ? 'Batal Edit' : 'Ubah / Pilih Alamat'}</span>
+                  <span>{isEditingAddress ? 'Batal Edit' : 'Ubah Alamat & No. WA'}</span>
                 </button>
               </div>
 
               {addressSavedNotification && (
                 <div className="mt-3 p-3 bg-[#aff496]/40 text-[#125104] text-xs font-bold rounded-2xl flex items-center gap-2">
                   <span className="material-symbols-outlined text-[18px]">check_circle</span>
-                  <span>Alamat tujuan dan titik drop-off berhasil diperbarui ke armada kurir!</span>
+                  <span>Alamat tujuan, nama penerima, dan nomor WhatsApp berhasil diperbarui ke armada kurir!</span>
                 </div>
               )}
 
@@ -170,7 +198,7 @@ export const OrderTrackingPage: React.FC = () => {
                 <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
                   <div className="md:col-span-2 bg-[#f0f4fb] p-4 rounded-2xl border border-[#dee3ea]/70">
                     <span className="text-[10px] font-bold text-[#5b5f63] uppercase tracking-wider block mb-1">
-                      Alamat Gedung &amp; Lokasi
+                      Alamat Gedung &amp; Lokasi Pengantaran
                     </span>
                     <p className="font-semibold text-sm text-[#171c21] leading-relaxed">
                       {destinationAddress}
@@ -183,10 +211,26 @@ export const OrderTrackingPage: React.FC = () => {
 
                   <div className="bg-[#f0f4fb] p-4 rounded-2xl border border-[#dee3ea]/70 flex flex-col justify-between">
                     <div>
-                      <span className="text-[10px] font-bold text-[#5b5f63] uppercase tracking-wider block mb-1">
-                        Kontak PIC Lapangan
-                      </span>
-                      <p className="font-bold text-xs text-[#171c21]">{recipientPhone}</p>
+                      <div className="flex items-center justify-between mb-1">
+                        <span className="text-[10px] font-bold text-[#5b5f63] uppercase tracking-wider block">
+                          Kontak PIC Lapangan
+                        </span>
+                        <span className="px-2 py-0.5 rounded-full bg-[#25D366]/20 text-[#128C7E] text-[10px] font-bold">
+                          WhatsApp Aktif
+                        </span>
+                      </div>
+                      <p className="font-bold text-sm text-[#171c21]">{recipientName}</p>
+                      <p className="font-mono text-xs font-semibold text-[#2e6b1f] mt-0.5">{formattedWaDisplay(recipientWa)}</p>
+                      
+                      <a
+                        href={`https://wa.me/${cleanWaNumber(recipientWa)}?text=Halo%20${encodeURIComponent(recipientName)},%20kami%20dari%20armada%20Saji.AI%20sedang%20menuju%20ke%20lokasi%20pesanan%20${encodeURIComponent(trackingId)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-3 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#25D366] text-white hover:bg-[#1ebd5d] text-xs font-bold transition-all shadow-xs"
+                      >
+                        <span className="text-[13px]">💬</span>
+                        <span>Hubungi via WA</span>
+                      </a>
                     </div>
                     <div className="mt-3 pt-2 border-t border-[#dee3ea] flex items-center gap-1 text-[11px] text-[#5b5f63]">
                       <span className="material-symbols-outlined text-[14px] text-[#2e6b1f]">shield</span>
@@ -195,8 +239,51 @@ export const OrderTrackingPage: React.FC = () => {
                   </div>
                 </div>
               ) : (
-                /* Edit & Selection Mode */
+                /* Edit & Selection Mode with WhatsApp Form */
                 <form onSubmit={handleSaveAddress} className="mt-4 p-5 rounded-2xl bg-[#f0f4fb] border border-[#82c46c]/40 space-y-4">
+                  
+                  {/* Recipient & WhatsApp Form Fields */}
+                  <div className="bg-white p-4 rounded-2xl border border-[#dee3ea] space-y-3">
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className="w-6 h-6 rounded-full bg-[#25D366]/20 text-[#128C7E] flex items-center justify-center text-xs font-bold">
+                        WA
+                      </span>
+                      <h4 className="text-xs font-bold text-[#171c21]">Kontak WhatsApp &amp; Nama Penerima di Lokasi</h4>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      <div>
+                        <label className="text-xs font-bold text-[#171c21] block mb-1">
+                          Nama Lengkap PIC Penerima:
+                        </label>
+                        <input
+                          type="text"
+                          value={tempRecipientName}
+                          onChange={(e) => setTempRecipientName(e.target.value)}
+                          placeholder="Contoh: Sarah Wijaya (PIC Acara)"
+                          className="w-full bg-[#f7f9ff] p-2.5 rounded-xl text-xs text-[#171c21] border border-[#dee3ea] outline-none font-semibold focus:border-[#2e6b1f]"
+                          required
+                        />
+                      </div>
+                      <div>
+                        <label className="text-xs font-bold text-[#171c21] block mb-1">
+                          Nomor WhatsApp Penerima:
+                        </label>
+                        <input
+                          type="tel"
+                          value={tempRecipientWa}
+                          onChange={(e) => setTempRecipientWa(e.target.value)}
+                          placeholder="Contoh: 081192887254"
+                          className="w-full bg-[#f7f9ff] p-2.5 rounded-xl text-xs text-[#171c21] border border-[#dee3ea] outline-none font-mono font-semibold focus:border-[#2e6b1f]"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <p className="text-[11px] text-[#5b5f63] italic">
+                      💡 Armada kurir Saji.AI akan mengirimkan live update dan meminta kode verifikasi serah terima paket ke nomor WhatsApp ini.
+                    </p>
+                  </div>
+
                   <div>
                     <label className="text-xs font-bold text-[#171c21] block mb-1.5">
                       Pilih dari Daftar Alamat Kantor Tersimpan:
@@ -249,7 +336,7 @@ export const OrderTrackingPage: React.FC = () => {
                       type="submit"
                       className="px-5 py-2.5 rounded-full bg-[#2e6b1f] text-white text-xs font-bold hover:bg-black transition-all shadow-sm"
                     >
-                      Simpan &amp; Perbarui Alamat
+                      Simpan Kontak WA &amp; Alamat
                     </button>
                     <button
                       type="button"

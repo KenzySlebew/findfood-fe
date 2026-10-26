@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { api, setStoredToken, setStoredUser } from '../services/api';
+import React, { useState, useEffect } from 'react';
+import { api, setStoredToken, setStoredUser, saveRegisteredAccount } from '../services/api';
 import type { User } from '../types';
 
 interface AuthModalProps {
@@ -27,6 +27,13 @@ export const AuthModal: React.FC<AuthModalProps> = ({
   const [loading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
+  useEffect(() => {
+    if (isOpen) {
+      setTab(initialTab);
+      setErrorMsg(null);
+    }
+  }, [isOpen, initialTab]);
+
   if (!isOpen) return null;
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -36,10 +43,11 @@ export const AuthModal: React.FC<AuthModalProps> = ({
 
     try {
       if (tab === 'login') {
-        const res = await api.login({ email, password });
+        const res = await api.login({ email, password, roleHint: role });
         if (res.data) {
           setStoredToken(res.data.token);
           setStoredUser(res.data.user);
+          saveRegisteredAccount(res.data.user);
           onSuccess(res.data.user);
           onClose();
         }
@@ -54,6 +62,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
         if (res.data) {
           setStoredToken(res.data.token);
           setStoredUser(res.data.user);
+          saveRegisteredAccount(res.data.user);
           onSuccess(res.data.user);
           onClose();
         }
@@ -139,42 +148,91 @@ export const AuthModal: React.FC<AuthModalProps> = ({
 
         <form onSubmit={handleSubmit} className="space-y-4">
           
+          {tab === 'login' && (
+            <div>
+              <div className="flex items-center justify-between mb-1.5">
+                <label className="text-xs font-bold text-[#171c21]">
+                  Masuk Sebagai:
+                </label>
+                <span className="text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-full bg-[#82c46c] text-[#125104]">
+                  {role === 'VENDOR' ? 'Mitra Toko Dapur' : 'Client Korporat'}
+                </span>
+              </div>
+              <div className="grid grid-cols-2 gap-2">
+                <button
+                  type="button"
+                  onClick={() => setRole('CLIENT')}
+                  className={`py-2 px-3 rounded-2xl text-xs font-bold border transition-all flex items-center justify-center gap-1.5 ${
+                    role === 'CLIENT'
+                      ? 'border-[#2e6b1f] bg-[#82c46c]/20 text-[#125104] ring-2 ring-[#82c46c]/40 font-extrabold'
+                      : 'border-[#dee3ea] text-[#5b5f63] hover:bg-[#f7f9ff]'
+                  }`}
+                >
+                  <span className="material-symbols-outlined text-[16px]">business</span>
+                  <span>Client PIC</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setRole('VENDOR')}
+                  className={`py-2 px-3 rounded-2xl text-xs font-bold border transition-all flex items-center justify-center gap-1.5 ${
+                    role === 'VENDOR'
+                      ? 'border-[#2e6b1f] bg-[#82c46c]/20 text-[#125104] ring-2 ring-[#82c46c]/40 font-extrabold'
+                      : 'border-[#dee3ea] text-[#5b5f63] hover:bg-[#f7f9ff]'
+                  }`}
+                >
+                  <span className="material-symbols-outlined text-[16px]">storefront</span>
+                  <span>Mitra Toko</span>
+                </button>
+              </div>
+            </div>
+          )}
+
           {tab === 'register' && (
             <>
               {/* Role Toggle for Register */}
               <div>
-                <label className="block text-xs font-bold text-[#171c21] mb-1">
-                  Mendaftar Sebagai:
-                </label>
+                <div className="flex items-center justify-between mb-1.5">
+                  <label className="text-xs font-bold text-[#171c21]">
+                    Mendaftar Sebagai:
+                  </label>
+                  <span className="text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-full bg-[#82c46c] text-[#125104]">
+                    {role === 'VENDOR' ? '✓ Mitra Toko Dapur' : '✓ Client Korporat'}
+                  </span>
+                </div>
                 <div className="grid grid-cols-2 gap-2">
                   <button
                     type="button"
                     onClick={() => setRole('CLIENT')}
-                    className={`py-2 px-3 rounded-2xl text-xs font-bold border transition-all ${
+                    className={`py-2.5 px-3 rounded-2xl text-xs font-bold border transition-all flex items-center justify-center gap-1.5 ${
                       role === 'CLIENT'
-                        ? 'border-[#2e6b1f] bg-[#82c46c]/15 text-[#2e6b1f]'
+                        ? 'border-[#2e6b1f] bg-[#82c46c]/20 text-[#125104] ring-2 ring-[#82c46c]/40 font-extrabold shadow-xs'
                         : 'border-[#dee3ea] text-[#5b5f63] hover:bg-[#f7f9ff]'
                     }`}
                   >
-                    👤 Client (Penyelenggara)
+                    <span>👤 Client (Penyelenggara)</span>
                   </button>
                   <button
                     type="button"
                     onClick={() => setRole('VENDOR')}
-                    className={`py-2 px-3 rounded-2xl text-xs font-bold border transition-all ${
+                    className={`py-2.5 px-3 rounded-2xl text-xs font-bold border transition-all flex items-center justify-center gap-1.5 ${
                       role === 'VENDOR'
-                        ? 'border-[#2e6b1f] bg-[#82c46c]/15 text-[#2e6b1f]'
+                        ? 'border-[#2e6b1f] bg-[#82c46c]/20 text-[#125104] ring-2 ring-[#82c46c]/40 font-extrabold shadow-xs'
                         : 'border-[#dee3ea] text-[#5b5f63] hover:bg-[#f7f9ff]'
                     }`}
                   >
-                    🍳 Vendor (Mitra Toko)
+                    <span>🍳 Vendor (Mitra Toko)</span>
                   </button>
                 </div>
+                <p className="text-[11px] text-[#5b5f63] mt-1.5 italic">
+                  {role === 'VENDOR'
+                    ? '• Akun Anda akan memiliki akses edit katalog, kelola inventaris dapur, dan terima tender B2B.'
+                    : '• Akun Anda akan memiliki akses pemesanan acara, lacak pengiriman kurir, dan faktur pajak DJP.'}
+                </p>
               </div>
 
               <div>
                 <label className="block text-xs font-bold text-[#171c21] mb-1">
-                  Nama Lengkap
+                  Nama Lengkap / Penanggung Jawab
                 </label>
                 <input
                   type="text"
@@ -190,7 +248,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                 <>
                   <div>
                     <label className="block text-xs font-bold text-[#171c21] mb-1">
-                      Nama Toko / Usaha Katering
+                      Nama Toko / Usaha Katering <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="text"
@@ -198,7 +256,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                       value={namaToko}
                       onChange={(e) => setNamaToko(e.target.value)}
                       placeholder="Contoh: Berkah Rasa Katering"
-                      className="w-full px-4 py-2.5 rounded-full border border-[#dee3ea] text-xs sm:text-sm focus:outline-none focus:border-[#2e6b1f] bg-[#f7f9ff]"
+                      className="w-full px-4 py-2.5 rounded-full border border-[#2e6b1f] text-xs sm:text-sm focus:outline-none bg-white shadow-xs font-semibold"
                     />
                   </div>
                   <div>
@@ -290,6 +348,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                 };
                 setStoredToken('mock-jwt-token-client');
                 setStoredUser(demoClient);
+                saveRegisteredAccount(demoClient);
                 onSuccess(demoClient);
                 onClose();
               }}
@@ -306,6 +365,8 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                   name: 'Kurnia Boga Mandiri',
                   email: 'halo@kurniaboga.com',
                   role: 'VENDOR',
+                  namaToko: 'Kurnia Boga Mandiri',
+                  alamatToko: 'Kebayoran Baru, Jakarta Selatan',
                   vendor: {
                     id: 'v-1',
                     userId: 'demo-vendor-1',
@@ -317,6 +378,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                 };
                 setStoredToken('mock-jwt-token-vendor');
                 setStoredUser(demoVendor);
+                saveRegisteredAccount(demoVendor);
                 onSuccess(demoVendor);
                 onClose();
               }}

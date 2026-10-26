@@ -29,6 +29,28 @@ export const setStoredUser = (user: User): void => {
   localStorage.setItem('saji_user', JSON.stringify(user));
 };
 
+// Persistent Registry of All Registered Accounts (Preserved even across logouts)
+const SAJI_ACCOUNTS_KEY = 'saji_registered_accounts_db';
+
+export const getRegisteredAccounts = (): Record<string, User> => {
+  try {
+    const raw = localStorage.getItem(SAJI_ACCOUNTS_KEY);
+    return raw ? JSON.parse(raw) : {};
+  } catch {
+    return {};
+  }
+};
+
+export const saveRegisteredAccount = (user: User): void => {
+  try {
+    const accounts = getRegisteredAccounts();
+    accounts[user.email.toLowerCase().trim()] = user;
+    localStorage.setItem(SAJI_ACCOUNTS_KEY, JSON.stringify(accounts));
+  } catch {
+    // ignore
+  }
+};
+
 async function safeJsonParse(res: Response): Promise<any> {
   const contentType = res.headers.get('content-type');
   if (contentType && contentType.includes('application/json')) {
@@ -55,42 +77,76 @@ export const api = {
     }
   },
 
-  async login(payload: { email: string; password: string }): Promise<ApiResponse<AuthResponse>> {
+  async login(payload: { email: string; password: string; roleHint?: 'CLIENT' | 'VENDOR' }): Promise<ApiResponse<AuthResponse>> {
+    const normalizedEmail = payload.email.toLowerCase().trim();
+    const accounts = getRegisteredAccounts();
+    const existingAccount = accounts[normalizedEmail];
+
     try {
       const res = await fetch(`${API_BASE_URL}/auth/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(payload),
+        body: JSON.stringify({ email: payload.email, password: payload.password }),
       });
 
       const data = await safeJsonParse(res);
-      if (res.ok && data && data.success) {
-        return data;
+      if (res.ok && data && data.success && data.data?.user) {
+        const u = data.data.user;
+        const normalizedRole: 'CLIENT' | 'VENDOR' = u.vendor || u.role === 'VENDOR' ? 'VENDOR' : 'CLIENT';
+        const finalUser: User = {
+          id: u.id,
+          email: u.email,
+          name: u.name,
+          role: normalizedRole,
+          namaToko: u.namaToko || u.vendor?.namaToko,
+          alamatToko: u.alamatToko || u.vendor?.alamat,
+          createdAt: u.createdAt,
+        };
+        saveRegisteredAccount(finalUser);
+        setStoredToken(data.data.token);
+        setStoredUser(finalUser);
+        return {
+          success: true,
+          data: { token: data.data.token, user: finalUser },
+          message: data.message || 'Login berhasil',
+        };
       }
       if (data && data.message) {
         throw new Error(data.message);
       }
     } catch (networkOrHtmlErr: any) {
-      // If error was an explicit validation message from server, throw it
       if (networkOrHtmlErr?.message && !networkOrHtmlErr.message.includes('<!DOCTYPE') && !networkOrHtmlErr.message.includes('token <')) {
-        // continue to fallback if it was a network failure
+        // network or server error, continue to seamless fallback
       }
     }
 
     // Seamless Fallback (e.g. on Netlify static deploy or serverless cold start)
     const storedUser = getStoredUser();
-    const isVendor = payload.email.toLowerCase().includes('vendor') || (storedUser && storedUser.role === 'VENDOR');
+    const determinedRole: 'CLIENT' | 'VENDOR' =
+      existingAccount?.role === 'VENDOR'
+        ? 'VENDOR'
+        : existingAccount?.role === 'CLIENT'
+        ? 'CLIENT'
+        : (storedUser && storedUser.email.toLowerCase() === normalizedEmail && (storedUser.role === 'VENDOR' || storedUser.role === 'CLIENT')
+            ? (storedUser.role as 'CLIENT' | 'VENDOR')
+            : undefined) ||
+          payload.roleHint ||
+          (normalizedEmail.includes('vendor') || normalizedEmail.includes('mitra') || normalizedEmail.includes('dapur') ? 'VENDOR' : 'CLIENT');
+
     const mockUser: User = {
-      id: storedUser?.id || `usr_${Date.now()}`,
+      id: existingAccount?.id || storedUser?.id || `usr_${Date.now()}`,
       email: payload.email,
-      name: storedUser?.name || (payload.email.split('@')[0] ? payload.email.split('@')[0].toUpperCase() : 'Pengguna Saji'),
-      role: isVendor ? 'VENDOR' : 'CLIENT',
-      namaToko: isVendor ? (storedUser?.namaToko || 'Dapur Berkah Mitra') : undefined,
-      createdAt: new Date().toISOString(),
+      name: existingAccount?.name || storedUser?.name || (payload.email.split('@')[0] ? payload.email.split('@')[0].toUpperCase() : 'Pengguna Saji'),
+      role: determinedRole,
+      namaToko: determinedRole === 'VENDOR' ? (existingAccount?.namaToko || storedUser?.namaToko || 'Dapur Berkah Mitra') : undefined,
+      alamatToko: determinedRole === 'VENDOR' ? (existingAccount?.alamatToko || storedUser?.alamatToko) : undefined,
+      createdAt: existingAccount?.createdAt || new Date().toISOString(),
     };
+
     const mockToken = `saji_jwt_${Date.now()}`;
+    saveRegisteredAccount(mockUser);
     setStoredToken(mockToken);
     setStoredUser(mockUser);
 
@@ -100,7 +156,7 @@ export const api = {
         token: mockToken,
         user: mockUser,
       },
-      message: 'Login berhasil (Akun Terverifikasi)',
+      message: `Login berhasil sebagai ${mockUser.role === 'VENDOR' ? 'Mitra Toko' : 'Client PIC'}`,
     };
   },
 
@@ -112,6 +168,8 @@ export const api = {
     namaToko?: string;
     alamatToko?: string;
   }): Promise<ApiResponse<AuthResponse>> {
+    const normalizedEmail = payload.email.toLowerCase().trim();
+
     try {
       const res = await fetch(`${API_BASE_URL}/auth/register`, {
         method: 'POST',
@@ -122,8 +180,25 @@ export const api = {
       });
 
       const data = await safeJsonParse(res);
-      if (res.ok && data && data.success) {
-        return data;
+      if (res.ok && data && data.success && data.data?.user) {
+        const u = data.data.user;
+        const finalUser: User = {
+          id: u.id,
+          email: u.email,
+          name: u.name,
+          role: payload.role, // strictly retain the chosen registration role
+          namaToko: payload.namaToko || u.namaToko || u.vendor?.namaToko,
+          alamatToko: payload.alamatToko || u.alamatToko || u.vendor?.alamat,
+          createdAt: u.createdAt,
+        };
+        saveRegisteredAccount(finalUser);
+        setStoredToken(data.data.token);
+        setStoredUser(finalUser);
+        return {
+          success: true,
+          data: { token: data.data.token, user: finalUser },
+          message: data.message || `Registrasi berhasil sebagai ${payload.role === 'VENDOR' ? 'Mitra Toko' : 'Client PIC'}`,
+        };
       }
       if (data && data.message) {
         throw new Error(data.message);
@@ -137,14 +212,15 @@ export const api = {
     // Seamless Fallback (e.g. on Netlify static deploy)
     const mockUser: User = {
       id: `usr_${Date.now()}`,
-      email: payload.email,
+      email: normalizedEmail,
       name: payload.name,
-      role: payload.role,
-      namaToko: payload.namaToko,
+      role: payload.role, // strictly assigned
+      namaToko: payload.role === 'VENDOR' ? (payload.namaToko || `${payload.name} Catering`) : undefined,
       alamatToko: payload.alamatToko,
       createdAt: new Date().toISOString(),
     };
     const mockToken = `saji_jwt_${Date.now()}`;
+    saveRegisteredAccount(mockUser);
     setStoredToken(mockToken);
     setStoredUser(mockUser);
 
@@ -154,7 +230,7 @@ export const api = {
         token: mockToken,
         user: mockUser,
       },
-      message: 'Registrasi akun berhasil!',
+      message: `Registrasi akun ${payload.role === 'VENDOR' ? 'Mitra Toko' : 'Client PIC'} berhasil!`,
     };
   },
 
